@@ -3,7 +3,7 @@ My neovim configuration tree
 
 
 ## Prerequisites 
-[Neovim](https://neovim.io/)
+[Neovim](https://neovim.io/)\n
 [Vim-Plug](https://github.com/junegunn/vim-plug)
 
 ## Setup
