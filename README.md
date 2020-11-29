@@ -24,7 +24,7 @@ $ sudo ln -sf ~/myneovim/nvim ~/.config/nvim
 $ nvim
 :PlugInstall
 ```
-5. To change the color scheme, open the file ~/myneovim/nvim/general/theme.vim and change the line 'colorscheme <colorscheme>', to the scheme of your choice
+5. To change the color scheme, open the file ~/myneovim/nvim/general/theme.vim and change the line 'colorscheme dracula', to the scheme of your choice
 
 
 
