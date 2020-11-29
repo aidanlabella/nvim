@@ -7,7 +7,7 @@ My neovim configuration tree
 [Vim-Plug](https://github.com/junegunn/vim-plug)
 
 ## Setup
-These instrutions will work for GNU/Linux, BSD and Apple macOS
+These instrutions will work for GNU/Linux, BSD and Apple macOS.
 Installtion for Windows 10 is possible under the Windows Subsystem For Linux (WSL) and is theoretically possible under just the Windows Shell, but will require tweaking
 
 1. Clone this repo into your home directory (e.g. ~/myneovim)
