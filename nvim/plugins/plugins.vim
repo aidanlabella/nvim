@@ -37,6 +37,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'jacoborus/tender.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'machakann/vim-sandwich'
+Plug 'psliwka/vim-smoothie'
 
 " Initialize plugin system
 call plug#end()
