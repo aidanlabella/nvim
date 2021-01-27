@@ -8,7 +8,7 @@ My neovim configuration tree
 
 ## Setup
 These instrutions will work for GNU/Linux, BSD and Apple's macOS.
-Installtion for Windows 10 is possible under the Windows Subsystem for Linux (WSL) and is theoretically possible under just the Windows Shell, but will require tweaking as Windows/DOS/NT is not a UNIX.
+Installtion for Windows 10 is possible under the Windows Subsystem for Linux (WSL) and is theoretically possible under just the Windows Shell, but may require some tweaks (i.e. config file locations).
 
 1. Clone this repo into your home directory (e.g. ~/myneovim)
 2. Create a symlink to the Neovim configuration tree
