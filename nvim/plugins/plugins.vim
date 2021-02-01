@@ -38,6 +38,8 @@ Plug 'jacoborus/tender.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'machakann/vim-sandwich'
 Plug 'psliwka/vim-smoothie'
+Plug 'lervag/vimtex'
+
 
 " Initialize plugin system
 call plug#end()
