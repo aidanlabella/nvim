@@ -35,12 +35,13 @@ Plug 'rbgrouleff/bclose.vim'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'jacoborus/tender.vim'
-Plug 'jiangmiao/auto-pairs'
 Plug 'machakann/vim-sandwich'
 Plug 'psliwka/vim-smoothie'
 Plug 'lervag/vimtex'
 Plug 'puremourning/vimspector'
 
 
+"No longer used/too buggy
+"Plug 'jiangmiao/auto-pairs'
 " Initialize plugin system
 call plug#end()
