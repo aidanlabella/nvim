@@ -5,15 +5,15 @@
 "keybindings/apps/tabs.vim
 "keybindings for tabs and windows
 
-let g:which_key_map['1'] = [ ':1tabnext'  , 'tab 1' ]
-let g:which_key_map['2'] = [ ':2tabnext'  , 'tab 2' ]
-let g:which_key_map['3'] = [ ':3tabnext'  , 'tab 3' ]
-let g:which_key_map['4'] = [ ':4tabnext'  , 'tab 4' ]
-let g:which_key_map['5'] = [ ':5tabnext'  , 'tab 5' ]
-let g:which_key_map['6'] = [ ':6tabnext'  , 'tab 6' ]
-let g:which_key_map['7'] = [ ':7tabnext'  , 'tab 7' ]
-let g:which_key_map['8'] = [ ':8tabnext'  , 'tab 8' ]
-let g:which_key_map['9'] = [ ':9tabnext'  , 'tab 9' ]
+"let g:which_key_map['1'] = [ ':1tabnext'  , 'tab 1' ]
+"let g:which_key_map['2'] = [ ':2tabnext'  , 'tab 2' ]
+"let g:which_key_map['3'] = [ ':3tabnext'  , 'tab 3' ]
+"let g:which_key_map['4'] = [ ':4tabnext'  , 'tab 4' ]
+"let g:which_key_map['5'] = [ ':5tabnext'  , 'tab 5' ]
+"let g:which_key_map['6'] = [ ':6tabnext'  , 'tab 6' ]
+"let g:which_key_map['7'] = [ ':7tabnext'  , 'tab 7' ]
+"let g:which_key_map['8'] = [ ':8tabnext'  , 'tab 8' ]
+"let g:which_key_map['9'] = [ ':9tabnext'  , 'tab 9' ]
 
 let g:which_key_map['t'] = {
       \ 'name' : '+tabs' ,
@@ -21,6 +21,15 @@ let g:which_key_map['t'] = {
       \ 't' : ['gt'     , 'switch tabs']         ,
       \ 'l' : ['gt'     , 'one tab forward']         ,
       \ 'h' : ['gT'    , 'one tab backwards']            ,
+      \ '1' : [':1tabnext'  , 'tab 1' ],
+      \ '2' : [':2tabnext'  , 'tab 2' ],
+      \ '3' : [':3tabnext'  , 'tab 3' ],
+      \ '4' : [':4tabnext'  , 'tab 4' ],
+      \ '5' : [':5tabnext'  , 'tab 5' ],
+      \ '6' : [':6tabnext'  , 'tab 6' ],
+      \ '7' : [':7tabnext'  , 'tab 7' ],
+      \ '8' : [':8tabnext'  , 'tab 8' ],
+      \ '9' : [':9tabnext'  , 'tab 9' ],
 \ }
 
 let g:which_key_map['w'] = {
@@ -42,4 +51,4 @@ let g:which_key_map['w'] = {
       \ 's' : ['<C-W>s'     , 'split-window-below']    ,
       \ 'v' : ['<C-W>v'     , 'split-window-below']    ,
       \ '?' : ['Windows'    , 'fzf-window']            ,
-\ }
+      \}

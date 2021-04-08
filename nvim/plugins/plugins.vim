@@ -39,6 +39,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'machakann/vim-sandwich'
 Plug 'psliwka/vim-smoothie'
 Plug 'lervag/vimtex'
+Plug 'puremourning/vimspector'
 
 
 " Initialize plugin system
