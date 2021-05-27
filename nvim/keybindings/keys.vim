@@ -17,7 +17,7 @@ source $HOME/.config/nvim/keybindings/apps/exit.vim
 source $HOME/.config/nvim/keybindings/apps/tabs.vim
 source $HOME/.config/nvim/keybindings/apps/git.vim
 source $HOME/.config/nvim/keybindings/apps/tagbar.vim
-source $HOME/.config/nvim/keybindings/apps/coc.vim
+source $HOME/.config/nvim/keybindings/apps/lsp.vim
 source $HOME/.config/nvim/keybindings/apps/vimtex.vim
 
 call which_key#register('<Space>', "g:which_key_map")

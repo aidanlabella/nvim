@@ -15,7 +15,7 @@ let g:which_key_map.g = {
       \ 'd' : [':Git diff'                         , 'diff'],
       \ 'D' : [':Gdiffsplit'                       , 'diff split'],
       \ 'f' : [':Gfetch'                           , 'fetch'],
-      \ 'g' : [':Git'                              , 'fugitive'],
+      \ 'g' : [':Neogit'                           , 'Git status'],
       \ 'G' : [':Gstatus'                          , 'status'],
       \ 'h' : [':GitGutterLineHighlightsToggle'    , 'highlight hunks'],
       \ 'H' : ['<Plug>(GitGutterPreviewHunk)'      , 'preview hunk'],

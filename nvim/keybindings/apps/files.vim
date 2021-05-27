@@ -7,9 +7,9 @@
 
 let g:which_key_map['f'] = {
       \ 'name' : '+files' ,
-      \ 'f' : ['FZF'     , 'find file']    ,
+      \ 'f' : [':Telescope find_files'     , 'find file']    ,
       \ 'r' : ['RangerCurrentDirectory'     , 'ranger']    ,
       \ 'R' : ['Ranger'     , 'ranger ~']    ,
-      \ 't' : ['NERDTreeToggle'     , 'file tree']    ,
+      \ 't' : [':execute "lua nvimTree.toggle()"'     , 'file tree']    ,
       \ 'e' : ['Explore'     , 'explore files']    ,
 \ }
