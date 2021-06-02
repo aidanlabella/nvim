@@ -11,6 +11,7 @@ source $HOME/.config/nvim/plugins/barbar_settings.vim
 let g:nvim_tree_width = 35 "30 by default
 let g:nvim_tree_quit_on_open = 0 "0 by default, closes the tree when you open a file
 let g:nvim_tree_follow = 1 "0 by default, this option allows the cursor to be updated when entering a buffer
+let g:nvim_tree_tab_open = 1
 lua <<EOF
     local tree_cb = require'nvim-tree.config'.nvim_tree_callback
     vim.g.nvim_tree_bindings = {
@@ -22,22 +23,6 @@ lua <<EOF
 EOF
 
 "Airline
-"let g:airline#extensions#tabline#enabled = 1 
-let g:airline_powerline_fonts = 1
-"let g:airline#extensions#tabline#show_tab_nr = 1
-"let g:airline#extensions#tabline#tab_nr_type= 2
-"let g:airline#extensions#tabline#fnamemod = ':t'
-"let g:airline#extensions#tabline#show_tab_type = 1
-let g:airline#extensions#whitespace#enabled = 0
-"let g:airline#extensions#tabline#buffer_idx_mode = 1
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let hostname=system('hostname -s | tr -d "\n"')
-let username=system('whoami | tr -d "\n"')
-let g:airline_section_x = '%{username}@%{hostname}'
 
 "Startify
 function! StartifyEntryFormat()

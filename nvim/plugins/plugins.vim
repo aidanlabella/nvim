@@ -13,8 +13,6 @@ Plug 'uiiaoo/java-syntax.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'terryma/vim-multiple-cursors'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'pangloss/vim-javascript'
@@ -49,6 +47,7 @@ Plug 'mfussenegger/nvim-jdtls'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'kosayoda/nvim-lightbulb'
+Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 
 "No longer used/too buggy
 "Plug 'jiangmiao/auto-pairs'

@@ -10,7 +10,7 @@ let g:which_key_map['q'] = {
       \ 'name' : '+quit' ,
       \ 'x' : [':x'     , 'save and exit current buffer']          ,
       \ 'X' : [':xa!'     , 'save and exit all buffers']         ,
-      \ 'q' : [':q'    , 'exit current buffer']            ,
+      \ 'q' : [':BufferDelete'    , 'exit current buffer']            ,
       \ 'f' : [':q!'    , 'force quit current buffer']            ,
       \ 'Q' : [':qa!'    , 'exit all buffers']            ,
 \ }
