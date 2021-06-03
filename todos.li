@@ -1,0 +1,5 @@
+- Get LSP to do better java completions and highlighting
+- Integrate better with neogit
+- Add LSP commands
+- Add telescope commands 
+- Get lightbulb integrated with telescope

@@ -1,5 +1,4 @@
-nvimTree = require('tree')
+require('tree')
 require('compelsp')
-require('lightbulb')
 
 require('galaxy')

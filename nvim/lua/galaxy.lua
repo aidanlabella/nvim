@@ -8,7 +8,7 @@ local extension = require('galaxyline.provider_extensions')
 gl.short_line_list = {
     'LuaTree',
     'vista',
-		'floaterm',
+    'floaterm',
     'dbui',
     'startify',
     'term',
@@ -21,8 +21,8 @@ gl.short_line_list = {
 -- VistaPlugin = extension.vista_nearest
 
 local colors = {
-    bg = '282a36',
-    line_bg = '7D0AB2',
+    bg = '#44475a',
+    line_bg = '#44475a',
     fg = '#f8f8f2',
     NameColor = '#5B4B70',
     fg_green = '#65a380',
@@ -145,25 +145,25 @@ gls.left[2] = {
       }
       local vim_mode = vim.fn.mode()
       vim.api.nvim_command('hi GalaxyViMode guifg='..mode_color[vim_mode])
-      return alias[vim_mode] .. ' NVIM (alabella) '
+      return alias[vim_mode] .. ' NVIM '
     end,
     highlight = {colors.red,colors.line_bg,'bold'},
   },
 }
 gls.left[3] = {
-	BOOLNS = {
+    BOOLNS = {
     provider = function()
-		end,
-		separator = '',
+        end,
+        separator = '',
     condition = buffer_not_empty,
     separator_highlight = {colors.NameColor,colors.bg}
-	}
+    }
 }
 -- 文件图标
 gls.left[4] ={
   FileIcon = {
     provider = 'FileIcon',
-		icon = '',
+        icon = '',
     condition = buffer_not_empty,
     highlight = {require('galaxyline.provider_fileinfo').get_file_icon_color,colors.NameColor},
   },
@@ -222,7 +222,7 @@ gls.left[10] = {
   DiffModified = {
     provider = 'DiffModified',
     condition = checkwidth,
-    icon = ' ',
+    icon = '   ',
     highlight = {colors.orange,colors.line_bg},
   }
 }
@@ -300,7 +300,7 @@ gls.right[1] = {
  gls.right[4] = {
    ScrollBar = {
      provider = 'ScrollBar',
-		 separator = ' ● ',
+         separator = ' ● ',
     separator_highlight = {colors.blue,colors.line_bg},
      highlight = {colors.yellow,colors.bg},
    }
@@ -316,13 +316,13 @@ gls.short_line_left[3] = {
   }
 }
 gls.short_line_left[2] = {
-	BOOLNS = {
+    BOOLNS = {
     provider = function()
-		end,
-		separator = '',
+        end,
+        separator = '',
     condition = buffer_not_empty,
     separator_highlight = {colors.NameColor,colors.bg}
-	}
+    }
 }
 gls.short_line_left[1] = {
   ViMode = {
