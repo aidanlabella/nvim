@@ -38,10 +38,10 @@ Plug 'jacoborus/tender.vim'
 Plug 'machakann/vim-sandwich'
 Plug 'psliwka/vim-smoothie'
 Plug 'lervag/vimtex'
-Plug 'puremourning/vimspector'
 
 
 "No longer used/too buggy
 "Plug 'jiangmiao/auto-pairs'
+"Plug 'puremourning/vimspector'
 " Initialize plugin system
 call plug#end()
