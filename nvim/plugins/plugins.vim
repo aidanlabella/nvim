@@ -20,7 +20,6 @@ Plug 'prabirshrestha/async.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'liuchengxu/vim-which-key'
-Plug 'mhinz/vim-startify'
 Plug 'jceb/vim-orgmode'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -48,6 +47,7 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'kosayoda/nvim-lightbulb'
 Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+Plug 'glepnir/dashboard-nvim'
 
 "No longer used/too buggy
 "Plug 'jiangmiao/auto-pairs'

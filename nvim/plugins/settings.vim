@@ -65,3 +65,17 @@ let g:ranger_map_keys = 0
 
 "Colorizer
 lua require'colorizer'.setup()
+
+"Dashboard
+let g:dashboard_default_executive ='telescope'
+
+let g:dashboard_custom_header = [
+     \ '                                        ▟▙            ',
+ \ '                                        ▝▘            ',
+ \ '██▃▅▇█▆▖  ▗▟████▙▖   ▄████▄   ██▄  ▄██  ██  ▗▟█▆▄▄▆█▙▖',
+ \ '██▛▔ ▝██  ██▄▄▄▄██  ██▛▔▔▜██  ▝██  ██▘  ██  ██▛▜██▛▜██',
+ \ '██    ██  ██▀▀▀▀▀▘  ██▖  ▗██   ▜█▙▟█▛   ██  ██  ██  ██',
+ \ '██    ██  ▜█▙▄▄▄▟▊  ▀██▙▟██▀   ▝████▘   ██  ██  ██  ██',
+ \ '▀▀    ▀▀   ▝▀▀▀▀▀     ▀▀▀▀       ▀▀     ▀▀  ▀▀  ▀▀  ▀▀',
+ \ '',
+ \]
