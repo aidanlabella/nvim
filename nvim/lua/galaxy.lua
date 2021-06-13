@@ -68,23 +68,23 @@ local gls = gl.section
 
 -- Colours, maps and icons {{{2
 local colors = {
-    bg              = '#000000',
+    bg              = '#44475a',
 
-    giticon         = '#FF8800',
-    gitbg           = '#5C2C2E',
-    gittext         = '#C5C5C5',
+    giticon         = '#6272a4',
+    gitbg           = '#44475a',
+    gittext         = '#ff5555',
 
     diagerror       = '#F44747',
-    diagwarn        = '#FF8800',
+    diagwarn        = '#ffb86c',
     diaghint        = '#4FC1FF',
     diaginfo        = '#FFCC66',
 
-    lspicon         = '#68AF00',
-    lspbg           = '#304B2E',
+    lspicon         = '#6272a4',
+    lspbg           = '#44475a',
     lsptext         = '#C5C5C5',
 
-    typeicon        = '#FF8800',
-    typebg          = '#5C2C2E',
+    typeicon        = '#50fa7b',
+    typebg          = '#282a36',
     typetext        = '#C5C5C5',
 
     statsicon       = '#9CDCFE',
@@ -107,42 +107,42 @@ local colors = {
     yellow          = '#DCDCAA',
     magenta         = '#D16D9E',
     green           = '#608B4E',
-    orange          = '#FF8800',
+    orange          = '#ffb86c',
     purple          = '#C586C0',
     blue            = '#569CD6',
     cyan            = '#4EC9B0'
 }
 
 local mode_map = {
-    ['n']        = {'#569CD6', 'NORMAL'},
-    ['i']        = {'#D16969', 'INSERT'},
-    ['R']        = {'#D16969', 'REPLACE'},
-    ['c']        = {'#608B4E', 'COMMAND'},
-    ['v']        = {'#C586C0', 'VISUAL'},
-    ['V']        = {'#C586C0', 'VIS-LN'},
-    ['']       = {'#C586C0', 'VIS-BLK'},
-    ['s']        = {'#FF8800', 'SELECT'},
-    ['S']        = {'#FF8800', 'SEL-LN'},
-    ['']       = {'#DCDCAA', 'SEL-BLK'},
-    ['t']        = {'#569CD6', 'TERMINAL'},
+    ['n']        = {'#bd93f9', 'NORMAL'},
+    ['i']        = {'#50fa7b', 'INSERT'},
+    ['R']        = {'#50fa7b', 'REPLACE'},
+    ['c']        = {'#ff79c6', 'COMMAND'},
+    ['v']        = {'#bd93f9', 'VISUAL'},
+    ['V']        = {'#bd93f9', 'VIS-LN'},
+    ['']       = {'#bd93f9', 'VIS-BLK'},
+    ['s']        = {'#ffb86c', 'SELECT'},
+    ['S']        = {'#ffb86c', 'SEL-LN'},
+    ['']       = {'#f1fa8c', 'SEL-BLK'},
+    ['t']        = {'#6272a4', 'TERMINAL'},
     ['Rv']       = {'#D16D69', 'VIR-REP'},
-    ['rm']       = {'#FF0000', '- More -'},
-    ['r']        = {'#FF0000', "- Hit-Enter -"},
-    ['r?']       = {'#FF0000', "- Confirm -"},
-    ['cv']       = {'#569CD6', "Vim Ex Mode"},
-    ['ce']       = {'#569CD6', "Normal Ex Mode"},
-    ['!']        = {'#569CD6', "Shell Running"},
-    ['ic']       = {'#DCDCAA', 'Insert mode completion |compl-generic|'},
-    ['no']       = {'#DCDCAA', 'Operator-pending'},
-    ['nov']      = {'#DCDCAA', 'Operator-pending (forced charwise |o_v|)'},
-    ['noV']      = {'#DCDCAA', 'Operator-pending (forced linewise |o_V|)'},
-    ['noCTRL-V'] = {'#DCDCAA', 'Operator-pending (forced blockwise |o_CTRL-V|) CTRL-V is one character'},
-    ['niI']      = {'#DCDCAA', 'Normal using |i_CTRL-O| in |Insert-mode|'},
-    ['niR']      = {'#DCDCAA', 'Normal using |i_CTRL-O| in |Replace-mode|'},
-    ['niV']      = {'#DCDCAA', 'Normal using |i_CTRL-O| in |Virtual-Replace-mode|'},
-    ['ix']       = {'#DCDCAA', 'Insert mode |i_CTRL-X| completion'},
-    ['Rc']       = {'#DCDCAA', 'Replace mode completion |compl-generic|'},
-    ['Rx']       = {'#DCDCAA', 'Replace mode |i_CTRL-X| completion'},
+    ['rm']       = {'#FF5555', '- More -'},
+    ['r']        = {'#FF5555', "- Hit-Enter -"},
+    ['r?']       = {'#FF5555', "- Confirm -"},
+    ['cv']       = {'#8be9fd', "Vim Ex Mode"},
+    ['ce']       = {'#8be9fd', "Normal Ex Mode"},
+    ['!']        = {'#8be9fd', "Shell Running"},
+    ['ic']       = {'#f1fa8c', 'Insert mode completion |compl-generic|'},
+    ['no']       = {'#f1fa8c', 'Operator-pending'},
+    ['nov']      = {'#f1fa8c', 'Operator-pending (forced charwise |o_v|)'},
+    ['noV']      = {'#f1fa8c', 'Operator-pending (forced linewise |o_V|)'},
+    ['noCTRL-V'] = {'#f1fa8c', 'Operator-pending (forced blockwise |o_CTRL-V|) CTRL-V is one character'},
+    ['niI']      = {'#f1fa8c', 'Normal using |i_CTRL-O| in |Insert-mode|'},
+    ['niR']      = {'#f1fa8c', 'Normal using |i_CTRL-O| in |Replace-mode|'},
+    ['niV']      = {'#f1fa8c', 'Normal using |i_CTRL-O| in |Virtual-Replace-mode|'},
+    ['ix']       = {'#f1fa8c', 'Insert mode |i_CTRL-X| completion'},
+    ['Rc']       = {'#f1fa8c', 'Replace mode completion |compl-generic|'},
+    ['Rx']       = {'#f1fa8c', 'Replace mode |i_CTRL-X| completion'},
 }
 
 -- See: https://www.nerdfonts.com/cheat-sheet
@@ -177,7 +177,7 @@ local function setLineWidthColours()
 
     highlight('LinePosHighlightStart', colbg, colors.statsbg)
     highlight('LinePosHighlightColNum', colors.statstext, colbg)
-    highlight('LinePosHighlightMid', linebg, colbg)
+    highlight('LinePosHighlhtMid', linebg, colbg)
     highlight('LineLenHighlightLenNum', colors.statstext, linebg)
     highlight('LinePosHighlightEnd', linebg, colors.statsbg)
 end
@@ -193,13 +193,13 @@ gls.left =
         {
             ViModeSpaceOnFarLeft = {
                 provider = function() return " " end,
-                highlight = {colors.giticon, colors.bg}
+                highlight = {colors.bg, mode_map[vim.fn.mode()][1]}
             }
         }, {
             ViModeLeft = {
                 provider = function()
                     highlight('ViModeHighlight', mode_map[vim.fn.mode()][1], colors.bg)
-                    return leftbracket
+                    return ''
                 end,
                 highlight = 'ViModeHighlight'
             }
@@ -314,7 +314,7 @@ gls.left =
                         name = gl.lspclient()
                     end
 
-                    return '' .. name
+                    return ' ' .. name
                 end,
                 highlight = {colors.lspbg, colors.lspicon}
             }
