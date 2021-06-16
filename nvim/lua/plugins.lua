@@ -1,6 +1,6 @@
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
-    use 'uiiaoo/java-syntax.vim'
+    --use 'uiiaoo/java-syntax.vim'
     use 'preservim/nerdcommenter'
     use {'dracula/vim',
         as = 'dracula',
@@ -13,7 +13,6 @@ return require('packer').startup(function()
     use 'terryma/vim-multiple-cursors'
     use 'airblade/vim-gitgutter'
     use 'tpope/vim-fugitive'
-    use 'pangloss/vim-javascript'
     use 'prabirshrestha/async.vim'
     use 'ryanoasis/vim-devicons'
     use 'kyazdani42/nvim-web-devicons'
@@ -31,7 +30,7 @@ return require('packer').startup(function()
     use 'psliwka/vim-smoothie'
     use 'lervag/vimtex'
 
-    --Added fdr NVIM 0.5:
+    --Added for NVIM 0.5:
     use 'romgrk/barbar.nvim'
     use 'kyazdani42/nvim-tree.lua'
     use 'TimUntersberger/neogit'
