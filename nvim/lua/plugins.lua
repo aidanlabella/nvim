@@ -1,5 +1,6 @@
 nvimTree = require('tree')
+neogit = require('neogit')
 require('compelsp')
 require('lightbulb')
-
-require('galaxy')
+require('statusline')
+require('whichkey')
