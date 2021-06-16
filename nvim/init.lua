@@ -2,8 +2,8 @@
 --neogit.setup {}
 CONFIG_PATH = vim.fn.stdpath('config')
 
-vim.cmd('source '..CONFIG_PATH..'/plugins/plugins.vim')
 require('plugins')
+require('plugged')
 
 vim.cmd('source '..CONFIG_PATH..'/general/editor.vim')
 vim.cmd('source '..CONFIG_PATH..'/general/theme.vim')

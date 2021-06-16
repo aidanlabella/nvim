@@ -48,6 +48,7 @@ Plug 'kosayoda/nvim-lightbulb'
 Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 Plug 'glepnir/dashboard-nvim'
 Plug 'folke/which-key.nvim'
+Plug 'glepnir/lspsaga.nvim'
 
 "No longer used/too buggy
 "Plug 'jiangmiao/auto-pairs'
