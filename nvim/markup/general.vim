@@ -21,7 +21,4 @@ augroup CursorLine
   au WinLeave * setlocal nocursorline
 augroup END
 
-hi Normal guibg=NONE ctermbg=NONE
 set termguicolors
-
-

@@ -6,5 +6,4 @@
 "configures colorschemes & fonts
 
 
-colorscheme dracula
-set guifont=NotoMono\ Nerd\ Font:h10
+set guifont=Consolas:h10

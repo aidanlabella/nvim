@@ -2,7 +2,14 @@ return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
     use 'uiiaoo/java-syntax.vim'
     use 'preservim/nerdcommenter'
-    use {'dracula/vim', as = 'dracula'}
+    use {'dracula/vim',
+        as = 'dracula',
+        config = function()
+            vim.cmd('colorscheme dracula')
+            vim.cmd('source $HOME/.config/nvim/plugins/barbar_settings.vim')
+            vim.cmd[[highlight NvimTreeFolderIcon guifg='#c09553']]
+            vim.cmd[[hi Normal guibg=NONE ctermbg=NONE]]
+        end}
     use 'terryma/vim-multiple-cursors'
     use 'airblade/vim-gitgutter'
     use 'tpope/vim-fugitive'

@@ -5,7 +5,6 @@
 "plugins/settings.vim
 "configure plugin settings
 "BarBar
-source $HOME/.config/nvim/plugins/barbar_settings.vim
 
 "NVIMTree
 let g:nvim_tree_width = 35 "30 by default
@@ -52,7 +51,6 @@ let g:nvim_tree_icons = {
     \   }
     \ }
 
-highlight NvimTreeFolderIcon guifg='#c09553'
 
 "Airline
 
@@ -62,6 +60,8 @@ function! StartifyEntryFormat()
 endfunction
 
 "COC/LSP
+inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 inoremap <silent><expr> <C-Space> compe#complete()
 inoremap <silent><expr> <CR>      compe#confirm('<CR>')
 inoremap <silent><expr> <C-e>     compe#close('<C-e>')
@@ -94,9 +94,6 @@ endif
 
 "Ranger
 let g:ranger_map_keys = 0
-
-"Colorizer
-lua require'colorizer'.setup()
 
 "Dashboard
 let g:dashboard_default_executive ='telescope'
