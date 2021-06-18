@@ -153,6 +153,7 @@ local mappings = {
         h = {"<cmd>tabnext<cr>", "Tab left"},
         l = {"<cmd>tabprevious<cr>", "Tab right"},
         n = {"<cmd>tabnew<cr>", "New tab"},
+        k = {":BufferClose <CR>", "Close current buffer"},
         ["1"] = {"<cmd>1tabnext<cr>", "Goto tab 1"},
         ["2"] = {"<cmd>2tabnext<cr>", "goto tab 2"},
         ["3"] = {"<cmd>3tabnext<cr>", "goto tab 3"},
@@ -165,7 +166,8 @@ local mappings = {
     },
     q = {
         name = "+Quit",
-        q = {":q <CR>", "Quit current buffer"},
+        q = {":q <CR>", "Quit"},
+        t = {":BufferClose <CR>", "Close current buffer"},
         Q = {":qa! <CR>", "Force quit everything!"},
         x = {":x <CR>", "Save and quit current buffer"},
         X = {":xa <CR>", "Save and quit all buffers"},

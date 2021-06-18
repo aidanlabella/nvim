@@ -25,7 +25,7 @@ end
 
 gls.left[1] = {
   FirstElement = {
-    provider = function() return '▋' end,
+    provider = function() return '' end,
     highlight = {colors.purple, colors.purple}
   },
 }
@@ -56,7 +56,7 @@ gls.left[4] = {
   FileName = {
     provider = {'FileName','FileSize'},
     condition = buffer_not_empty,
-    separator = ' ',
+    separator = '',
     separator_highlight = {colors.purple,colors.darkblue},
     highlight = {colors.magenta,colors.darkblue}
   }
@@ -64,7 +64,7 @@ gls.left[4] = {
 
 gls.left[5] = {
   GitIcon = {
-    provider = function() return '  ' end,
+    provider = function() return ' ' end,
     condition = buffer_not_empty,
     highlight = {colors.orange,colors.purple},
   }
@@ -97,7 +97,7 @@ gls.left[8] = {
   DiffModified = {
     provider = 'DiffModified',
     condition = checkwidth,
-    icon = ' ',
+    icon = '   ',
     highlight = {colors.orange,colors.purple},
   }
 }
@@ -105,14 +105,14 @@ gls.left[9] = {
   DiffRemove = {
     provider = 'DiffRemove',
     condition = checkwidth,
-    icon = ' ',
+    icon = '   ',
     highlight = {colors.red,colors.purple},
   }
 }
 gls.left[10] = {
   LeftEnd = {
     provider = function() return ' ' end,
-    separator = ' ',
+    separator = '',
     separator_highlight = {colors.purple,colors.bg},
     highlight = {colors.purple,colors.purple}
   }
@@ -139,7 +139,7 @@ gls.left[13] = {
 gls.right[1]= {
   FileFormat = {
     provider = 'FileFormat',
-    separator = ' ',
+    separator = '',
     separator_highlight = {colors.bg,colors.purple},
     highlight = {colors.grey,colors.purple},
   }
@@ -155,7 +155,7 @@ gls.right[2] = {
 gls.right[3] = {
   PerCent = {
     provider = 'LinePercent',
-    separator = ' ',
+    separator = '',
     separator_highlight = {colors.darkblue,colors.purple},
     highlight = {colors.grey,colors.darkblue},
   }
@@ -170,7 +170,7 @@ gls.right[4] = {
 gls.short_line_left[1] = {
   BufferType = {
     provider = 'FileTypeName',
-    separator = ' ',
+    separator = '',
     separator_highlight = {colors.purple,colors.bg},
     highlight = {colors.grey,colors.purple}
   }
@@ -180,7 +180,7 @@ gls.short_line_left[1] = {
 gls.short_line_right[1] = {
   BufferIcon = {
     provider= 'BufferIcon',
-    separator = ' ',
+    separator = '',
     separator_highlight = {colors.purple,colors.bg},
     highlight = {colors.grey,colors.purple}
   }
