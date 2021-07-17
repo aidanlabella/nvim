@@ -39,6 +39,18 @@ lspconfig.ccls.setup {
 }
 
 lspconfig.pyright.setup{}
+lspconfig.tsserver.setup{}
+lspconfig.ccls.setup {
+  init_options = {
+    compilationDatabaseDirectory = "build";
+    index = {
+      threads = 0;
+    };
+    clang = {
+      excludeArgs = { "-frounding-math"} ;
+    };
+  }
+}
 
 --local t = function(str)
   --return vim.api.nvim_replace_termcodes(str, true, true, true)
