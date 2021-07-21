@@ -1,6 +1,5 @@
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
-    --use 'uiiaoo/java-syntax.vim'
     use 'preservim/nerdcommenter'
     use {'dracula/vim',
         as = 'dracula',
@@ -55,5 +54,6 @@ return require('packer').startup(function()
       end
     }
     use 'folke/lsp-colors.nvim'
+    use 'windwp/nvim-autopairs'
 
 end)
