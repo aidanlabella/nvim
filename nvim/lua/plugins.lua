@@ -11,7 +11,6 @@ return require('packer').startup(function()
             vim.cmd[[hi Normal guibg=NONE ctermbg=NONE]]
         end}
     use 'terryma/vim-multiple-cursors'
-    use 'airblade/vim-gitgutter'
     use 'tpope/vim-fugitive'
     use 'prabirshrestha/async.vim'
     use 'ryanoasis/vim-devicons'
@@ -27,7 +26,6 @@ return require('packer').startup(function()
     use 'vim-syntastic/syntastic'
     use 'jacoborus/tender.vim'
     use 'machakann/vim-sandwich'
-    use 'psliwka/vim-smoothie'
     use 'lervag/vimtex'
 
     --Added for NVIM 0.5:
@@ -36,14 +34,26 @@ return require('packer').startup(function()
     use 'TimUntersberger/neogit'
     use 'nvim-lua/plenary.nvim'
     use 'neovim/nvim-lspconfig'
+    use 'kabouzeid/nvim-lspinstall'
     use 'hrsh7th/nvim-compe'
     use 'nvim-treesitter/nvim-treesitter'
-    use 'mfussenegger/nvim-jdtls'
     use 'nvim-lua/popup.nvim'
     use 'nvim-telescope/telescope.nvim'
     --use 'kosayoda/nvim-lightbulb'
     use {'glepnir/galaxyline.nvim', branch = 'main'}
     use 'glepnir/dashboard-nvim'
     use 'folke/which-key.nvim'
-    use 'glepnir/lspsaga.nvim'
+    --use 'glepnir/lspsaga.nvim'
+    use 'karb94/neoscroll.nvim'
+    use {
+      'lewis6991/gitsigns.nvim',
+      requires = {
+        'nvim-lua/plenary.nvim'
+      },
+      config = function()
+        require('gitsigns').setup()
+      end
+    }
+    use 'folke/lsp-colors.nvim'
+
 end)
