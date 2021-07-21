@@ -14,10 +14,9 @@ let g:nvim_tree_tab_open = 1
 lua <<EOF
     local tree_cb = require'nvim-tree.config'.nvim_tree_callback
     vim.g.nvim_tree_bindings = {
-      -- default mappings
-      ["v"]          = tree_cb("vsplit"),
-      ["s"]          = tree_cb("split"),
-      ["t"]          = tree_cb("tabnew"),
+      { key = "s",                        cb = tree_cb("vsplit") },
+      { key = "v",                        cb = tree_cb("split") },
+      { key = "t",                        cb = tree_cb("tabnew") },
     }
 EOF
 

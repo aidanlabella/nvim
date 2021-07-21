@@ -11,11 +11,11 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set laststatus=2
-set number
 set hidden
 set updatetime=300
 set timeoutlen=250
 set mouse=a
+set number
 
 cnoreabbrev W w
 cnoreabbrev Q q
