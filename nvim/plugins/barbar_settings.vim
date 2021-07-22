@@ -1,7 +1,8 @@
 let bufferline = get(g:, 'bufferline', {})
-let bufferline.icon_separator_active = '|'
-let bufferline.icon_separator_inactive = '|'
-let bufferline.icon_close_tab_modified = '●'
+"let bufferline.icon_separator_active = '|'
+"let bufferline.icon_separator_inactive = '|'
+let bufferline.icon_close_tab_modified = ' '
+
 
 function! s:fg(groups, default)
    for group in a:groups
@@ -85,6 +86,7 @@ let fg_subtle   = s:fg(['NonText', 'Comment'], '#555555')
 let bg_current  = s:bg(['Normal'], 'none')
 let bg_visible  = s:bg(['TabLineSel', 'Normal'], 'none')
 let bg_inactive = s:bg(['TabLineFill', 'StatusLine'], 'none')
+
 " Meaning of terms:
 "
 " format: "Buffer" + status + part
@@ -99,37 +101,52 @@ let bg_inactive = s:bg(['TabLineFill', 'StatusLine'], 'none')
 "       *Index: buffer index
 "         *Mod: when modified
 "        *Sign: the separator between buffers
+"
 "      *Target: letter in buffer-picking mode
 "
 " BufferTabpages: tabpage indicator
 " BufferTabpageFill: filler after the buffer section
 " BufferOffset: offset section, created with set_offset()
 
+let fg_mod_galx = ['#50fa7b', 'none', 'bold']
+let fg_mod_galx_inact = ['#50fa7b', '#5d4d7a', 'bold']
+
+
+
 call s:hi_all([
-\ ['BufferCurrent',        '#ff79c6',  bg_current],
-\ ['BufferCurrentIndex',   '#8be9fd',  bg_current],
-\ ['BufferCurrentMod',     '#50fa7b', bg_current],
+\ ['BufferCurrent',        fg_current,  bg_current],
+\ ['BufferCurrentIndex',   fg_special,  bg_current],
+\ ['BufferCurrentMod',     fg_mod_galx, bg_current],
 \ ['BufferCurrentSign',    fg_special,  bg_current],
 \ ['BufferCurrentTarget',  fg_target,   bg_current,   'bold'],
-\ ['BufferVisible',        fg_visible,  bg_visible],
-\ ['BufferVisibleIndex',   '#8be9fd',  bg_visible],
-\ ['BufferVisibleMod',     '#50fa7b', bg_visible],
-\ ['BufferVisibleSign',    fg_visible,  bg_visible],
-\ ['BufferVisibleTarget',  fg_target,   bg_visible,   'bold'],
-\ ['BufferInactive',       fg_current, bg_visible],
-\ ['BufferInactiveIndex',  fg_current,   bg_visible],
-\ ['BufferInactiveMod',    '#50fa7b', bg_visible],
-\ ['BufferInactiveSign',   fg_current,   bg_visible],
-\ ['BufferInactiveTarget', fg_current,   bg_inactive,  'bold'],
-\ ['BufferTabpages',       fg_special,  bg_inactive, 'bold'],
-\ ['BufferTabpageFill',    fg_inactive, fg_subtle],
+"\ ['BufferVisible',        fg_visible,  bg_visible],
+"\ ['BufferVisibleIndex',   fg_visible,  bg_visible],
+\ ['BufferVisibleMod',      fg_mod_galx_inact],
+"\ ['BufferVisibleSign',    fg_visible,  bg_visible],
+\ ['BufferVisibleTarget',   fg_target,   bg_visible,   'bold'],
+"\ ['BufferInactive',       fg_inactive, bg_inactive],
+"\ ['BufferInactiveIndex',   fg_inactive, bg_inactive],
+\ ['BufferInactiveMod',     fg_mod_galx_inact],
+"\ ['BufferInactiveSign',   fg_subtle,   bg_inactive],
+\ ['BufferInactiveTarget',  fg_target,   bg_inactive,  'bold'],
+"\ ['BufferTabpages',       fg_special,  bg_inactive, 'bold'],
+"\ ['BufferTabpageFill',    fg_inactive, bg_inactive],
 \ ])
 
+
 call s:hi_link([
-\ ['BufferCurrentIcon',  'BufferCurrent'],
-\ ['BufferVisibleIcon',  'BufferVisible'],
-\ ['BufferInactiveIcon', 'BufferInactive'],
-\ ['BufferOffset',       'BufferTabpageFill'],
+\ ['BufferVisible',                   'GalaxyLineInfo'],
+\ ['BufferVisibleIndex',              'GalaxyLineInfo'],
+\ ['BufferVisibleSign',               'GalaxyLineInfo'],
+\ ['BufferTabpageFill',               'DraculaSelection'],
+\ ['BufferTabpages',                  'DraculaSelection'],
+\ ['BufferInactive',                  'GalaxyViMode'],
+\ ['BufferInactiveIndex',             'GalaxyViMode'],
+\ ['BufferInactiveSign',              'GalaxyViMode'],
+\ ['BufferCurrentIcon',               'BufferCurrent'],
+\ ['BufferVisibleIcon',               'BufferVisible'],
+\ ['BufferInactiveIcon',              'BufferInactive'],
+\ ['BufferOffset',                    'BufferTabpageFill'],
 \ ])
 
 " NOTE: this is an example taken from the source, implementation of
