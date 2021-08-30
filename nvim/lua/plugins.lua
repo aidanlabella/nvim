@@ -8,7 +8,8 @@ return require('packer').startup(function()
             vim.cmd('source $HOME/.config/nvim/plugins/barbar_settings.vim')
             vim.cmd[[highlight NvimTreeFolderIcon guifg='#c09553']]
             vim.cmd[[hi Normal guibg=NONE ctermbg=NONE]]
-        end}
+        end
+        }
     use 'terryma/vim-multiple-cursors'
     use 'tpope/vim-fugitive'
     use 'prabirshrestha/async.vim'
@@ -55,5 +56,43 @@ return require('packer').startup(function()
     }
     use 'folke/lsp-colors.nvim'
     use 'windwp/nvim-autopairs'
+    use {
+        'tanvirtin/monokai.nvim' ,
+    }
+    use {
+        'phanviet/vim-monokai-pro',
+    }
+
+    use { 
+    "vhyrro/neorg",
+    config = function()
+        local parser_configs = require('nvim-treesitter.parsers').get_parser_configs()
+
+        parser_configs.norg = {
+            install_info = {
+                url = "https://github.com/vhyrro/tree-sitter-norg",
+                files = { "src/parser.c" },
+                branch = "main"
+            },
+        }
+
+        require('neorg').setup {
+            -- Tell Neorg what modules to load
+            load = {
+                ["core.defaults"] = {}, -- Load all the default modules
+                ["core.norg.concealer"] = {}, -- Allows for use of icons
+                ["core.norg.dirman"] = { -- Manage your directories with Neorg
+                    config = {
+                        workspaces = {
+                            my_workspace = "~/neorg"
+                        }
+                    }
+                }
+            },
+        }
+        end,
+        requires = "nvim-lua/plenary.nvim"
+    }
+
 
 end)
