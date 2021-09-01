@@ -68,7 +68,7 @@ endfunction
 let g:UltiSnipsExpandTrigger="<C-s>"
 
 autocmd BufEnter * lua require'completion'.on_attach()
-let g:completion_enable_snippet = 'UltiSnips'
+let g:completion_enable_snippet = 'vim-vsnip'
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
