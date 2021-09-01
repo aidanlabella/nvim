@@ -96,6 +96,11 @@ local mappings = {
         r = {"<cmd>DebugToggleRepl<cr>", "Toggle Repl"},
         s = {"<cmd>DebugStart<cr>", "Start"}
     },
+    d = {
+        name = "+Diagnostic Box",
+        d = {"<cmd>TroubleToggle<cr>", "Show diagnostic box"},
+        r = {"<cmd>TroubleRefresh<cr>", "Refresh"}
+    },
     g = {
         name = "+Git",
         j = {"<cmd>NextHunk<cr>", "Next Hunk"},
@@ -140,6 +145,14 @@ local mappings = {
         r = {"<cmd>Telescope oldfiles<cr>", "Open Recent File"},
         R = {"<cmd>Telescope registers<cr>", "Registers"},
         t = {"<cmd>Telescope live_grep<cr>", "Text"}
+    },
+    x = {
+        name = "+Latex",
+        c = {"<cmd>VimtexCompile<cr>", "Compile"},
+        i = {"<cmd>VimtexInfo<cr>", "Info"},
+        r = {"<cmd>VimtexReload<cr>", "Reload"},
+        r = {"<cmd>VimtexErrors<cr>", "Errors"},
+        r = {"<cmd>VimtexLog<cr>", "Log"}
     },
     w = {
         name = "+Windows",

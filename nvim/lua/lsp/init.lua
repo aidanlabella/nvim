@@ -1,5 +1,5 @@
-require('lsp.compelsp')
 --require('lsp.saga')
+require('lsp.lspkind')
 
 local function setup_servers()
   require'lspinstall'.setup()

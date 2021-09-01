@@ -30,12 +30,14 @@ return require('packer').startup(function()
 
     --Added for NVIM 0.5:
     use 'romgrk/barbar.nvim'
+    use 'psliwka/vim-smoothie'
     use 'kyazdani42/nvim-tree.lua'
     use 'TimUntersberger/neogit'
     use 'nvim-lua/plenary.nvim'
     use 'neovim/nvim-lspconfig'
     use 'kabouzeid/nvim-lspinstall'
-    use 'hrsh7th/nvim-compe'
+    use 'nvim-lua/completion-nvim'
+    --use 'neoclide/coc.nvim'
     use 'nvim-treesitter/nvim-treesitter'
     use 'nvim-lua/popup.nvim'
     use 'nvim-telescope/telescope.nvim'
@@ -44,7 +46,6 @@ return require('packer').startup(function()
     use 'glepnir/dashboard-nvim'
     use 'folke/which-key.nvim'
     --use 'glepnir/lspsaga.nvim'
-    use 'karb94/neoscroll.nvim'
     use {
       'lewis6991/gitsigns.nvim',
       requires = {
@@ -94,5 +95,13 @@ return require('packer').startup(function()
         requires = "nvim-lua/plenary.nvim"
     }
 
+    use {
+      "folke/trouble.nvim",
+      requires = "kyazdani42/nvim-web-devicons",
+    }
+
+    use 'onsails/lspkind-nvim'
+    use 'ray-x/lsp_signature.nvim'
+    use 'SirVer/ultisnips'
 
 end)
