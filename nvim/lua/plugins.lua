@@ -104,5 +104,10 @@ return require('packer').startup(function()
     use 'ray-x/lsp_signature.nvim'
     use 'hrsh7th/vim-vsnip'
     use 'hrsh7th/vim-vsnip-integ'
-
+    use 'wfxr/minimap.vim'
+    use 'p00f/nvim-ts-rainbow'
+    use 'tpope/vim-surround'
+    use 'lukas-reineke/indent-blankline.nvim'
+    use 'chrisbra/csv.vim'
+    use 'numtostr/FTerm.nvim'
 end)
