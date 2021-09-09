@@ -7,82 +7,8 @@
 "BarBar
 
 "NVIMTree
-set fillchars=vert:\  
-
-let g:nvim_tree_width = 35 "30 by default
-let g:nvim_tree_quit_on_open = 0 "0 by default, closes the tree when you open a file
-let g:nvim_tree_follow = 1 "0 by default, this option allows the cursor to be updated when entering a buffer
-let g:nvim_tree_git_hl = 1
-let g:nvim_tree_lsp_diagnostics = 1
-let g:nvim_tree_ignore = [ '.git', 'node_modules', '.cache' ]
-let g:nvim_tree_disable_netrw = 0
-let g:nvim_tree_tab_open = 1
-lua <<EOF
-    local tree_cb = require'nvim-tree.config'.nvim_tree_callback
-    vim.g.nvim_tree_bindings = {
-      { key = "s",                        cb = tree_cb("vsplit") },
-      { key = "v",                        cb = tree_cb("split") },
-      { key = "t",                        cb = tree_cb("tabnew") },
-    }
-EOF
-
-let g:nvim_tree_icons = {
-    \ 'default': '',
-    \ 'symlink': '',
-    \ 'git': {
-    \   'unstaged': "✗",
-    \   'staged': "✓",
-    \   'unmerged': "",
-    \   'renamed': "➜",
-    \   'untracked': "★",
-    \   'deleted': "",
-    \   'ignored': "◌"
-    \   },
-    \ 'folder': {
-    \   'arrow_open': "",
-    \   'arrow_closed': "",
-    \   'default': "",
-    \   'open': "",
-    \   'empty': "",
-    \   'empty_open': "",
-    \   'symlink': "",
-    \   'symlink_open': "",
-    \   },
-    \   'lsp': {
-    \     'hint': "",
-    \     'info': "",
-    \     'warning': "",
-    \     'error': "",
-    \   }
-    \ }
 
 
-"Airline
-
-"Startify
-function! StartifyEntryFormat()
-        return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
-endfunction
-
-"COC/LSP
-"inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-"inoremap <silent><expr> <C-Space> compe#complete()
-"inoremap <silent><expr> <CR>      compe#confirm('<CR>')
-"inoremap <silent><expr> <C-e>     compe#close('<C-e>')
-
-let g:UltiSnipsExpandTrigger="<C-s>"
-
-autocmd BufEnter * lua require'completion'.on_attach()
-let g:completion_enable_snippet = 'vim-vsnip'
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" Set completeopt to have a better completion experience
-set completeopt=menuone,noinsert,noselect
-
-" Avoid showing message extra message when using completion
-set shortmess+=c
 
 "if exists('*complete_info')
   "inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -102,35 +28,7 @@ set shortmess+=c
       "\ coc#refresh()
 
 "Code-Minimap
-let g:minimap_width = 10
-let g:minimap_auto_start = 1
-let g:minimap_auto_start_win_enter = 1
 
 "Ranger
-let g:ranger_map_keys = 0
 
 "Dashboard
-let g:dashboard_default_executive ='telescope'
-
-let g:dashboard_custom_header = [
- \ '         //                 /*',
- \ '      ,(/(//,               *###',
- \ '    ((((((////.             /####%*',
- \ ' ,/(((((((/////*            /########',
- \ '/*///((((((//////.          *#########/',
- \ '//////((((((((((((/         *#########/.',
- \ '////////((((((((((((*       *#########/.',
- \ '/////////(/(((((((((((      *#########(.',
- \ '//////////.,((((((((((/(    *#########(.',
- \ '//////////.  /(((((((((((,  *#########(.',
- \ '(////////(.    (((((((((((( *#########(.',
- \ '(////////(.     ,#((((((((((##########(.',
- \ '((//////((.       /#((((((((##%%######(.',
- \ '((((((((((.         #(((((((####%%##%#(.',
- \ '((((((((((.          ,((((((#####%%%%%(.',
- \ ' .#(((((((.            (((((#######%%',
- \ '    /(((((.             .(((#%##%%/*',
- \ '      ,(((.               /(#%%#',
- \ '        ./.                 #*',
- \ '',
- \]

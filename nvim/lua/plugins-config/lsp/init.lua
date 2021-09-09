@@ -1,5 +1,7 @@
 --require('lsp.saga')
-require('lsp.lspkind')
+
+local mod_prefix = 'plugins-config/lsp/'
+require(mod_prefix .. 'lspkind')
 
 local function setup_servers()
   require'lspinstall'.setup()
@@ -27,3 +29,19 @@ require'lspinstall'.post_install_hook = function ()
   vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
 end
 
+
+vim.api.nvim_exec(
+[[
+    let g:UltiSnipsExpandTrigger="<C-s>"
+
+    autocmd BufEnter * lua require'completion'.on_attach()
+    let g:completion_enable_snippet = 'vim-vsnip'
+    inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+    " Set completeopt to have a better completion experience
+    set completeopt=menuone,noinsert,noselect
+
+    " Avoid showing message extra message when using completion
+    set shortmess+=c
+]], false)
