@@ -50,7 +50,7 @@ return require('packer').startup(function()
     use {'glepnir/galaxyline.nvim', branch = 'main'}
     use 'glepnir/dashboard-nvim'
     use 'folke/which-key.nvim'
-    --use 'glepnir/lspsaga.nvim'
+    use 'glepnir/lspsaga.nvim'
     use {
       'lewis6991/gitsigns.nvim',
       requires = {
