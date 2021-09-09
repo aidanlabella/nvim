@@ -3,8 +3,8 @@ My neovim configuration tree
 
 
 ## Prerequisites 
-[Neovim](https://neovim.io/)<br/>
-[Vim-Plug](https://github.com/junegunn/vim-plug)
+[Neovim >=0.5](https://neovim.io/)<br/>
+[Packer](https://github.com/wbthomason/packer.nvim)
 
 ## Setup
 These instrutions will work for GNU/Linux, BSD and Apple's macOS.
@@ -15,16 +15,17 @@ Installtion for Windows 10 is possible under the Windows Subsystem for Linux (WS
 ```
 $ sudo ln -sf ~/myneovim/nvim ~/.config/nvim
 ```
-3. If you haven't yet already, install Vim-Plug (this is the plugin manager)
+3. If you haven't yet already, install Packer (this is the plugin manager)
 ```
-$ ./myneovim/install_scripts/vplug.sh
+$ ./myneovim/install_scripts/packer.sh
 ```
 4. Open Neovim and install all the plugins (there will be alot of errors on the first launch, this is normal)
 ```
 $ nvim
-:PlugInstall
+:PackerInstall
+:PackerCompile
 ```
-5. To change the color scheme, open the file ~/myneovim/nvim/general/theme.vim and change the line 'colorscheme dracula', to the scheme of your choice
+5. To change the color scheme, open the file `~/.config/nvim/lua/plugins/init.lua` and change the line `colorscheme <colorscheme>` in the config function under `use 'dracula/vim'` to that of your choice. If your scheme is a plugin, then change the `dracula/vim` as such. If not, it does not need to be modified.
 
 
 
