@@ -2,13 +2,16 @@ return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
     use 'preservim/nerdcommenter'
 
-    -- Change colorscheme here and adjust sources/configs as such
+    -- Change colorscheme here and adjust sources/configs as such for other highlights
     use {'dracula/vim',
         as = 'dracula',
         config = function()
             vim.cmd('colorscheme dracula')
             vim.cmd('source $HOME/.config/nvim/vimscript/barbar/barbar_settings.vim') -- Add barbar colorscheme-specific settings
             vim.cmd[[hi Normal guibg=NONE ctermbg=NONE]]    --Make background transparent
+            
+            -- Custom Folder Icon Hi Link
+            vim.cmd[[highlight NvimTreeFolderIcon guifg='#c09553']]
         end
     }
 

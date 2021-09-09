@@ -51,9 +51,6 @@ vim.g.nvim_tree_icons = {
     }
 }
 
--- Custom Folder Icon Hi Link
-vim.cmd[[highlight NvimTreeFolderIcon guifg='#c09553']]
-
 local tree ={}
 treeState = false
 
