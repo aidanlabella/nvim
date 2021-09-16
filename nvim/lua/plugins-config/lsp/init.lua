@@ -1,7 +1,6 @@
---require('lsp.saga')
-
 local mod_prefix = 'plugins-config/lsp/'
 require(mod_prefix .. 'lspkind')
+require(mod_prefix .. 'saga')
 
 local function setup_servers()
   require'lspinstall'.setup()

@@ -47,10 +47,15 @@ return require('packer').startup(function()
     use 'nvim-lua/popup.nvim'
     use 'nvim-telescope/telescope.nvim'
     --use 'kosayoda/nvim-lightbulb'
-    use {'glepnir/galaxyline.nvim', branch = 'main'}
+    use {
+        'hoob3rt/lualine.nvim',
+        requires = {'kyazdani42/nvim-web-devicons', opt = true}
+    }
+
     use 'glepnir/dashboard-nvim'
     use 'folke/which-key.nvim'
     use 'glepnir/lspsaga.nvim'
+    use 'famiu/bufdelete.nvim'
     use {
       'lewis6991/gitsigns.nvim',
       requires = {
@@ -67,6 +72,11 @@ return require('packer').startup(function()
     }
     use {
         'phanviet/vim-monokai-pro',
+    }
+
+    use {
+        "SmiteshP/nvim-gps",
+        requires = "nvim-treesitter/nvim-treesitter"
     }
 
     use { 
