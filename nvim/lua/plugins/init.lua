@@ -34,7 +34,7 @@ return require('packer').startup(function()
     use 'lervag/vimtex'
 
     --Added for NVIM 0.5:
-    use 'romgrk/barbar.nvim'
+    use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
     use 'psliwka/vim-smoothie'
     use 'kyazdani42/nvim-tree.lua'
     use 'TimUntersberger/neogit'
