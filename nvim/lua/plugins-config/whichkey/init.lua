@@ -51,7 +51,7 @@ vim.g.mapleader = ' '
 vim.api.nvim_set_keymap('n', '<Leader>h', ':set hlsearch!<CR>', {noremap = true, silent = true})
 
 -- explorer
-vim.api.nvim_set_keymap('n', '<Leader>e', ":execute 'lua nvimTree.toggle()'<CR>", {noremap = true, silent = false})
+vim.api.nvim_set_keymap('n', '<Leader>e', "<cmd>NvimTreeToggle<CR>", {noremap = true, silent = false})
 
 -- telescope
 vim.api.nvim_set_keymap('n', '<Leader>f', ':Telescope find_files<CR>', {noremap = true, silent = true})
@@ -163,9 +163,9 @@ local mappings = {
     },
     t = {
         name = "+Tabs",
-        h = {"<cmd>BufferPrevious<cr>", "Tab left"},
-        l = {"<cmd>BufferNext<cr>", "Tab right"},
-        k = {":BufferClose <CR>", "Close current buffer"},
+        h = {"<cmd>BufferLineCyclePrev<cr>", "Tab left"},
+        l = {"<cmd>BufferLineCycleNext<cr>", "Tab right"},
+        k = {":Bdelete <CR>", "Close current buffer"},
         ["1"] = {"<cmd>1tabnext<cr>", "Goto tab 1"},
         ["2"] = {"<cmd>2tabnext<cr>", "goto tab 2"},
         ["3"] = {"<cmd>3tabnext<cr>", "goto tab 3"},
