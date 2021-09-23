@@ -36,4 +36,10 @@ local saga = require 'lspsaga'
 -- like server_filetype_map = {metals = {'sbt', 'scala'}}
 -- server_filetype_map = {}
 
-saga.init_lsp_saga()
+saga.init_lsp_saga{
+    code_action_prompt = {
+        enable = false,
+        sign = false,
+        virtual_text = false,
+    },
+}

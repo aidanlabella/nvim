@@ -37,7 +37,7 @@ return require('packer').startup(function()
     use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
     use 'psliwka/vim-smoothie'
     use 'kyazdani42/nvim-tree.lua'
-    use 'TimUntersberger/neogit'
+    use 'sindrets/diffview.nvim'
     use 'nvim-lua/plenary.nvim'
     use 'neovim/nvim-lspconfig'
     use 'kabouzeid/nvim-lspinstall'
@@ -120,9 +120,26 @@ return require('packer').startup(function()
     use 'hrsh7th/vim-vsnip'
     use 'hrsh7th/vim-vsnip-integ'
     use 'wfxr/minimap.vim'
-    use 'p00f/nvim-ts-rainbow'
+    --use 'p00f/nvim-ts-rainbow'
     use 'tpope/vim-surround'
     use 'lukas-reineke/indent-blankline.nvim'
     use 'chrisbra/csv.vim'
     use 'numtostr/FTerm.nvim'
+    --Too buggy:
+    --use 'mfussenegger/nvim-jdtls'
+    --use {'TimUntersberger/neogit',
+        --requires = {
+            --'nvim-lua/plenary.nvim',
+            --'sindrets/diffview.nvim'
+        --},
+        --config = function()
+            --require("neogit").setup(
+                --{
+                    --integrations = {
+                        --diffview = true
+                --}
+            --}
+        --)
+        --end
+    --}
 end)

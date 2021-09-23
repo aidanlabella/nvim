@@ -9,7 +9,7 @@ local mod_prefix = "plugins-config/"
 --
 -- Plugins that require a global declaration
 nvimTree = require(mod_prefix .. 'file-tree')
-neogit = require('neogit')
+--neogit = require('neogit')
 
 -- Plugins requiring lua initailization
 require('colorizer').setup()
