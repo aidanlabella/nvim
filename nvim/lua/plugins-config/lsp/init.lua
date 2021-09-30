@@ -21,6 +21,7 @@ local function setup_servers()
 end
 
 setup_servers()
+--local coq = require "coq" -- add this
 
 -- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
 require'lspinstall'.post_install_hook = function ()
@@ -29,18 +30,8 @@ require'lspinstall'.post_install_hook = function ()
 end
 
 
+
 vim.api.nvim_exec(
 [[
-    let g:UltiSnipsExpandTrigger="<C-s>"
-
-    autocmd BufEnter * lua require'completion'.on_attach()
-    let g:completion_enable_snippet = 'vim-vsnip'
-    inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-    " Set completeopt to have a better completion experience
-    set completeopt=menuone,noinsert,noselect
-
-    " Avoid showing message extra message when using completion
-    set shortmess+=c
+    let g:coq_settings = { 'auto_start': v:true }
 ]], false)

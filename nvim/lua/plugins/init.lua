@@ -21,8 +21,6 @@ return require('packer').startup(function()
     use 'ryanoasis/vim-devicons'
     use 'kyazdani42/nvim-web-devicons'
     use 'jceb/vim-orgmode'
-    use 'Xuyuanp/nerdtree-git-plugin'
-    use 'tiagofumo/vim-nerdtree-syntax-highlight'
     use 'majutsushi/tagbar'
     use 'norcalli/nvim-colorizer.lua'
     use 'junegunn/gv.vim'
@@ -41,7 +39,8 @@ return require('packer').startup(function()
     use 'nvim-lua/plenary.nvim'
     use 'neovim/nvim-lspconfig'
     use 'kabouzeid/nvim-lspinstall'
-    use 'nvim-lua/completion-nvim'
+    --use {'ms-jpq/coq.thirdparty', branch = '3p'}
+    use {'ms-jpq/coq_nvim'}
     --use 'neoclide/coc.nvim'
     use 'nvim-treesitter/nvim-treesitter'
     use 'nvim-lua/popup.nvim'
@@ -125,6 +124,7 @@ return require('packer').startup(function()
     use 'lukas-reineke/indent-blankline.nvim'
     use 'chrisbra/csv.vim'
     use 'numtostr/FTerm.nvim'
+
     --Too buggy:
     --use 'mfussenegger/nvim-jdtls'
     --use {'TimUntersberger/neogit',
