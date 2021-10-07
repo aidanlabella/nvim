@@ -127,19 +127,19 @@ return require('packer').startup(function()
 
     --Too buggy:
     --use 'mfussenegger/nvim-jdtls'
-    --use {'TimUntersberger/neogit',
-        --requires = {
-            --'nvim-lua/plenary.nvim',
-            --'sindrets/diffview.nvim'
-        --},
-        --config = function()
-            --require("neogit").setup(
-                --{
-                    --integrations = {
-                        --diffview = true
-                --}
-            --}
-        --)
-        --end
-    --}
+    use {'TimUntersberger/neogit',
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'sindrets/diffview.nvim'
+        },
+        config = function()
+            require("neogit").setup(
+                {
+                    integrations = {
+                        diffview = true
+                }
+            }
+        )
+        end
+    }
 end)
