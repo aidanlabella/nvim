@@ -54,23 +54,24 @@ require'nvim-tree'.setup {
     }
 }
 
-vim.g.nvim_tree_bindings = {
-  { key = "s",                        cb = tree_cb("vsplit") },
-  { key = "v",                        cb = tree_cb("split") },
-  { key = "t",                        cb = tree_cb("tabnew") },
-}
+--vim.g.nvim_tree_bindings = {
+  --{ key = "s",                        cb = tree_cb("vsplit") },
+  --{ key = "v",                        cb = tree_cb("split") },
+  --{ key = "t",                        cb = tree_cb("tabnew") },
+--}
 
-vim.api.nvim_exec(
-[[
-    set fillchars=vert:\  
-    let g:nvim_tree_auto_close = 1
-    let g:nvim_tree_follow_update_path = 1
-    let g:nvim_tree_add_trailing = 1
-    let g:nvim_tree_git_hl = 1
-    let g:nvim_tree_lsp_diagnostics = 1
-    let g:nvim_tree_ignore = [ '.git', 'node_modules', '.cache' ]
-]],
-false)
+--vim.api.nvim_exec(
+--[[
+    --set fillchars=vert:\  
+    --let g:nvim_tree_auto_close = 1
+    --let g:nvim_tree_follow_update_path = 1
+    --let g:nvim_tree_add_trailing = 1
+    --let g:nvim_tree_git_hl = 1
+    --let g:nvim_tree_lsp_diagnostics = 1
+    --let g:nvim_tree_ignore = [ '.git', 'node_modules', '.cache' ]
+--]]
+--,
+--false)
 
 vim.g.nvim_tree_icons = {
     default = '',

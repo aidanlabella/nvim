@@ -176,13 +176,13 @@ ins_left {
   color = {fg = '#ffffff', gui = 'bold'}
 }
 
-ins_right {
-    upper = true,
-    function ()
-        return gps.get_location
-    end,
-    condition = gps.is_available,
-}
+--ins_right {
+    --upper = true,
+    --function ()
+        --return gps.get_location
+    --end,
+    --condition = gps.is_available,
+--}
 
 -- Add components to right sections
 ins_right {

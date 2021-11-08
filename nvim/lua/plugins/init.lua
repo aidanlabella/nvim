@@ -20,7 +20,6 @@ return require('packer').startup(function()
     use 'prabirshrestha/async.vim'
     use 'ryanoasis/vim-devicons'
     use 'kyazdani42/nvim-web-devicons'
-    use 'jceb/vim-orgmode'
     use 'majutsushi/tagbar'
     use 'norcalli/nvim-colorizer.lua'
     use 'junegunn/gv.vim'
@@ -118,7 +117,7 @@ return require('packer').startup(function()
     use 'ray-x/lsp_signature.nvim'
     use 'hrsh7th/vim-vsnip'
     use 'hrsh7th/vim-vsnip-integ'
-    use 'wfxr/minimap.vim'
+    --use 'wfxr/minimap.vim'
     --use 'p00f/nvim-ts-rainbow'
     use 'tpope/vim-surround'
     use 'lukas-reineke/indent-blankline.nvim'
@@ -134,12 +133,14 @@ return require('packer').startup(function()
         },
         config = function()
             require("neogit").setup(
-                {
-                    integrations = {
-                        diffview = true
+                    {
+                        integrations = {
+                            diffview = true
+                    }
                 }
-            }
-        )
+            )
         end
     }
+    use 'iamcco/markdown-preview.nvim'
+    use 'dkarter/bullets.vim'
 end)

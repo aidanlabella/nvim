@@ -110,7 +110,7 @@ local mappings = {
         R = {"<cmd>ResetBuffer<cr>", "Reset Buffer"},
         s = {"<cmd>StageHunk<cr>", "Stage Hunk"},
         u = {"<cmd>UndoStageHunk<cr>", "Undo Stage Hunk"},
-        g = {"<cmd>Git<cr>", "Status"},
+        g = {function() neogit.open({ kind = "split" }) end, "Status"},
         b = {"<cmd>Telescope git_branches<cr>", "Checkout branch"},
         c = {"<cmd>Telescope git_commits<cr>", "Checkout commit"},
         C = {"<cmd>Telescope git_bcommits<cr>", "Checkout commit(for current file)"},
