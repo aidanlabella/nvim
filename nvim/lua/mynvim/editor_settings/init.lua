@@ -25,12 +25,13 @@ vim.api.nvim_exec(
     "highlight Normal ctermbg=NONE
     "highlight nonText ctermbg=NONE
     "
-    augroup CursorLine
-      au!
-      au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-      au WinLeave * setlocal nocursorline
-    augroup END
 
     set termguicolors
 ]],
 false)
+
+    --augroup CursorLine
+      --au!
+      --au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+      --au WinLeave * setlocal nocursorline
+    --augroup END

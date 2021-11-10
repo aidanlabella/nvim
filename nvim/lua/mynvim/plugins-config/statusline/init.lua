@@ -138,6 +138,7 @@ ins_left {
 ins_left {
   'filename',
   condition = conditions.buffer_not_empty,
+  icon = require'nvim-web-devicons'.get_icon(vim.fn.expand('%:t:r'), vim.fn.expand('%:e'), { default = true }),
   color = {fg = colors.magenta, gui = 'bold'}
 }
 

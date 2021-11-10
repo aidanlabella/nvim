@@ -3,12 +3,14 @@ return require('packer').startup(function()
     use 'preservim/nerdcommenter'
 
     -- Change colorscheme here and adjust sources/configs as such for other highlights
-    use {'dracula/vim',
+    use {'Mofiqul/dracula.nvim',
+    --'dracula/vim'
         as = 'dracula',
         config = function()
             vim.cmd('colorscheme dracula')
-            vim.cmd('source $HOME/.config/nvim/vimscript/barbar/barbar_settings.vim') -- Add barbar colorscheme-specific settings
+            --vim.cmd('source $HOME/.config/nvim/vimscript/barbar/barbar_settings.vim') -- Add barbar colorscheme-specific settings
             vim.cmd[[hi Normal guibg=NONE ctermbg=NONE]]    --Make background transparent
+            vim.g.dracula_transparent_bg = true
             
             -- Custom Folder Icon Hi Link
             vim.cmd[[highlight NvimTreeFolderIcon guifg='#c09553']]
@@ -32,6 +34,7 @@ return require('packer').startup(function()
 
     --Added for NVIM 0.5:
     use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+
     use 'psliwka/vim-smoothie'
     use 'kyazdani42/nvim-tree.lua'
     use 'sindrets/diffview.nvim'
@@ -153,4 +156,5 @@ return require('packer').startup(function()
     use 'iamcco/markdown-preview.nvim'
     use 'dkarter/bullets.vim'
     use 'ellisonleao/glow.nvim'
+    use 'yamatsum/nvim-cursorline'
 end)
