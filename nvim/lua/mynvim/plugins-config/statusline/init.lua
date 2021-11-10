@@ -1,4 +1,5 @@
-local gps = require("nvim-gps")
+gps = require("nvim-gps")
+gps.setup({separator = '  '})
 
 local lualine = require 'lualine'
 
@@ -153,6 +154,7 @@ ins_left {
   color_info = colors.cyan
 }
 
+
 -- Insert mid section. You can make any number of sections in neovim :)
 -- for lualine it's any number greater then 2
 ins_left {function() return '%=' end}
@@ -173,16 +175,20 @@ ins_left {
     return msg
   end,
   icon = ' LSP:',
-  color = {fg = '#ffffff', gui = 'bold'}
+  color = {fg = colors.violet, gui = 'bold'}
 }
 
---ins_right {
-    --upper = true,
-    --function ()
-        --return gps.get_location
-    --end,
-    --condition = gps.is_available,
---}
+ins_left { gps.get_location, cond = gps.is_available, color = {fg = colors.orange}}
+
+
+local geten = io.popen("hostname")
+local hostname = geten:read("*line")
+
+geten = io.popen("whoami")
+local me = geten:read("*line")
+geten:close()
+
+ins_right {function() return '  ' .. me .. '@' .. hostname end, color = {fg = colors.magenta, gui = 'bold'}}
 
 -- Add components to right sections
 ins_right {
