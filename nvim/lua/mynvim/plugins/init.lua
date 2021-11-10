@@ -152,4 +152,5 @@ return require('packer').startup(function()
     --}
     use 'iamcco/markdown-preview.nvim'
     use 'dkarter/bullets.vim'
+    use 'ellisonleao/glow.nvim'
 end)
