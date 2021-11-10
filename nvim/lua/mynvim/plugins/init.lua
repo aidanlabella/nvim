@@ -37,7 +37,7 @@ return require('packer').startup(function()
     use 'sindrets/diffview.nvim'
     use 'nvim-lua/plenary.nvim'
     use 'neovim/nvim-lspconfig'
-    use 'kabouzeid/nvim-lspinstall'
+    use 'williamboman/nvim-lsp-installer'
     use 'nvim-treesitter/nvim-treesitter'
     use 'nvim-lua/popup.nvim'
 

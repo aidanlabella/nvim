@@ -174,7 +174,7 @@ ins_left {
     end
     return msg
   end,
-  icon = ' :',
+  icon = ' ',
   color = {fg = colors.violet, gui = 'bold'}
 }
 
