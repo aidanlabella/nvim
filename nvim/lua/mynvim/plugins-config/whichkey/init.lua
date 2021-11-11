@@ -43,6 +43,20 @@ local opts = {
     nowait = false -- use `nowait` when creating keymaps
 }
 
+local view = require'nvim-tree.view'
+
+tree_ctl = {}
+tree_ctl.toggle_tree = function()
+  if view.win_open() then
+    require'nvim-tree'.close()
+    require'bufferline.state'.set_offset(0)
+  else
+    require'bufferline.state'.set_offset(35, 'File Explorer')
+    require'nvim-tree'.find_file(true)
+  end
+end
+
+
 -- Set leader
 vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true})
 vim.g.mapleader = ' '
@@ -51,7 +65,7 @@ vim.g.mapleader = ' '
 vim.api.nvim_set_keymap('n', '<Leader>h', ':set hlsearch!<CR>', {noremap = true, silent = true})
 
 -- explorer
-vim.api.nvim_set_keymap('n', '<Leader>e', "<cmd>NvimTreeToggle<CR>", {noremap = true, silent = false})
+vim.api.nvim_set_keymap('n', '<Leader>e', "<cmd>lua tree_ctl.toggle_tree()<CR>", {noremap = true, silent = false})
 
 -- telescope
 vim.api.nvim_set_keymap('n', '<Leader>f', ':Telescope find_files<CR>', {noremap = true, silent = true})
@@ -163,9 +177,9 @@ local mappings = {
     },
     t = {
         name = "+Tabs",
-        h = {"<cmd>BufferLineCyclePrev<cr>", "Tab left"},
-        l = {"<cmd>BufferLineCycleNext<cr>", "Tab right"},
-        k = {":Bdelete <CR>", "Close current buffer"},
+        h = {"<cmd>BufferPrevious<cr>", "Tab left"},
+        l = {"<cmd>BufferNext<cr>", "Tab right"},
+        k = {":BufferClose <CR>", "Close current buffer"},
         ["1"] = {"<cmd>1tabnext<cr>", "Goto tab 1"},
         ["2"] = {"<cmd>2tabnext<cr>", "goto tab 2"},
         ["3"] = {"<cmd>3tabnext<cr>", "goto tab 3"},

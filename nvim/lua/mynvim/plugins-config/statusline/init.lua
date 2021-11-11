@@ -114,6 +114,10 @@ ins_left {
   left_padding = 0
 }
 
+local get_ficon = function ()
+    return require'nvim-web-devicons'.get_icon(vim.fn.expand('%:t:r'), vim.fn.expand('%:e'), {default = true})
+end
+
 ins_left {
   -- filesize component
   function()
@@ -136,9 +140,13 @@ ins_left {
 }
 
 ins_left {
+    get_ficon,
+    color = {fg = colors.magenta}
+}
+
+ins_left {
   'filename',
   condition = conditions.buffer_not_empty,
-  icon = require'nvim-web-devicons'.get_icon(vim.fn.expand('%:t:r'), vim.fn.expand('%:e'), { default = true }),
   color = {fg = colors.magenta, gui = 'bold'}
 }
 
@@ -208,7 +216,7 @@ ins_right {
 
 ins_right {
   'branch',
-  icon = '',
+  icon = '',
   condition = conditions.check_git_workspace,
   color = {fg = colors.violet, gui = 'bold'}
 }

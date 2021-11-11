@@ -33,8 +33,8 @@ return require('packer').startup(function()
     use 'lervag/vimtex'
 
     --Added for NVIM 0.5:
-    use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
-
+    --use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+    use 'romgrk/barbar.nvim'
     use 'karb94/neoscroll.nvim'
     use 'kyazdani42/nvim-tree.lua'
     use 'sindrets/diffview.nvim'
