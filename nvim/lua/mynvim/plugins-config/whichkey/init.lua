@@ -61,37 +61,32 @@ end
 vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true})
 vim.g.mapleader = ' '
 
--- no hl
-vim.api.nvim_set_keymap('n', '<Leader>h', ':set hlsearch!<CR>', {noremap = true, silent = true})
-
--- explorer
-vim.api.nvim_set_keymap('n', '<Leader>e', "<cmd>lua tree_ctl.toggle_tree()<CR>", {noremap = true, silent = false})
-
--- telescope
-vim.api.nvim_set_keymap('n', '<Leader>f', ':Telescope find_files<CR>', {noremap = true, silent = true})
-
--- dashboard
-vim.api.nvim_set_keymap('n', '<Leader>;', ':Dashboard<CR>', {noremap = true, silent = true})
-
--- Comments
-vim.api.nvim_set_keymap("n", "<leader>/", ":CommentToggle<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("v", "<leader>/", ":CommentToggle<CR>", {noremap = true, silent = true})
-
--- close buffer
-vim.api.nvim_set_keymap("n", "<leader>c", ":BufferClose<CR>", {noremap = true, silent = true})
-
--- open projects
-vim.api.nvim_set_keymap('n', '<leader>p', ":lua require'telescope'.extensions.project.project{}<CR>",
-                        {noremap = true, silent = true})
--- TODO create entire treesitter section
+--Make sure we allow comment commands in visual mode!
+vim.api.nvim_set_keymap("v", "<Leader>cc", "<cmd>lua require('Comment').toggle()<cr>", { silent = false })
+vim.api.nvim_set_keymap("v", "<Leader>cu", "<cmd>lua require('Comment').uncomment()<cr>", { silent = false })
 
 local mappings = {
-    ["/"] = "Comment",
-    ["c"] = "Close Buffer",
-    ["e"] = "Explorer",
-    ["f"] = "Find File",
-    ["h"] = "No Highlight",
-    ["p"] = "Projects",
+    p = {
+        name = "+Projects",
+        p = {":lua require'telescope'.extensions.project.project{}<CR>", "Switch Projects"},
+    },
+    c = {
+        name = "+Commenter",
+        c = {"<cmd>lua require('Comment').toggle()<cr>", "Toggle comments on line/region"},
+        u = {"<cmd>lua require('Comment').uncomment()<cr>", "Uncomment line/region"},
+    },
+    n = {
+        name = "+Command Shortcuts",
+        h = {"<cmd>Telescope command_history<cr>", "Command History"},
+        n = {"<cmd>Telescope buffer<cr>", "Open New Buffer"},
+    },
+    f = {
+        name = "+Files",
+        t = {"<cmd>lua tree_ctl.toggle_tree()<cr>", "File Tree"},
+        f = {"<cmd>Telescope find_files<cr>", "Fuzzy Finder"},
+        r = {"<cmd>Telescope file_browser<cr>", "File Browser"},
+        a = {"<cmd>Telescope grep_string<cr>", "Find Words (vimgrep)"},
+    },
     d = {
         name = "+Diagnostics",
         t = {"<cmd>TroubleToggle<cr>", "trouble"},
@@ -117,6 +112,7 @@ local mappings = {
     },
     g = {
         name = "+Git",
+        b = {"<cmd>Telescope git_branches<cr>", "Checkout branch"},
         j = {"<cmd>NextHunk<cr>", "Next Hunk"},
         k = {"<cmd>PrevHunk<cr>", "Prev Hunk"},
         p = {"<cmd>PreviewHunk<cr>", "Preview Hunk"},
@@ -147,19 +143,6 @@ local mappings = {
         s = {"<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols"},
         S = {"<cmd>Telescope lsp_workspace_symbols<cr>", "Workspace Symbols"}
     },
-    s = {
-        name = "+Search",
-        b = {"<cmd>Telescope git_branches<cr>", "Checkout branch"},
-        c = {"<cmd>Telescope colorscheme<cr>", "Colorscheme"},
-        d = {"<cmd>Telescope lsp_document_diagnostics<cr>", "Document Diagnostics"},
-        D = {"<cmd>Telescope lsp_workspace_diagnostics<cr>", "Workspace Diagnostics"},
-        f = {"<cmd>Telescope find_files<cr>", "Find File"},
-        m = {"<cmd>Telescope marks<cr>", "Marks"},
-        M = {"<cmd>Telescope man_pages<cr>", "Man Pages"},
-        r = {"<cmd>Telescope oldfiles<cr>", "Open Recent File"},
-        R = {"<cmd>Telescope registers<cr>", "Registers"},
-        t = {"<cmd>Telescope live_grep<cr>", "Text"}
-    },
     x = {
         name = "+Latex",
         c = {"<cmd>VimtexCompile<cr>", "Compile"},
@@ -170,28 +153,29 @@ local mappings = {
     },
     w = {
         name = "+Windows",
+        c = {"<C-W>q", "Close selected window"},
         h = {"<C-W>h", "Window left"},
         j = {"<C-W>j", "Window below"},
         k = {"<C-W>k", "Window above"},
         l = {"<C-W>l", "Window right"},
     },
     t = {
-        name = "+Tabs",
-        h = {"<cmd>BufferPrevious<cr>", "Tab left"},
-        l = {"<cmd>BufferNext<cr>", "Tab right"},
+        name = "+Tabs/Buffers",
+        h = {"<cmd>BufferPrevious<cr>", "Tab/buffer left"},
+        l = {"<cmd>BufferNext<cr>", "Tab/buffer right"},
         k = {":BufferClose <CR>", "Close current buffer"},
-        ["1"] = {"<cmd>1tabnext<cr>", "Goto tab 1"},
-        ["2"] = {"<cmd>2tabnext<cr>", "goto tab 2"},
-        ["3"] = {"<cmd>3tabnext<cr>", "goto tab 3"},
-        ["4"] = {"<cmd>4tabnext<cr>", "goto tab 4"},
-        ["5"] = {"<cmd>5tabnext<cr>", "goto tab 5"},
-        ["6"] = {"<cmd>6tabnext<cr>", "goto tab 6"},
-        ["7"] = {"<cmd>7tabnext<cr>", "goto tab 7"},
-        ["8"] = {"<cmd>8tabnext<cr>", "goto tab 8"},
-        ["9"] = {"<cmd>9tabnext<cr>", "Goto tab 9"},
+        ["1"] = {"<cmd>1bnext<cr>", "Goto tab/buffer 1"},
+        ["2"] = {"<cmd>2bnext<cr>", "Goto tab/buffer 2"},
+        ["3"] = {"<cmd>3bnext<cr>", "Goto tab/buffer 3"},
+        ["4"] = {"<cmd>4bnext<cr>", "Goto tab/buffer 4"},
+        ["5"] = {"<cmd>5bnext<cr>", "Goto tab/buffer 5"},
+        ["6"] = {"<cmd>6bnext<cr>", "Goto tab/buffer 6"},
+        ["7"] = {"<cmd>7bnext<cr>", "Goto tab/buffer 7"},
+        ["8"] = {"<cmd>8bnext<cr>", "Goto tab/buffer 8"},
+        ["9"] = {"<cmd>9bnext<cr>", "Goto tab/buffer 9"},
     },
     q = {
-        name = "+Quit",
+        name = "+Leave Neovim",
         q = {":q <CR>", "Quit"},
         t = {":BufferClose <CR>", "Close current buffer"},
         Q = {":qa! <CR>", "Force quit everything!"},

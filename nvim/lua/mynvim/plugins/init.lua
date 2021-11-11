@@ -1,6 +1,13 @@
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
-    use 'preservim/nerdcommenter'
+
+    use {
+    'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
+
 
     -- Change colorscheme here and adjust sources/configs as such for other highlights
     use {'Mofiqul/dracula.nvim',
