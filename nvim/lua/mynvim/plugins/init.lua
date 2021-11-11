@@ -4,7 +4,7 @@ return require('packer').startup(function()
 
     -- Change colorscheme here and adjust sources/configs as such for other highlights
     use {'Mofiqul/dracula.nvim',
-    --'dracula/vim'
+    --'dracula/vim',
         as = 'dracula',
         config = function()
             vim.cmd('colorscheme dracula')
@@ -35,7 +35,7 @@ return require('packer').startup(function()
     --Added for NVIM 0.5:
     use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
 
-    use 'psliwka/vim-smoothie'
+    use 'karb94/neoscroll.nvim'
     use 'kyazdani42/nvim-tree.lua'
     use 'sindrets/diffview.nvim'
     use 'nvim-lua/plenary.nvim'
@@ -47,8 +47,7 @@ return require('packer').startup(function()
     --Telescope
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-telescope/telescope-project.nvim'
-
-    --use 'kosayoda/nvim-lightbulb'
+    use 'kosayoda/nvim-lightbulb'
 
     --Completion
     use 'hrsh7th/cmp-nvim-lsp'
@@ -126,7 +125,7 @@ return require('packer').startup(function()
     }
 
     use 'onsails/lspkind-nvim'
-    --use 'ray-x/lsp_signature.nvim'
+    use 'ray-x/lsp_signature.nvim'
     use 'hrsh7th/vim-vsnip'
     use 'hrsh7th/vim-vsnip-integ'
     --use 'wfxr/minimap.vim'
