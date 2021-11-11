@@ -8,7 +8,7 @@ return require('packer').startup(function()
         as = 'dracula',
         config = function()
             vim.cmd('colorscheme dracula')
-            --vim.cmd('source $HOME/.config/nvim/vimscript/barbar/barbar_settings.vim') -- Add barbar colorscheme-specific settings
+            vim.cmd('source $HOME/.config/nvim/vimscript/barbar/barbar_settings.vim') -- Add barbar colorscheme-specific settings
             vim.cmd[[hi Normal guibg=NONE ctermbg=NONE]]    --Make background transparent
             vim.g.dracula_transparent_bg = true
             

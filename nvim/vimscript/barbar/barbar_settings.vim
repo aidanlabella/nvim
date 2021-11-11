@@ -1,7 +1,6 @@
 let bufferline = get(g:, 'bufferline', {})
 "let bufferline.icon_separator_active = '|'
 "let bufferline.icon_separator_inactive = '|'
-let bufferline.icon_close_tab_modified = ' '
 
 
 function! s:fg(groups, default)
@@ -134,20 +133,11 @@ let bg_inactive = s:bg(['TabLineFill', 'StatusLine'], 'none')
 "\ ])
 
 
-"call s:hi_link([
-"\ ['BufferVisible',                   'GalaxyLineInfo'],
-"\ ['BufferVisibleIndex',              'GalaxyLineInfo'],
-"\ ['BufferVisibleSign',               'GalaxyLineInfo'],
-"\ ['BufferTabpageFill',               'DraculaSelection'],
-"\ ['BufferTabpages',                  'DraculaSelection'],
-"\ ['BufferInactive',                  'GalaxyViMode'],
-"\ ['BufferInactiveIndex',             'GalaxyViMode'],
-"\ ['BufferInactiveSign',              'GalaxyViMode'],
-"\ ['BufferCurrentIcon',               'BufferCurrent'],
-"\ ['BufferVisibleIcon',               'BufferVisible'],
-"\ ['BufferInactiveIcon',              'BufferInactive'],
-"\ ['BufferOffset',                    'BufferTabpageFill'],
-"\ ])
+call s:hi_link([
+\ ['BufferCurrent',                   'NvimAssignment'],
+\ ['BufferTabpages',                   'NvimAssignment'],
+\ ['BufferTabpageFill',                   'NvimOperator'],
+\ ])
 
 " NOTE: this is an example taken from the source, implementation of
 " s:fg(), s:bg(), s:hi_all() and s:hi_link() is left as an exercise

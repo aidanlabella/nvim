@@ -1,12 +1,4 @@
---require('bufferline').setup {
-    --options = {
-        --numbers = "ordinal",
-        --separator_style = "thick",
-        --offsets = {{filetype = "NvimTree", text = "File Explorer" , text_align = "left"}},
-        --diagnostics =  "nvim_lsp",
-        --modified_icon = ' '
-    --}
---}-- Set barbar's options
+-- Set barbar's options
 vim.g.bufferline = {
   -- Enable/disable animations
   animation = true,
