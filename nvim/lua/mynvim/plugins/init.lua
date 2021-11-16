@@ -63,6 +63,8 @@ return require('packer').startup(function()
     use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/nvim-cmp'
 
+    use 'mfussenegger/nvim-jdtls'
+
     use {
         'hoob3rt/lualine.nvim',
         requires = {'kyazdani42/nvim-web-devicons', opt = true}
@@ -143,7 +145,6 @@ return require('packer').startup(function()
     --use 'numtostr/FTerm.nvim'
 
     --Too buggy:
-    --use 'mfussenegger/nvim-jdtls'
     --use {'TimUntersberger/neogit',
         --requires = {
             --'nvim-lua/plenary.nvim',
