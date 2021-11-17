@@ -17,7 +17,7 @@ vim.api.nvim_exec(
     set t_Co=256
     set guifont=Consolas:h10
 
-    let g:javascript_plugin_jsdoc = 1
+    "let g:javascript_plugin_jsdoc = 1
 
     "
     let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"

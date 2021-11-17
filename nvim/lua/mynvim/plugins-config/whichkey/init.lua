@@ -128,6 +128,7 @@ local mappings = {
     },
     l = {
         name = "+LSP",
+        j = {":lua require('jdtls').code_action()<CR>", "(JAVA ONLY) Code Action"},
         a = {":Lspsaga code_action<CR>", "Code Action"},
         A = {"<cmd>Lspsaga range_code_action<cr>", "Selected Action"},
         d = {"<cmd>Telescope lsp_document_diagnostics<cr>", "Document Diagnostics"},
