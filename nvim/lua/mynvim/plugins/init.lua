@@ -1,14 +1,6 @@
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
 
-    use {
-    'numToStr/Comment.nvim',
-        config = function()
-            require('Comment').setup()
-        end
-    }
-
-
     -- Change colorscheme here and adjust sources/configs as such for other highlights
     use {'Mofiqul/dracula.nvim',
     --'dracula/vim',
@@ -25,6 +17,7 @@ return require('packer').startup(function()
     }
 
     use 'terryma/vim-multiple-cursors'
+    use 'preservim/nerdcommenter'
     use 'tpope/vim-fugitive'
     use 'prabirshrestha/async.vim'
     use 'ryanoasis/vim-devicons'

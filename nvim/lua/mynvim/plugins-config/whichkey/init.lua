@@ -72,8 +72,6 @@ local mappings = {
     },
     c = {
         name = "+Commenter",
-        c = {"<cmd>lua require('Comment').toggle()<cr>", "Toggle comments on line/region"},
-        u = {"<cmd>lua require('Comment').uncomment()<cr>", "Uncomment line/region"},
     },
     n = {
         name = "+Command Shortcuts",
