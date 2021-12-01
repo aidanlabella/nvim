@@ -53,4 +53,3 @@ local lspkind = require('lspkind')
       { name = 'cmdline' }
     })
   })
-

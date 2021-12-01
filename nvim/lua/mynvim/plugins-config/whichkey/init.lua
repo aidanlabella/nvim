@@ -70,6 +70,9 @@ local mappings = {
         name = "+Projects",
         p = {":lua require'telescope'.extensions.project.project{}<CR>", "Switch Projects"},
     },
+    b = {
+        name = "+Buffers",
+    },
     c = {
         name = "+Commenter",
     },
