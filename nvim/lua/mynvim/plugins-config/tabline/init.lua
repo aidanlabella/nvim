@@ -18,7 +18,7 @@ vim.g.bufferline = {
   clickable = true,
 
   -- Excludes buffers from the tabline
-  exclude_ft = {'javascript'},
+  exclude_ft = {''},
   exclude_name = {'package.json'},
 
   -- Enable/disable icons
@@ -36,7 +36,7 @@ vim.g.bufferline = {
   icon_separator_active = '',
   icon_separator_inactive = '',
   icon_close_tab = '',
-  icon_close_tab_modified = 'ﱴ ',
+  icon_close_tab_modified = ' ',
   icon_pinned = '車',
 
   -- If true, new buffers will be inserted at the start/end of the list.
