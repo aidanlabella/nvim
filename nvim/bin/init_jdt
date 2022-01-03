@@ -1,12 +1,12 @@
-java \
+/usr/bin/java \
 	-Declipse.application=org.eclipse.jdt.ls.core.id1 \
 	-Dosgi.bundles.defaultStartLevel=4 \
 	-Declipse.product=org.eclipse.jdt.ls.core.product \
 	-Dlog.level=ALL \
 	-noverify \
 	-Xmx1G \
-	-jar ~/dev/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/plugins/org.eclipse.equinox.launcher*.jar \
-	-configuration ~/dev/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/config_linux \
+	-jar ~/dev/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/plugins/org.eclipse.equinox.launcher_*.jar \
+	-configuration ~/dev/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/config_{mac,linux,win32} \             # CHANGEME!
 	--add-modules=ALL-SYSTEM \
 	--add-opens java.base/java.util=ALL-UNNAMED \
 	--add-opens java.base/java.lang=ALL-UNNAMED
