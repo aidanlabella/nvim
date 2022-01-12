@@ -64,6 +64,7 @@ vim.g.mapleader = ' '
 --Make sure we allow comment commands in visual mode!
 vim.api.nvim_set_keymap("v", "<Leader>cc", "<cmd>lua require('Comment').toggle()<cr>", { silent = false })
 vim.api.nvim_set_keymap("v", "<Leader>cu", "<cmd>lua require('Comment').uncomment()<cr>", { silent = false })
+vim.api.nvim_set_keymap("n", "<Leader>w", "<C-w>", { silent = false })
 
 local mappings = {
     p = {
@@ -75,6 +76,9 @@ local mappings = {
     },
     c = {
         name = "+Commenter",
+    },
+    w = {
+        name = "+Window Managment",
     },
     n = {
         name = "+Command Shortcuts",
@@ -153,14 +157,6 @@ local mappings = {
         r = {"<cmd>VimtexReload<cr>", "Reload"},
         r = {"<cmd>VimtexErrors<cr>", "Errors"},
         r = {"<cmd>VimtexLog<cr>", "Log"}
-    },
-    w = {
-        name = "+Windows",
-        c = {"<C-W>q", "Close selected window"},
-        h = {"<C-W>h", "Window left"},
-        j = {"<C-W>j", "Window below"},
-        k = {"<C-W>k", "Window above"},
-        l = {"<C-W>l", "Window right"},
     },
     t = {
         name = "+Tabs/Buffers",
