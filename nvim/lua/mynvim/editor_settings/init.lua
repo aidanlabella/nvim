@@ -1,8 +1,6 @@
 vim.api.nvim_exec(
 [[
     set autoindent
-    set tabstop=4
-    set shiftwidth=4
     set expandtab
     set laststatus=2
     set hidden
@@ -29,9 +27,3 @@ vim.api.nvim_exec(
     set termguicolors
 ]],
 false)
-
-    --augroup CursorLine
-      --au!
-      --au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-      --au WinLeave * setlocal nocursorline
-    --augroup END
