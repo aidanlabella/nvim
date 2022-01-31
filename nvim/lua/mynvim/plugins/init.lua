@@ -31,6 +31,7 @@ return require('packer').startup(function()
     use 'jacoborus/tender.vim'
     use 'machakann/vim-sandwich'
     use 'lervag/vimtex'
+    use 'mhinz/vim-startify'
 
     --Added for NVIM 0.5:
     --use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
@@ -63,7 +64,6 @@ return require('packer').startup(function()
         requires = {'kyazdani42/nvim-web-devicons', opt = true}
     }
 
-    use 'glepnir/dashboard-nvim'
     use 'folke/which-key.nvim'
     use 'glepnir/lspsaga.nvim'
     use 'famiu/bufdelete.nvim'

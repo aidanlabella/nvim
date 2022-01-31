@@ -29,7 +29,6 @@ require(mod_prefix .. 'trouble_diag')
 require(mod_prefix .. 'indent_line')
 
 -- Plugins using vimscript
-require(mod_prefix .. 'dashboard')
 require(mod_prefix .. 'code-minimap')
 require(mod_prefix .. 'ranger')
 require(mod_prefix .. 'tabline')
