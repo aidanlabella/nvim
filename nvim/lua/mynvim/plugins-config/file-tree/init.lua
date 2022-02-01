@@ -1,4 +1,11 @@
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
+
+vim.api.nvim_exec(
+[[
+  let g:nvim_tree_indent_markers = 1
+]],
+false)
+
 require'nvim-tree'.setup {
     -- disables netrw completely
     disable_netrw       = false,

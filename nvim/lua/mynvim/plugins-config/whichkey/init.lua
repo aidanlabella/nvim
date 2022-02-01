@@ -127,6 +127,7 @@ local mappings = {
         u = {"<cmd>UndoStageHunk<cr>", "Undo Stage Hunk"},
         g = {"<cmd>Git<cr>", "Status"},
         v = {"<cmd>GV<cr>", "Verbose Log"},
+        w = {"<cmd>Git blame<cr>", "Whodunnit?"},
         b = {"<cmd>Telescope git_branches<cr>", "Checkout branch"},
         c = {"<cmd>Telescope git_commits<cr>", "Checkout commit"},
         C = {"<cmd>Telescope git_bcommits<cr>", "Checkout commit(for current file)"},
