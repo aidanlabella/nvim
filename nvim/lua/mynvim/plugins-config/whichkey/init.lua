@@ -47,8 +47,8 @@ local view = require'nvim-tree.view'
 
 tree_ctl = {}
 tree_ctl.toggle_tree = function()
-  if view.win_open() then
-    require'nvim-tree'.close()
+  if view.is_visible() then
+    vim.api.nvim_exec([[NvimTreeClose]], false)
     require'bufferline.state'.set_offset(0)
   else
     require'bufferline.state'.set_offset(35, 'File Explorer')
