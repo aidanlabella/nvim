@@ -118,6 +118,7 @@ local mappings = {
     g = {
         name = "+Git",
         b = {"<cmd>Telescope git_branches<cr>", "Checkout branch"},
+        d = {"<cmd>Git diff %<cr>", "diff current file changes"},
         j = {"<cmd>NextHunk<cr>", "Next Hunk"},
         k = {"<cmd>PrevHunk<cr>", "Prev Hunk"},
         p = {"<cmd>PreviewHunk<cr>", "Preview Hunk"},
