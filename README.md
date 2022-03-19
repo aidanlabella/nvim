@@ -3,7 +3,7 @@ My neovim configuration tree
 
 
 ## Prerequisites 
-[Neovim >=0.5](https://neovim.io/)<br/>
+[Neovim >=0.6.1](https://neovim.io/)<br/>
 [Packer](https://github.com/wbthomason/packer.nvim)
 
 ## Setup
