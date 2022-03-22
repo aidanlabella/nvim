@@ -2,17 +2,26 @@ return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
 
     -- Change colorscheme here and adjust sources/configs as such for other highlights
-    use {'Mofiqul/dracula.nvim',
-    --'dracula/vim',
-        as = 'dracula',
-        config = function()
-            vim.cmd('colorscheme dracula')
-            vim.cmd('source $HOME/.config/nvim/vimscript/barbar/barbar_settings.vim') -- Add barbar colorscheme-specific settings
+    -- use {'Mofiqul/dracula.nvim',
+    -- --'dracula/vim',
+    --     as = 'dracula',
+    --     config = function()
+    --         vim.cmd('colorscheme dracula')
+    --         vim.cmd('source $HOME/.config/nvim/vimscript/barbar/barbar_settings.vim') -- Add barbar colorscheme-specific settings
+    --         vim.cmd[[hi Normal guibg=NONE ctermbg=NONE]]    --Make background transparent
+    --         vim.g.dracula_transparent_bg = true
+    --         
+    --         -- Custom Folder Icon Hi Link
+    --         vim.cmd[[highlight NvimTreeFolderIcon guifg='#c09553']]
+    --     end
+    -- }
+
+    use { 
+        'jzelinskie/monokai-soda.vim',
+        requires = 'tjdevries/colorbuddy.vim',
+        config = function() 
+            vim.cmd('colorscheme monokai_soda')
             vim.cmd[[hi Normal guibg=NONE ctermbg=NONE]]    --Make background transparent
-            vim.g.dracula_transparent_bg = true
-            
-            -- Custom Folder Icon Hi Link
-            vim.cmd[[highlight NvimTreeFolderIcon guifg='#c09553']]
         end
     }
 
@@ -58,6 +67,7 @@ return require('packer').startup(function()
     use 'hrsh7th/nvim-cmp'
 
     use 'mfussenegger/nvim-jdtls'
+    use 'tjdevries/colorbuddy.nvim'
 
     use {
         'hoob3rt/lualine.nvim',
@@ -83,6 +93,13 @@ return require('packer').startup(function()
     }
     use {
         'phanviet/vim-monokai-pro',
+    }
+
+    use {
+        'ngscheurich/iris.nvim',
+        config = function()
+            require("iris").setup({})
+        end
     }
 
     use {

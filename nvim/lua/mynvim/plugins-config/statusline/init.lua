@@ -2,9 +2,11 @@ gps = require("nvim-gps")
 gps.setup({separator = '  '})
 
 local lualine = require 'lualine'
+local colors = require('colorbuddy').setup()
+print(colors.blue)
 
 -- Color table for highlights
-local colors = {
+local ucolors = {
   bg = '#44475a',
   fg = '#f8f8f2',
   yellow = '#f1fa8c',
@@ -38,8 +40,8 @@ local config = {
       -- We are going to use lualine_c an lualine_x as left and
       -- right section. Both are highlighted by c theme .  So we
       -- are just setting default looks o statusline
-      normal = {c = {fg = colors.fg, bg = colors.bg}},
-      inactive = {c = {fg = colors.fg, bg = colors.bg}}
+      normal = {c = {fg = ucolors.fg, bg = ucolors.bg}},
+      inactive = {c = {fg = ucolors.fg, bg = ucolors.bg}}
     }
   },
   sections = {
@@ -75,7 +77,7 @@ end
 
 ins_left {
   function() return '▊' end,
-  color = {fg = colors.blue}, -- Sets highlighting of component
+  color = {fg = ucolors.blue}, -- Sets highlighting of component
   left_padding = 0 -- We don't need space before this
 }
 
@@ -84,30 +86,30 @@ ins_left {
   function()
     -- auto change color according to neovims mode
     local mode_color = {
-      n = colors.red,
-      i = colors.green,
-      v = colors.blue,
-      [''] = colors.blue,
-      V = colors.blue,
-      c = colors.magenta,
-      no = colors.red,
-      s = colors.orange,
-      S = colors.orange,
-      [''] = colors.orange,
-      ic = colors.yellow,
-      R = colors.violet,
-      Rv = colors.violet,
-      cv = colors.red,
-      ce = colors.red,
-      r = colors.cyan,
-      rm = colors.cyan,
-      ['r?'] = colors.cyan,
-      ['!'] = colors.red,
-      t = colors.red
+      n = ucolors.red,
+      i = ucolors.green,
+      v = ucolors.blue,
+      [''] = ucolors.blue,
+      V = ucolors.blue,
+      c = ucolors.magenta,
+      no = ucolors.red,
+      s = ucolors.orange,
+      S = ucolors.orange,
+      [''] = ucolors.orange,
+      ic = ucolors.yellow,
+      R = ucolors.violet,
+      Rv = ucolors.violet,
+      cv = ucolors.red,
+      ce = ucolors.red,
+      r = ucolors.cyan,
+      rm = ucolors.cyan,
+      ['r?'] = ucolors.cyan,
+      ['!'] = ucolors.red,
+      t = ucolors.red
     }
     vim.api.nvim_command(
         'hi! LualineMode guifg=' .. mode_color[vim.fn.mode()] .. " guibg=" ..
-            colors.bg)
+            ucolors.bg)
     return ''
   end,
   color = "LualineMode",
@@ -141,26 +143,26 @@ ins_left {
 
 ins_left {
     get_ficon,
-    color = {fg = colors.magenta}
+    color = {fg = ucolors.magenta}
 }
 
 ins_left {
   'filename',
   condition = conditions.buffer_not_empty,
-  color = {fg = colors.magenta, gui = 'bold'}
+  color = {fg = ucolors.magenta, gui = 'bold'}
 }
 
 ins_left {'location'}
 
-ins_left {'progress', color = {fg = colors.fg, gui = 'bold'}}
+ins_left {'progress', color = {fg = ucolors.fg, gui = 'bold'}}
 
 ins_left {
   'diagnostics',
   sources = {'nvim_diagnostic'},
   symbols = {error = ' ', warn = ' ', info = ' '},
-  color_error = colors.red,
-  color_warn = colors.yellow,
-  color_info = colors.cyan
+  color_error = ucolors.red,
+  color_warn = ucolors.yellow,
+  color_info = ucolors.cyan
 }
 
 
@@ -184,10 +186,10 @@ ins_left {
     return msg
   end,
   icon = ' ',
-  color = {fg = colors.violet, gui = 'bold'}
+  color = {fg = ucolors.violet, gui = 'bold'}
 }
 
-ins_left { gps.get_location, cond = gps.is_available, color = {fg = colors.orange}}
+ins_left { gps.get_location, cond = gps.is_available, color = {fg = ucolors.orange}}
 
 
 local geten = io.popen("hostname")
@@ -197,43 +199,43 @@ geten = io.popen("whoami")
 local me = geten:read("*line")
 geten:close()
 
-ins_right {function() return '  ' .. me .. '@' .. hostname end, color = {fg = colors.magenta, gui = 'bold'}}
+ins_right {function() return '  ' .. me .. '@' .. hostname end, color = {fg = ucolors.magenta, gui = 'bold'}}
 
 -- Add components to right sections
 ins_right {
   'o:encoding', -- option component same as &encoding in viml
   upper = true, -- I'm not sure why it's upper case either ;)
   condition = conditions.hide_in_width,
-  color = {fg = colors.green, gui = 'bold'}
+  color = {fg = ucolors.green, gui = 'bold'}
 }
 
 ins_right {
   'fileformat',
   upper = true,
   icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
-  color = {fg = colors.green, gui = 'bold'}
+  color = {fg = ucolors.green, gui = 'bold'}
 }
 
 ins_right {
   'branch',
   icon = '',
   condition = conditions.check_git_workspace,
-  color = {fg = colors.violet, gui = 'bold'}
+  color = {fg = ucolors.violet, gui = 'bold'}
 }
 
 ins_right {
   'diff',
   -- Is it me or the symbol for modified us really weird
   symbols = {added = ' ', modified = '柳 ', removed = ' '},
-  color_added = colors.green,
-  color_modified = colors.orange,
-  color_removed = colors.red,
+  color_added = ucolors.green,
+  color_modified = ucolors.orange,
+  color_removed = ucolors.red,
   condition = conditions.hide_in_width
 }
 
 --ins_right {
   --function() return '▊' end,
-  --color = {fg = colors.blue},
+  --color = {fg = ucolors.blue},
   --right_padding = 0
 --}
 
