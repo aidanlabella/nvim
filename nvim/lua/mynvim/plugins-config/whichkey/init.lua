@@ -87,7 +87,7 @@ local mappings = {
     },
     f = {
         name = "+Files",
-        t = {"<cmd>lua tree_ctl.toggle_tree()<cr>", "File Tree"},
+        t = {"<cmd>NvimTreeToggle<cr>", "File Tree"},
         f = {"<cmd>Telescope find_files<cr>", "Fuzzy Finder"},
         r = {"<cmd>Telescope file_browser<cr>", "File Browser"},
         a = {"<cmd>Telescope grep_string<cr>", "Find Words (vimgrep)"},
@@ -162,8 +162,8 @@ local mappings = {
     },
     t = {
         name = "+Tabs/Buffers",
-        h = {"<cmd>BufferPrevious<cr>", "Tab/buffer left"},
-        l = {"<cmd>BufferNext<cr>", "Tab/buffer right"},
+        h = {"<cmd>TablineBufferPrevious<cr>", "Tab/buffer left"},
+        l = {"<cmd>TablineBufferNext<cr>", "Tab/buffer right"},
         k = {":BufferClose <CR>", "Close current buffer"},
         ["1"] = {"<cmd>1bnext<cr>", "Goto tab/buffer 1"},
         ["2"] = {"<cmd>2bnext<cr>", "Goto tab/buffer 2"},

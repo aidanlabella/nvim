@@ -24,6 +24,10 @@ vim.api.nvim_exec(
     "highlight nonText ctermbg=NONE
     "
 
+    colorscheme dracula
+    hi Normal guibg=NONE ctermbg=NONE
+    highlight NvimTreeFolderIcon guifg='#c09553'
+
     set termguicolors
 ]],
 false)
