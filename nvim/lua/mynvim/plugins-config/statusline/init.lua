@@ -29,14 +29,13 @@ local config = {
   sections = {
     lualine_a = {[['']], 'mode'},
     lualine_b = {{'diff',
-                'require("lsp-status").status()',
                  symbols = {added = ' ', modified = ' ', removed = ' '},
                 },
                 'diagnostics'},
     lualine_c = {'filename', gps.get_location},
     lualine_x = {get_host},
     lualine_y = {'encoding', 'fileformat', 'filetype'},
-    lualine_z = {'filename', 'location', 'progress'}
+    lualine_z = {'location', 'progress'}
   },
   inactive_sections = {
     lualine_a = {},

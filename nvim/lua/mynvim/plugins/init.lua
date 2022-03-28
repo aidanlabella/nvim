@@ -34,14 +34,15 @@ return require('packer').startup(function()
     use 'mhinz/vim-startify'
 
     --Added for NVIM 0.5+:
-    --use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
-    use {
-      'kdheepak/tabline.nvim',
-      requires = {
-          { 'hoob3rt/lualine.nvim', opt=true },
-          {'kyazdani42/nvim-web-devicons', opt = true}
-      }
-    }
+    use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+   -- use 'akinsho/bufferline.nvim'
+   -- use {
+   --   'kdheepak/tabline.nvim',
+   --   requires = {
+   --       { 'hoob3rt/lualine.nvim', opt=true },
+   --       {'kyazdani42/nvim-web-devicons', opt = true}
+   --   }
+   -- }
 
 
     use 'karb94/neoscroll.nvim'

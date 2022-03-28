@@ -162,8 +162,8 @@ local mappings = {
     },
     t = {
         name = "+Tabs/Buffers",
-        h = {"<cmd>TablineBufferPrevious<cr>", "Tab/buffer left"},
-        l = {"<cmd>TablineBufferNext<cr>", "Tab/buffer right"},
+        h = {"<cmd>BufferLineMovePrev<cr>", "Tab/buffer left"},
+        l = {"<cmd>BufferLineMoveNext<cr>", "Tab/buffer right"},
         k = {":BufferClose <CR>", "Close current buffer"},
         ["1"] = {"<cmd>1bnext<cr>", "Goto tab/buffer 1"},
         ["2"] = {"<cmd>2bnext<cr>", "Goto tab/buffer 2"},
