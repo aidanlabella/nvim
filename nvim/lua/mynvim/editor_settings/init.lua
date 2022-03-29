@@ -23,7 +23,6 @@ vim.api.nvim_exec(
     "highlight Normal ctermbg=NONE
     "highlight nonText ctermbg=NONE
     "
-
     set termguicolors
 ]],
 false)

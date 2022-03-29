@@ -1,20 +1,22 @@
 return require('packer').startup(function()
+    -- This package manager (bootstrap)
     use 'wbthomason/packer.nvim'
 
-    -- Change colorscheme here and adjust sources/configs as such for other highlights
+    -- Colorschemes
     use {'Mofiqul/dracula.nvim',
-    --'dracula/vim',
         as = 'dracula',
-        config = function()
-            vim.cmd('colorscheme dracula')
-            vim.cmd('source $HOME/.config/nvim/vimscript/barbar/barbar_settings.vim') -- Add barbar colorscheme-specific settings
-            vim.cmd[[hi Normal guibg=NONE ctermbg=NONE]]    --Make background transparent
-            vim.g.dracula_transparent_bg = true
-            
-            -- Custom Folder Icon Hi Link
-            vim.cmd[[highlight NvimTreeFolderIcon guifg='#c09553']]
-        end
     }
+    use {'navarasu/onedark.nvim',
+        as = 'onedark',
+    }
+
+    use 'eskilop/NorthernLights.vim'
+    use 'cpea2506/one_monokai.nvim'
+    use 'glepnir/zephyr-nvim'
+    use 'bluz71/vim-nightfly-guicolors'
+    use 'olimorris/onedarkpro.nvim'
+    use 'folke/tokyonight.nvim'
+    use 'nxvu699134/vn-night.nvim'
 
     use 'terryma/vim-multiple-cursors'
     use 'preservim/nerdcommenter'
@@ -33,9 +35,18 @@ return require('packer').startup(function()
     use 'lervag/vimtex'
     use 'mhinz/vim-startify'
 
-    --Added for NVIM 0.5:
-    --use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
-    use 'romgrk/barbar.nvim'
+    --Added for NVIM 0.5+:
+    use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+   -- use 'akinsho/bufferline.nvim'
+   -- use {
+   --   'kdheepak/tabline.nvim',
+   --   requires = {
+   --       { 'hoob3rt/lualine.nvim', opt=true },
+   --       {'kyazdani42/nvim-web-devicons', opt = true}
+   --   }
+   -- }
+
+
     use 'karb94/neoscroll.nvim'
     use 'kyazdani42/nvim-tree.lua'
     use 'sindrets/diffview.nvim'
@@ -66,6 +77,7 @@ return require('packer').startup(function()
 
     use 'folke/which-key.nvim'
     use 'glepnir/lspsaga.nvim'
+    use 'nvim-lua/lsp-status.nvim'
     use 'famiu/bufdelete.nvim'
     use {
       'lewis6991/gitsigns.nvim',
@@ -157,4 +169,5 @@ return require('packer').startup(function()
     use 'dkarter/bullets.vim'
     use 'ellisonleao/glow.nvim'
     use 'yamatsum/nvim-cursorline'
+    use 'xiyaowong/nvim-transparent'
 end)
