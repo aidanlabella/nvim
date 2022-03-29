@@ -1,20 +1,22 @@
 return require('packer').startup(function()
+    -- This package manager (bootstrap)
     use 'wbthomason/packer.nvim'
 
-    -- Change colorscheme here and adjust sources/configs as such for other highlights
+    -- Colorschemes
     use {'Mofiqul/dracula.nvim',
         as = 'dracula',
     }
-
     use {'navarasu/onedark.nvim',
         as = 'onedark',
-        config = function ()
-            require('onedark').setup {
-                --style = 'darker'
-            }
-            require('onedark').load()
-        end,
     }
+
+    use 'eskilop/NorthernLights.vim'
+    use 'cpea2506/one_monokai.nvim'
+    use 'glepnir/zephyr-nvim'
+    use 'bluz71/vim-nightfly-guicolors'
+    use 'olimorris/onedarkpro.nvim'
+    use 'folke/tokyonight.nvim'
+    use 'nxvu699134/vn-night.nvim'
 
     use 'terryma/vim-multiple-cursors'
     use 'preservim/nerdcommenter'
@@ -167,4 +169,5 @@ return require('packer').startup(function()
     use 'dkarter/bullets.vim'
     use 'ellisonleao/glow.nvim'
     use 'yamatsum/nvim-cursorline'
+    use 'xiyaowong/nvim-transparent'
 end)

@@ -27,6 +27,7 @@ require(mod_prefix .. 'treesitter')
 require(mod_prefix .. 'whichkey')
 require(mod_prefix .. 'trouble_diag')
 require(mod_prefix .. 'indent_line')
+require(mod_prefix .. 'transparency')
 
 -- Plugins using vimscript
 require(mod_prefix .. 'code-minimap')
