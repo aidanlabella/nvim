@@ -32,7 +32,7 @@ local config = {
                  symbols = {added = ' ', modified = ' ', removed = ' '},
                 },
                 'diagnostics'},
-    lualine_c = {'filename', gps.get_location},
+    lualine_c = {'branch', gps.get_location},
     lualine_x = {get_host},
     lualine_y = {'encoding', 'fileformat', 'filetype'},
     lualine_z = {'location', 'progress'}
