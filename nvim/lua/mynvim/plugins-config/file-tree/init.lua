@@ -1,11 +1,5 @@
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 
-vim.api.nvim_exec(
-[[
-  let g:nvim_tree_indent_markers = 1
-]],
-false)
-
 require'nvim-tree'.setup {
     -- disables netrw completely
     disable_netrw       = false,
@@ -56,7 +50,20 @@ require'nvim-tree'.setup {
         -- list of mappings to set on the tree manually
         list = {}
         }
-    }
+    },
+	renderer = {
+		indent_markers = {
+			enable = false,
+			icons = {
+				corner = "└ ",
+				edge = "│ ",
+				none = "  ",
+			},
+		},
+		icons = {
+			webdev_colors = true,
+		},
+	},
 }
 
 --vim.g.nvim_tree_bindings = {

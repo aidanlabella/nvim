@@ -18,7 +18,7 @@ return require('packer').startup(function()
     use 'folke/tokyonight.nvim'
     use 'nxvu699134/vn-night.nvim'
 
-    use 'terryma/vim-multiple-cursors'
+    use 'mg979/vim-visual-multi'
     use 'preservim/nerdcommenter'
     use 'tpope/vim-fugitive'
     use 'prabirshrestha/async.vim'
@@ -36,7 +36,7 @@ return require('packer').startup(function()
     use 'mhinz/vim-startify'
 
     --Added for NVIM 0.5+:
-    use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+    use {'akinsho/bufferline.nvim', tag = "*", requires = 'kyazdani42/nvim-web-devicons'}
    -- use 'akinsho/bufferline.nvim'
    -- use {
    --   'kdheepak/tabline.nvim',
