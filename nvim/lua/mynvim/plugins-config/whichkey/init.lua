@@ -64,6 +64,7 @@ vim.g.mapleader = ' '
 --Make sure we allow comment commands in visual mode!
 vim.api.nvim_set_keymap("v", "<Leader>cc", "<cmd>lua require('Comment').toggle()<cr>", { silent = false })
 vim.api.nvim_set_keymap("v", "<Leader>cu", "<cmd>lua require('Comment').uncomment()<cr>", { silent = false })
+vim.api.nvim_set_keymap("n", "<Leader>cg", ":lua require('neogen').generate()<CR>", { silent = false })
 vim.api.nvim_set_keymap("n", "<Leader>w", "<C-w>", { silent = false })
 
 local mappings = {
