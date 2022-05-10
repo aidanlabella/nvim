@@ -122,6 +122,8 @@ return require('packer').startup(function()
     use 'hrsh7th/vim-vsnip'
     use 'hrsh7th/vim-vsnip-integ'
     --use 'wfxr/minimap.vim'
+    --
+    -- Too ugly
     --use 'p00f/nvim-ts-rainbow'
     use 'tpope/vim-surround'
     use 'lukas-reineke/indent-blankline.nvim'
