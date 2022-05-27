@@ -28,6 +28,7 @@ require(mod_prefix .. 'whichkey')
 require(mod_prefix .. 'trouble_diag')
 require(mod_prefix .. 'indent_line')
 require(mod_prefix .. 'transparency')
+require(mod_prefix .. 'cursorline')
 
 -- Plugins using vimscript
 require(mod_prefix .. 'code-minimap')
