@@ -1,5 +1,8 @@
 local mod_root = '~/dev/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository'
 
+local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
+local workspace_dir = '.workspace/dev/' .. project_name
+
 local config = {
   -- The command that starts the language server
   cmd = {
@@ -14,7 +17,8 @@ local config = {
 	'-configuration', '/Users/aidan/dev/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/config_mac',
 	'--add-modules=ALL-SYSTEM',
 	'--add-opens java.base/java.util=ALL-UNNAMED',
-	'--add-opens java.base/java.lang=ALL-UNNAMED'
+	'--add-opens java.base/java.lang=ALL-UNNAMED',
+    '-data', workspace_dir,
     -- See the init_jdt file for more config options
   },
     capabilities = {

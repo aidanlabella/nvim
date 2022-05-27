@@ -76,8 +76,8 @@ return require('packer').startup(function()
     }
 
     use 'folke/which-key.nvim'
-    use 'glepnir/lspsaga.nvim'
     use 'nvim-lua/lsp-status.nvim'
+    use { 'weilbith/nvim-code-action-menu', cmd = 'CodeActionMenu', }
     use 'famiu/bufdelete.nvim'
     use {
       'lewis6991/gitsigns.nvim',
