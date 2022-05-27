@@ -5,7 +5,7 @@ local geten = io.popen("hostname")
 local hostname = geten:read("*line.")
 
 -- remove additional hostnames
-hostname=hostname:match"([^.]*).(.*)"
+hostname=hostname:match"([^.]*)(.*)"
 
 geten = io.popen("whoami")
 local me = geten:read("*line")
