@@ -149,4 +149,6 @@ return require('packer').startup(function()
     use 'ellisonleao/glow.nvim'
     use 'yamatsum/nvim-cursorline'
     use 'xiyaowong/nvim-transparent'
+    use 'ldelossa/litee.nvim'
+    use 'ldelossa/litee-calltree.nvim'
 end)
