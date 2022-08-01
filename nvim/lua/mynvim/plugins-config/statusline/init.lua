@@ -1,3 +1,6 @@
+local lsp_status = require('lsp-status')
+lsp_status.register_progress()
+
 gps = require("nvim-gps")
 gps.setup({separator = '  '})
 
@@ -32,7 +35,7 @@ local config = {
                  symbols = {added = ' ', modified = ' ', removed = ' '},
                 },
                 'diagnostics'},
-    lualine_c = {'branch', gps.get_location},
+    lualine_c = {'branch', "require'lsp-status'.status()"},
     lualine_x = {get_host},
     lualine_y = {'encoding', 'fileformat', 'filetype'},
     lualine_z = {'location', 'progress'}

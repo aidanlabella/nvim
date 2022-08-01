@@ -68,8 +68,6 @@ return require('packer').startup(function()
     use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/nvim-cmp'
 
-    use 'mfussenegger/nvim-jdtls'
-
     use {
         'hoob3rt/lualine.nvim',
         requires = {'kyazdani42/nvim-web-devicons', opt = true}
@@ -151,4 +149,6 @@ return require('packer').startup(function()
     use 'ellisonleao/glow.nvim'
     use 'yamatsum/nvim-cursorline'
     use 'xiyaowong/nvim-transparent'
+    use 'ldelossa/litee.nvim'
+    use 'ldelossa/litee-calltree.nvim'
 end)
