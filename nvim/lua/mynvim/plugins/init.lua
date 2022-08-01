@@ -12,7 +12,6 @@ return require('packer').startup(function()
 
     use 'eskilop/NorthernLights.vim'
     use 'cpea2506/one_monokai.nvim'
-    use 'glepnir/zephyr-nvim'
     use 'bluz71/vim-nightfly-guicolors'
     use 'olimorris/onedarkpro.nvim'
     use 'folke/tokyonight.nvim'
@@ -46,6 +45,10 @@ return require('packer').startup(function()
    --   }
    -- }
 
+    use({
+        'glepnir/zephyr-nvim',
+        requires = { 'nvim-treesitter/nvim-treesitter', opt = true },
+    })
 
     use 'karb94/neoscroll.nvim'
     use 'kyazdani42/nvim-tree.lua'
@@ -93,11 +96,6 @@ return require('packer').startup(function()
     }
     use {
         'phanviet/vim-monokai-pro',
-    }
-
-    use {
-        "SmiteshP/nvim-gps",
-        requires = "nvim-treesitter/nvim-treesitter"
     }
 
     use {

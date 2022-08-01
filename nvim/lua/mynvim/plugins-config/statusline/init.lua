@@ -1,9 +1,6 @@
 local lsp_status = require('lsp-status')
 lsp_status.register_progress()
 
-gps = require("nvim-gps")
-gps.setup({separator = '  '})
-
 local geten = io.popen("hostname")
 local hostname = geten:read("*line.")
 
