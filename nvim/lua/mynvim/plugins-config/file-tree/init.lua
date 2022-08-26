@@ -52,7 +52,7 @@ require'nvim-tree'.setup {
     },
 	renderer = {
 		indent_markers = {
-			enable = false,
+			enable = true,
 			icons = {
 				corner = "└ ",
 				edge = "│ ",
@@ -64,6 +64,8 @@ require'nvim-tree'.setup {
 		},
 	},
 }
+
+vim.api.nvim_exec([[set fillchars+=vert:\ ]], false)
 
 --vim.g.nvim_tree_bindings = {
   --{ key = "s",                        cb = tree_cb("vsplit") },
