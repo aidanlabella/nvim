@@ -3,12 +3,14 @@ return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
 
     -- Colorschemes
-    use {'Mofiqul/dracula.nvim',
-        as = 'dracula',
-    }
+    --use {'Mofiqul/dracula.nvim',
+        --as = 'dracula',
+    --}
     use {'navarasu/onedark.nvim',
         as = 'onedark',
     }
+
+    use 'dracula/vim'
 
     use 'eskilop/NorthernLights.vim'
     use 'cpea2506/one_monokai.nvim'
