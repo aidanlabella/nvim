@@ -34,7 +34,7 @@ require('bufferline').setup {
       return "("..count..")"
     end,
     -- NOTE: this will be called a lot so don't do any heavy processing here
-    offsets = {{filetype = "NvimTree", text = "🌳 FileTree" }},
+    offsets = {{filetype = "NvimTree", text = " FileTree" }},
     show_buffer_icons = true, -- disable filetype icons for buffers
     show_buffer_close_icons = true,
     show_close_icon = true,
