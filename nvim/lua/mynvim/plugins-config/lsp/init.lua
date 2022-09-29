@@ -1,11 +1,11 @@
 local mod_prefix = 'mynvim/plugins-config/lsp/'
 
-local lsp_status = require('lsp-status')
-
 require("nvim-lsp-installer").setup {}
 local lspconfig = require('lspconfig')
+local navic = require("nvim-navic")
 
 local function on_attach(client, bufnr)
+    navic.attach(client, bufnr)
     -- set up buffer keymaps, etc.
 end
 

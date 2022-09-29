@@ -79,7 +79,6 @@ return require('packer').startup(function()
     }
 
     use 'folke/which-key.nvim'
-    use 'nvim-lua/lsp-status.nvim'
     use { 'weilbith/nvim-code-action-menu', cmd = 'CodeActionMenu', }
     use 'famiu/bufdelete.nvim'
     use {
@@ -151,4 +150,18 @@ return require('packer').startup(function()
     use 'xiyaowong/nvim-transparent'
     use 'ldelossa/litee.nvim'
     use 'ldelossa/litee-calltree.nvim'
+    use {
+        'akinsho/git-conflict.nvim', tag = "*",
+        config = function()
+            require('git-conflict').setup()
+        end
+    }
+    use 'tveskag/nvim-blame-line'
+    use {
+        "SmiteshP/nvim-navic",
+        requires = "neovim/nvim-lspconfig"
+    }
+
+    -- For Nvim 0.8+
+    --use 'fgheng/winbar.nvim'
 end)

@@ -1,6 +1,3 @@
-local lsp_status = require('lsp-status')
-lsp_status.register_progress()
-
 local geten = io.popen("hostname")
 local hostname = geten:read("*line.")
 
@@ -32,7 +29,7 @@ local config = {
                  symbols = {added = ' ', modified = ' ', removed = ' '},
                 },
                 'diagnostics'},
-    lualine_c = {'branch', "require'lsp-status'.status()"},
+    lualine_c = {'branch', 'filename'},
     lualine_x = {get_host},
     lualine_y = {'encoding', 'fileformat', 'filetype'},
     lualine_z = {'location', 'progress'}
