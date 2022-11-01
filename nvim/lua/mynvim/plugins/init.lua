@@ -163,5 +163,5 @@ return require('packer').startup(function()
     }
 
     -- For Nvim 0.8+
-    --use 'fgheng/winbar.nvim'
+    use 'fgheng/winbar.nvim'
 end)

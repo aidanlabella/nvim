@@ -31,7 +31,7 @@ require(mod_prefix .. 'transparency')
 require(mod_prefix .. 'cursorline')
 require(mod_prefix .. 'litee')
 --For NVIM 0.8
---require(mod_prefix .. 'winbar')
+require(mod_prefix .. 'winbar')
 
 -- Plugins using vimscript
 require(mod_prefix .. 'code-minimap')
