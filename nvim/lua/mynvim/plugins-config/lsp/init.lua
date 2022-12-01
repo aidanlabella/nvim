@@ -13,6 +13,8 @@ end
 -- Configure LSP servers here
 lspconfig.tsserver.setup { on_attach = on_attach }
 lspconfig.ccls.setup { on_attach = on_attach }
+lspconfig.pylsp.setup { on_attach = on_attach }
+lspconfig.jedi_language_server.setup { on_attach = on_attach }
 
 lspconfig.jdtls.setup {
     vmargs = {

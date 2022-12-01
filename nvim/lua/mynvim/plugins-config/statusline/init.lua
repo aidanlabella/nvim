@@ -8,6 +8,14 @@ geten = io.popen("whoami")
 local me = geten:read("*line")
 geten:close()
 
+geten = io.popen("nvim -v | head -n 1")
+local vers = geten:read("*line")
+geten:close()
+
+local get_title = function() 
+    return ' ' .. vers
+end
+
 local get_host = function()
     return '  ' .. me .. '@' .. hostname
 end
@@ -24,7 +32,7 @@ local config = {
     globalstatus = false,
   },
   sections = {
-    lualine_a = {[['']], 'mode'},
+    lualine_a = {get_title, 'mode'},
     lualine_b = {{'diff',
                  symbols = {added = ' ', modified = ' ', removed = ' '},
                 },
