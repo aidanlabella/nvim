@@ -3,12 +3,12 @@ My neovim configuration tree
 
 
 ## Prerequisites 
-[Neovim >=0.6.1](https://neovim.io/)<br/>
+[Neovim >=0.8.0](https://neovim.io/)<br/>
 [Packer](https://github.com/wbthomason/packer.nvim)
 
 ## Setup
 These instrutions will work for GNU/Linux, BSD and Apple's macOS.
-Installtion for Windows 10 is possible under the Windows Subsystem for Linux (WSL) and is theoretically possible under just the Windows Shell, but may require some tweaks (i.e. config file locations).
+Installtion for Windows 10/11 is possible under the Windows Subsystem for Linux (WSL) and is theoretically possible under just the Windows Shell, but may require some tweaks (i.e. config file locations).
 
 1. Clone this repo into your home directory (e.g. ~/myneovim)
 2. Create a symlink to the Neovim configuration tree
