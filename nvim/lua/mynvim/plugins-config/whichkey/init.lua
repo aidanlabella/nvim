@@ -74,6 +74,7 @@ local mappings = {
     },
     b = {
         name = "+Buffers",
+        b = {"<cmd>Telescope buffers<cr>", "Buffer List"},
     },
     c = {
         name = "+Commenter",
@@ -158,6 +159,7 @@ local mappings = {
     },
     t = {
         name = "+Tabs/Buffers",
+        b = {"<cmd>Telescope buffers<cr>", "Buffer List"},
         h = {"<cmd>BufferLineCyclePrev<cr>", "Tab/buffer left"},
         l = {"<cmd>BufferLineCycleNext<cr>", "Tab/buffer right"},
         k = {":Bdelete <CR>", "Close current buffer"},

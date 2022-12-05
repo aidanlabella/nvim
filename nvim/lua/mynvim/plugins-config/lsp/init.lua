@@ -9,8 +9,12 @@ local function on_attach(client, bufnr)
     -- set up buffer keymaps, etc.
 end
 
+
 -- Configure LSP servers here
 lspconfig.tsserver.setup { on_attach = on_attach }
+lspconfig.ccls.setup { on_attach = on_attach }
+lspconfig.pylsp.setup { on_attach = on_attach }
+lspconfig.jedi_language_server.setup { on_attach = on_attach }
 
 lspconfig.jdtls.setup {
     vmargs = {
@@ -31,6 +35,8 @@ lspconfig.jdtls.setup {
             }
         }
     },
+    on_attach = on_attach,
 }
+
 -- Register a handler that will be called for all installed servers.
 -- Alternatively, you may also register handlers on specific server instances instead (see example below).

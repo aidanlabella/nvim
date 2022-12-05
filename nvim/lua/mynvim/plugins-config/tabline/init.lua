@@ -44,6 +44,6 @@ require('bufferline').setup {
     -- [focused and unfocused]. eg: { '|', '|' }
     --separator_style = "slant",
     enforce_regular_tabs = false,
-    always_show_bufferline = false,
+    always_show_bufferline = true,
   }
 }

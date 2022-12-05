@@ -156,12 +156,18 @@ return require('packer').startup(function()
             require('git-conflict').setup()
         end
     }
+
     use 'tveskag/nvim-blame-line'
-    use {
-        "SmiteshP/nvim-navic",
-        requires = "neovim/nvim-lspconfig"
-    }
 
     -- For Nvim 0.8+
-    --use 'fgheng/winbar.nvim'
+    use 'SmiteshP/nvim-navic'
+
+    use {
+        "utilyre/barbecue.nvim",
+        requires = {
+            "neovim/nvim-lspconfig",
+            "smiteshp/nvim-navic",
+        }
+    }
+
 end)
