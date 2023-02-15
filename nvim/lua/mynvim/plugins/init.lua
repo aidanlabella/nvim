@@ -47,11 +47,6 @@ return require('packer').startup(function()
    --   }
    -- }
 
-    use({
-        'glepnir/zephyr-nvim',
-        requires = { 'nvim-treesitter/nvim-treesitter', opt = true },
-    })
-
     use 'karb94/neoscroll.nvim'
     use 'kyazdani42/nvim-tree.lua'
     use 'sindrets/diffview.nvim'
@@ -143,7 +138,11 @@ return require('packer').startup(function()
             --)
         --end
     --}
-    use 'iamcco/markdown-preview.nvim'
+    use({ "iamcco/markdown-preview.nvim",
+        run = "cd app && npm install",
+        setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+        ft = { "markdown" }, })
+
     use 'dkarter/bullets.vim'
     use 'ellisonleao/glow.nvim'
     use 'yamatsum/nvim-cursorline'
