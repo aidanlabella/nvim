@@ -75,6 +75,9 @@ local mappings = {
     b = {
         name = "+Buffers",
         b = {"<cmd>Telescope buffers<cr>", "Buffer List"},
+        d = {":Bdelete <CR>", "Close Current Buffer"},
+        n = {":bNext <CR>", "Next Buffer"},
+        p = {":bprevious <CR>", "Previous Buffer"},
     },
     c = {
         name = "+Commenter",
@@ -159,19 +162,8 @@ local mappings = {
     },
     t = {
         name = "+Tabs/Buffers",
-        b = {"<cmd>Telescope buffers<cr>", "Buffer List"},
-        h = {"<cmd>BufferLineCyclePrev<cr>", "Tab/buffer left"},
-        l = {"<cmd>BufferLineCycleNext<cr>", "Tab/buffer right"},
-        k = {":Bdelete <CR>", "Close current buffer"},
-        ["1"] = {"<cmd>BufferLineGoToBuffer 1<cr>", "Goto tab 1"},
-        ["2"] = {"<cmd>BufferLineGoToBuffer 2<cr>", "Goto tab 2"},
-        ["3"] = {"<cmd>BufferLineGoToBuffer 3<cr>", "Goto tab 3"},
-        ["4"] = {"<cmd>BufferLineGoToBuffer 4<cr>", "Goto tab 4"},
-        ["5"] = {"<cmd>BufferLineGoToBuffer 5<cr>", "Goto tab 5"},
-        ["6"] = {"<cmd>BufferLineGoToBuffer 6<cr>", "Goto tab 6"},
-        ["7"] = {"<cmd>BufferLineGoToBuffer 7<cr>", "Goto tab 7"},
-        ["8"] = {"<cmd>BufferLineGoToBuffer 8<cr>", "Goto tab 8"},
-        ["9"] = {"<cmd>BufferLineGoToBuffer 9<cr>", "Goto tab 9"},
+        h = {"<cmd>lua print(\"now: <SPC> b p\")<cr>", "(Deprecated)"},
+        l = {"<cmd>lua print(\"now: <SPC> b n\")<cr>", "(Deprecated)"},
     },
     q = {
         name = "+Leave Neovim",

@@ -37,7 +37,7 @@ return require('packer').startup(function()
     use 'mhinz/vim-startify'
 
     --Added for NVIM 0.5+:
-    use {'akinsho/bufferline.nvim', tag = "*", requires = 'kyazdani42/nvim-web-devicons'}
+    --use {'akinsho/bufferline.nvim', tag = "*", requires = 'kyazdani42/nvim-web-devicons'}
    -- use 'akinsho/bufferline.nvim'
    -- use {
    --   'kdheepak/tabline.nvim',
