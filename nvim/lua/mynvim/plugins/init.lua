@@ -138,13 +138,14 @@ return require('packer').startup(function()
             --)
         --end
     --}
+    -- Markdown
     use({ "iamcco/markdown-preview.nvim",
         run = "cd app && npm install",
         setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
         ft = { "markdown" }, })
+    use {"ellisonleao/glow.nvim", config = function() require("glow").setup() end}
 
     use 'dkarter/bullets.vim'
-    use 'ellisonleao/glow.nvim'
     use 'yamatsum/nvim-cursorline'
     use 'xiyaowong/nvim-transparent'
     use 'ldelossa/litee.nvim'
