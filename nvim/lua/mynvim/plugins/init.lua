@@ -47,8 +47,18 @@ return require('packer').startup(function()
    --   }
    -- }
 
+   -- Neotree
+    use {
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v2.x",
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+            "MunifTanjim/nui.nvim",
+        }
+    }
+
     use 'karb94/neoscroll.nvim'
-    use 'kyazdani42/nvim-tree.lua'
     use 'sindrets/diffview.nvim'
     use 'nvim-lua/plenary.nvim'
     use 'neovim/nvim-lspconfig'

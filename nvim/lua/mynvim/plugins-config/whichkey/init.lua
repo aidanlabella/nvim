@@ -43,19 +43,6 @@ local opts = {
     nowait = false -- use `nowait` when creating keymaps
 }
 
-local view = require'nvim-tree.view'
-
-tree_ctl = {}
-tree_ctl.toggle_tree = function()
-  if view.is_visible() then
-    vim.api.nvim_exec([[NvimTreeClose]], false)
-    require'bufferline.state'.set_offset(0)
-  else
-    require'bufferline.state'.set_offset(35, 'File Explorer')
-    require'nvim-tree'.find_file(true)
-  end
-end
-
 
 -- Set leader
 vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true})
@@ -92,7 +79,7 @@ local mappings = {
     },
     f = {
         name = "+Files",
-        t = {"<cmd>NvimTreeToggle<cr>", "File Tree"},
+        t = {"<cmd>Neotree .<cr>", "File Tree"},
         f = {"<cmd>Telescope find_files<cr>", "Fuzzy Finder"},
         r = {"<cmd>Telescope file_browser<cr>", "File Browser"},
         a = {"<cmd>Telescope grep_string<cr>", "Find Words (vimgrep)"},
