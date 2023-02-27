@@ -72,6 +72,11 @@ local mappings = {
     w = {
         name = "+Window Managment",
     },
+    m = {
+        name = "+Markdown",
+        p = {"<cmd>MarkdownPreview<cr>", "Preview"},
+        g = {"<cmd>Glow<cr>", "Glow"},
+    },
     n = {
         name = "+Command Shortcuts",
         h = {"<cmd>Telescope command_history<cr>", "Command History"},
