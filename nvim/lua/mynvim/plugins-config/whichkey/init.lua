@@ -149,10 +149,11 @@ local mappings = {
     x = {
         name = "+Latex",
         c = {"<cmd>VimtexCompile<cr>", "Compile"},
+        x = {"<cmd>VimtexClean<cr>", "Clean"},
         i = {"<cmd>VimtexInfo<cr>", "Info"},
         r = {"<cmd>VimtexReload<cr>", "Reload"},
-        r = {"<cmd>VimtexErrors<cr>", "Errors"},
-        r = {"<cmd>VimtexLog<cr>", "Log"}
+        e = {"<cmd>VimtexErrors<cr>", "Errors"},
+        l = {"<cmd>VimtexLog<cr>", "Log"}
     },
     t = {
         name = "+Tabs/Buffers",
