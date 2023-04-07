@@ -27,7 +27,6 @@ require(mod_prefix .. 'treesitter')
 require(mod_prefix .. 'whichkey')
 require(mod_prefix .. 'trouble_diag')
 require(mod_prefix .. 'indent_line')
-require(mod_prefix .. 'transparency')
 require(mod_prefix .. 'cursorline')
 require(mod_prefix .. 'litee')
 --For NVIM 0.8
