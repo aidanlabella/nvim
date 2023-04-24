@@ -3,21 +3,12 @@ return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
 
     -- Colorschemes
+    use 'navarasu/onedark.nvim'
+    use 'dracula/vim'
     --use {'Mofiqul/dracula.nvim',
         --as = 'dracula',
     --}
-    use {'navarasu/onedark.nvim',
-        as = 'onedark',
-    }
-
-    use 'dracula/vim'
-
-    use 'eskilop/NorthernLights.vim'
-    use 'cpea2506/one_monokai.nvim'
-    use 'bluz71/vim-nightfly-guicolors'
-    use 'olimorris/onedarkpro.nvim'
-    use 'folke/tokyonight.nvim'
-    use 'nxvu699134/vn-night.nvim'
+    -- Using Packer
 
     use 'mg979/vim-visual-multi'
     use 'preservim/nerdcommenter'
@@ -31,7 +22,6 @@ return require('packer').startup(function()
     use 'rbgrouleff/bclose.vim'
     use 'francoiscabrol/ranger.vim'
     use 'vim-syntastic/syntastic'
-    use 'jacoborus/tender.vim'
     use 'machakann/vim-sandwich'
     use 'lervag/vimtex'
     use 'mhinz/vim-startify'
