@@ -13,10 +13,9 @@
      transparent = true,
      term_colors = true,
      code_style = {
-         functions = 'italic',
+         functions = 'none',
          keywords = 'none',
          comments = 'bold',
-         functions = 'italic',
          strings = 'bold',
      },
  

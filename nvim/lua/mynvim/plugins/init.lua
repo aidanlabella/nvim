@@ -24,7 +24,10 @@ return require('packer').startup(function()
     use 'vim-syntastic/syntastic'
     use 'machakann/vim-sandwich'
     use 'lervag/vimtex'
-    use 'mhinz/vim-startify'
+    use {
+        'goolord/alpha-nvim',
+        requires = { 'nvim-tree/nvim-web-devicons' }
+    }
 
     --Added for NVIM 0.5+:
     --use {'akinsho/bufferline.nvim', tag = "*", requires = 'kyazdani42/nvim-web-devicons'}
