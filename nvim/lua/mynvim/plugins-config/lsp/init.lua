@@ -12,8 +12,32 @@ end
 
 -- Configure LSP servers here
 lspconfig.tsserver.setup { on_attach = on_attach }
-lspconfig.ccls.setup { on_attach = on_attach }
-lspconfig.pylsp.setup { on_attach = on_attach }
+lspconfig.clangd.setup {
+    capabilities = {
+        textDocument = {
+              completion = {
+                completionItem = {
+                    snippetSupport = true
+                }
+            }
+        }
+    },
+    on_attach = on_attach
+}
+
+lspconfig.pylsp.setup {
+    capabilities = {
+        textDocument = {
+              completion = {
+                completionItem = {
+                    snippetSupport = true
+                }
+            }
+        }
+    },
+    on_attach = on_attach 
+}
+
 lspconfig.jedi_language_server.setup { on_attach = on_attach }
 lspconfig.intelephense.setup { on_attach = on_attach }
 lspconfig.sqlls.setup { on_attach = on_attach }
