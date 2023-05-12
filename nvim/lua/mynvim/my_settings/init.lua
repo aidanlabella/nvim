@@ -14,7 +14,7 @@
      term_colors = true,
      code_style = {
          functions = 'none',
-         keywords = 'none',
+         keywords = 'italic',
          comments = 'bold',
          strings = 'bold',
      },

@@ -1,6 +1,7 @@
 local mod_prefix = 'mynvim/plugins-config/lsp/'
 
-require("nvim-lsp-installer").setup {}
+require("mason").setup()
+require("mason-lspconfig").setup()
 local lspconfig = require('lspconfig')
 local navic = require("nvim-navic")
 
@@ -8,6 +9,8 @@ local function on_attach(client, bufnr)
     navic.attach(client, bufnr)
     -- set up buffer keymaps, etc.
 end
+
+vim.env.JAVA_HOME = '/usr/lib64/jvm/java-18-openjdk'
 
 
 -- Configure LSP servers here

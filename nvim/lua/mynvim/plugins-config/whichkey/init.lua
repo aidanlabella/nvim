@@ -125,7 +125,7 @@ local mappings = {
         R = {"<cmd>ResetBuffer<cr>", "Reset Buffer"},
         s = {"<cmd>StageHunk<cr>", "Stage Hunk"},
         u = {"<cmd>UndoStageHunk<cr>", "Undo Stage Hunk"},
-        g = {"<cmd>Git<cr>", "Status"},
+        g = {"<cmd>lua require('neogit').open({ kind = \"split\" })<cr>", "Status"},
         v = {"<cmd>GV<cr>", "Verbose Log"},
         w = {"<cmd>Git blame<cr>", "Whodunnit?"},
         W = {"<cmd>ToggleBlameLine<cr>", "Whodunnit? (single line)"},

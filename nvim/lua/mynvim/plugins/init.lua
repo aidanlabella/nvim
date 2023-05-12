@@ -12,6 +12,7 @@ return require('packer').startup(function()
 
     use 'mg979/vim-visual-multi'
     use 'preservim/nerdcommenter'
+    use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
     use 'tpope/vim-fugitive'
     use 'prabirshrestha/async.vim'
     use 'ryanoasis/vim-devicons'
@@ -44,8 +45,15 @@ return require('packer').startup(function()
     use 'kyazdani42/nvim-tree.lua'
     use 'sindrets/diffview.nvim'
     use 'nvim-lua/plenary.nvim'
+
+    -- LSP
+    use {
+        "williamboman/mason.nvim",
+        run = ":MasonUpdate" -- :MasonUpdate updates registry contents
+    }
+    use 'williamboman/mason-lspconfig.nvim'
     use 'neovim/nvim-lspconfig'
-    use 'williamboman/nvim-lsp-installer'
+
     use 'nvim-treesitter/nvim-treesitter'
     use 'nvim-lua/popup.nvim'
 
