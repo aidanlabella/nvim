@@ -1,5 +1,5 @@
 " rnb.vim -- Vim color scheme.
-" Author:      Aidan LaBella (apl1341@rit.edu)
+" Author:      Aidan LaBella (alabella@brown.edu)
 " Webpage:     http://people.rit.edu/~apl1341/
 " Description: A color scheme I created
 

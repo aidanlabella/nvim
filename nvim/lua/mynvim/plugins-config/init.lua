@@ -1,6 +1,6 @@
 -- myneovim configruation files
--- Author: Aidan LaBella - RIT Department of Computer Science
--- Email: apl1341@cs.rit.edu 
+-- Author: Aidan LaBella - Brown University Department of Computer Science
+-- Email: alabella@brown.edu 
 -- 
 -- Module: plugins-config
 -- Plugin configuration
