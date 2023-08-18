@@ -10,7 +10,7 @@ local function on_attach(client, bufnr)
     -- set up buffer keymaps, etc.
 end
 
-vim.env.JAVA_HOME = '/usr/lib64/jvm/java-18-openjdk'
+vim.env.JAVA_HOME = '/opt/homebrew/opt/java'
 
 
 -- Configure LSP servers here
@@ -44,6 +44,7 @@ lspconfig.pylsp.setup {
 lspconfig.jedi_language_server.setup { on_attach = on_attach }
 lspconfig.intelephense.setup { on_attach = on_attach }
 lspconfig.sqlls.setup { on_attach = on_attach }
+lspconfig.bashls.setup { on_attach = on_attach }
 
 lspconfig.jdtls.setup {
     vmargs = {

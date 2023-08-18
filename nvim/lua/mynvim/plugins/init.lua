@@ -82,9 +82,6 @@ return require('packer').startup(function()
       requires = {
         'nvim-lua/plenary.nvim'
       },
-      config = function()
-        require('gitsigns').setup()
-      end
     }
     use 'folke/lsp-colors.nvim'
     use 'windwp/nvim-autopairs'
@@ -102,9 +99,6 @@ return require('packer').startup(function()
 
     use {
         "danymat/neogen",
-        config = function()
-            require('neogen').setup {}
-        end,
         requires = "nvim-treesitter/nvim-treesitter",
         -- Uncomment next line if you want to follow only stable versions
         -- tag = "*"
@@ -121,41 +115,20 @@ return require('packer').startup(function()
     use 'tpope/vim-surround'
     use 'lukas-reineke/indent-blankline.nvim'
     use 'chrisbra/csv.vim'
-    --use 'numtostr/FTerm.nvim'
 
-    --Too buggy:
-    --use {'TimUntersberger/neogit',
-        --requires = {
-            --'nvim-lua/plenary.nvim',
-            --'sindrets/diffview.nvim'
-        --},
-        --config = function()
-            --require("neogit").setup(
-                    --{
-                        --integrations = {
-                            --diffview = true
-                    --}
-                --}
-            --)
-        --end
-    --}
     -- Markdown
     use({ "iamcco/markdown-preview.nvim",
         run = "cd app && npm install",
         setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
         ft = { "markdown" }, })
-    use {"ellisonleao/glow.nvim", config = function() require("glow").setup() end}
 
+    use {"ellisonleao/glow.nvim"}
     use 'dkarter/bullets.vim'
     use 'yamatsum/nvim-cursorline'
     use 'ldelossa/litee.nvim'
     use 'ldelossa/litee-calltree.nvim'
-    use {
-        'akinsho/git-conflict.nvim', tag = "*",
-        config = function()
-            require('git-conflict').setup()
-        end
-    }
+    use {'akinsho/git-conflict.nvim', tag = "*"}
+    use {'j-hui/fidget.nvim', tag = 'legacy'}
 
     use 'tveskag/nvim-blame-line'
 

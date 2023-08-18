@@ -8,18 +8,23 @@
 --local home = os.getenv( "HOME" )
 --local nvim_conf_dir = "/.config/nvim/lua"
 local mod_prefix = "mynvim/plugins-config/"
---
+
 -- Plugins that require a global declaration
 nvimTree = require(mod_prefix .. 'file-tree')
---neogit = require("neogit")
 
--- Plugins requiring lua initailization
+-- Plugins requiring lua initailization with DEFAULT options
 require('colorizer').setup()
 require('nvim-autopairs').setup()
 require('neoscroll').setup()
 require('lsp_signature').setup()
+require("neogit").setup()
+require('gitsigns').setup()
+require('neogen').setup()
+require('git-conflict').setup()
+require("fidget").setup()
+require("glow").setup()
 
-
+-- Plugins with lua initailization with custom options
 require(mod_prefix .. 'completeion')
 require(mod_prefix .. 'lsp')
 require(mod_prefix .. 'statusline')
