@@ -26,8 +26,14 @@ return require('packer').startup(function()
     use 'machakann/vim-sandwich'
     use 'lervag/vimtex'
     use {
-        'goolord/alpha-nvim',
-        requires = { 'nvim-tree/nvim-web-devicons' }
+        'glepnir/dashboard-nvim',
+        event = 'VimEnter',
+        config = function()
+          require('dashboard').setup {
+            -- config
+          }
+        end,
+        requires = {'nvim-tree/nvim-web-devicons'}
     }
 
     --Added for NVIM 0.5+:
