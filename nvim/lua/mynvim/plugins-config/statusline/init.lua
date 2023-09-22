@@ -20,6 +20,15 @@ local get_host = function()
     return '  ' .. me .. '@' .. hostname
 end
 
+local word_count = function()
+    local wc = vim.api.nvim_eval("wordcount()")
+    if wc["visual_words"] then
+        return "| |: " .. wc["visual_words"]
+    else
+        return "| |: " .. wc["words"]
+    end
+end
+
 local mode_map = {
 	["n"] = "N",
 	["no"] = "O·P",
@@ -81,7 +90,7 @@ local config = {
                 'diagnostics'},
     lualine_c = {'branch', 'filename'},
     lualine_x = {get_host},
-    lualine_y = {'encoding', 'fileformat', 'filetype'},
+    lualine_y = {word_count, 'fileformat', 'filetype'},
     lualine_z = {'location', 'progress', modes}
   },
   inactive_sections = {
