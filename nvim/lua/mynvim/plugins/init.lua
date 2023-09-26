@@ -89,7 +89,7 @@ require("lazy").setup({
 
     {
         'hoob3rt/lualine.nvim',
-        dependencies = {'kyazdani42/nvim-web-devicons', opt = true}
+        dependencies = {'nvim-tree/nvim-web-devicons', opt = true}
     },
 
     'folke/which-key.nvim',
@@ -112,7 +112,7 @@ require("lazy").setup({
 
     {
       "folke/trouble.nvim",
-      dependencies = "kyazdani42/nvim-web-devicons",
+      dependencies = "nvim-tree/nvim-web-devicons",
     },
 
     {
@@ -151,7 +151,7 @@ require("lazy").setup({
     'tveskag/nvim-blame-line',
 
     -- For Nvim 0.8+
-    'SmiteshP/nvim-navic',
+    'smiteshp/nvim-navic',
     {'nvim-neo-tree/neo-tree.nvim',
         branch = "v2.x",
         dependencies = {
