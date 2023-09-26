@@ -13,9 +13,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    -- This package manager (bootstrap)
-    'wbthomason/packer.nvim',
-
     -- Colorschemes
     'navarasu/onedark.nvim',
     'dracula/vim',
@@ -26,11 +23,11 @@ require("lazy").setup({
 
     'mg979/vim-visual-multi',
     'preservim/nerdcommenter',
-    { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' },
+    { 'TimUntersberger/neogit', dependencies = 'nvim-lua/plenary.nvim' },
     'tpope/vim-fugitive',
     'prabirshrestha/async.vim',
     'ryanoasis/vim-devicons',
-    'kyazdani42/nvim-web-devicons',
+    'nvim-tree/nvim-web-devicons',
     'majutsushi/tagbar',
     'norcalli/nvim-colorizer.lua',
     'junegunn/gv.vim',
@@ -47,15 +44,15 @@ require("lazy").setup({
             -- config
           }
         end,
-        requires = {'nvim-tree/nvim-web-devicons'}
+        dependencies = {'nvim-tree/nvim-web-devicons'}
     },
 
     --Added for NVIM 0.5+:
-    --{'akinsho/bufferline.nvim', tag = "*", requires = 'kyazdani42/nvim-web-devicons'}
+    --{'akinsho/bufferline.nvim', tag = "*", dependencies = 'kyazdani42/nvim-web-devicons'}
    -- 'akinsho/bufferline.nvim'
    -- {
    --   'kdheepak/tabline.nvim',
-   --   requires = {
+   --   dependencies = {
    --       { 'hoob3rt/lualine.nvim', opt=true },
    --       {'kyazdani42/nvim-web-devicons', opt = true}
    --   }
@@ -92,7 +89,7 @@ require("lazy").setup({
 
     {
         'hoob3rt/lualine.nvim',
-        requires = {'kyazdani42/nvim-web-devicons', opt = true}
+        dependencies = {'kyazdani42/nvim-web-devicons', opt = true}
     },
 
     'folke/which-key.nvim',
@@ -100,7 +97,7 @@ require("lazy").setup({
     'famiu/bufdelete.nvim',
     {
       'lewis6991/gitsigns.nvim',
-      requires = {
+      dependencies = {
         'nvim-lua/plenary.nvim'
       },
     },
@@ -115,12 +112,12 @@ require("lazy").setup({
 
     {
       "folke/trouble.nvim",
-      requires = "kyazdani42/nvim-web-devicons",
+      dependencies = "kyazdani42/nvim-web-devicons",
     },
 
     {
         "danymat/neogen",
-        requires = "nvim-treesitter/nvim-treesitter",
+        dependencies = "nvim-treesitter/nvim-treesitter",
         -- Uncomment next line if you want to follow only stable versions
         -- tag = "*"
     },
@@ -140,7 +137,7 @@ require("lazy").setup({
     -- Markdown
     { "iamcco/markdown-preview.nvim",
         run = "cd app && npm install",
-        setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
+        init = function() vim.g.mkdp_filetypes = { "markdown" } end,
         ft = { "markdown" }, },
 
     {"ellisonleao/glow.nvim"},
@@ -157,7 +154,7 @@ require("lazy").setup({
     'SmiteshP/nvim-navic',
     {'nvim-neo-tree/neo-tree.nvim',
         branch = "v2.x",
-        requires = {
+        dependencies = {
          "nvim-lua/plenary.nvim",
          "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
          "MunifTanjim/nui.nvim"}
@@ -165,7 +162,7 @@ require("lazy").setup({
 
     {
         "utilyre/barbecue.nvim",
-        requires = {
+        dependencies = {
             "neovim/nvim-lspconfig",
             "smiteshp/nvim-navic",
         }
