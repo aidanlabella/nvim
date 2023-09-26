@@ -1,31 +1,45 @@
-return require('packer').startup(function()
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("lazy").setup({
     -- This package manager (bootstrap)
-    use 'wbthomason/packer.nvim'
+    'wbthomason/packer.nvim',
 
     -- Colorschemes
-    use 'navarasu/onedark.nvim'
-    use 'dracula/vim'
-    --use {'Mofiqul/dracula.nvim',
+    'navarasu/onedark.nvim',
+    'dracula/vim',
+    --{'Mofiqul/dracula.nvim',
         --as = 'dracula',
     --}
     -- Using Packer
 
-    use 'mg979/vim-visual-multi'
-    use 'preservim/nerdcommenter'
-    use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
-    use 'tpope/vim-fugitive'
-    use 'prabirshrestha/async.vim'
-    use 'ryanoasis/vim-devicons'
-    use 'kyazdani42/nvim-web-devicons'
-    use 'majutsushi/tagbar'
-    use 'norcalli/nvim-colorizer.lua'
-    use 'junegunn/gv.vim'
-    use 'rbgrouleff/bclose.vim'
-    use 'francoiscabrol/ranger.vim'
-    use 'vim-syntastic/syntastic'
-    use 'machakann/vim-sandwich'
-    use 'lervag/vimtex'
-    use {
+    'mg979/vim-visual-multi',
+    'preservim/nerdcommenter',
+    { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' },
+    'tpope/vim-fugitive',
+    'prabirshrestha/async.vim',
+    'ryanoasis/vim-devicons',
+    'kyazdani42/nvim-web-devicons',
+    'majutsushi/tagbar',
+    'norcalli/nvim-colorizer.lua',
+    'junegunn/gv.vim',
+    'rbgrouleff/bclose.vim',
+    'francoiscabrol/ranger.vim',
+    'vim-syntastic/syntastic',
+    'machakann/vim-sandwich',
+    'lervag/vimtex',
+    {
         'glepnir/dashboard-nvim',
         event = 'VimEnter',
         config = function()
@@ -34,12 +48,12 @@ return require('packer').startup(function()
           }
         end,
         requires = {'nvim-tree/nvim-web-devicons'}
-    }
+    },
 
     --Added for NVIM 0.5+:
-    --use {'akinsho/bufferline.nvim', tag = "*", requires = 'kyazdani42/nvim-web-devicons'}
-   -- use 'akinsho/bufferline.nvim'
-   -- use {
+    --{'akinsho/bufferline.nvim', tag = "*", requires = 'kyazdani42/nvim-web-devicons'}
+   -- 'akinsho/bufferline.nvim'
+   -- {
    --   'kdheepak/tabline.nvim',
    --   requires = {
    --       { 'hoob3rt/lualine.nvim', opt=true },
@@ -47,113 +61,113 @@ return require('packer').startup(function()
    --   }
    -- }
 
-    use 'karb94/neoscroll.nvim'
-    use 'kyazdani42/nvim-tree.lua'
-    use 'sindrets/diffview.nvim'
-    use 'nvim-lua/plenary.nvim'
+    'karb94/neoscroll.nvim',
+    'kyazdani42/nvim-tree.lua',
+    'sindrets/diffview.nvim',
+    'nvim-lua/plenary.nvim',
 
     -- LSP
-    use {
+    {
         "williamboman/mason.nvim",
         run = ":MasonUpdate" -- :MasonUpdate updates registry contents
-    }
-    use 'williamboman/mason-lspconfig.nvim'
-    use 'neovim/nvim-lspconfig'
+    },
 
-    use 'nvim-treesitter/nvim-treesitter'
-    use 'nvim-lua/popup.nvim'
+    'williamboman/mason-lspconfig.nvim',
+    'neovim/nvim-lspconfig',
+
+    'nvim-treesitter/nvim-treesitter',
+    'nvim-lua/popup.nvim',
 
     --Telescope
-    use 'nvim-telescope/telescope.nvim'
-    use 'nvim-telescope/telescope-project.nvim'
-    use 'kosayoda/nvim-lightbulb'
+    'nvim-telescope/telescope.nvim',
+    'nvim-telescope/telescope-project.nvim',
+    'kosayoda/nvim-lightbulb',
 
     --Completion
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/cmp-cmdline'
-    use 'hrsh7th/nvim-cmp'
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+    'hrsh7th/cmp-cmdline',
+    'hrsh7th/nvim-cmp',
 
-    use {
+    {
         'hoob3rt/lualine.nvim',
         requires = {'kyazdani42/nvim-web-devicons', opt = true}
-    }
+    },
 
-    use 'folke/which-key.nvim'
-    use { 'weilbith/nvim-code-action-menu', cmd = 'CodeActionMenu', }
-    use 'famiu/bufdelete.nvim'
-    use {
+    'folke/which-key.nvim',
+    { 'weilbith/nvim-code-action-menu', cmd = 'CodeActionMenu', },
+    'famiu/bufdelete.nvim',
+    {
       'lewis6991/gitsigns.nvim',
       requires = {
         'nvim-lua/plenary.nvim'
       },
-    }
-    use 'folke/lsp-colors.nvim'
-    use 'windwp/nvim-autopairs'
-    use {
+    },
+    'folke/lsp-colors.nvim',
+    'windwp/nvim-autopairs',
+    {
         'tanvirtin/monokai.nvim' ,
-    }
-    use {
+    },
+    {
         'phanviet/vim-monokai-pro',
-    }
+    },
 
-    use {
+    {
       "folke/trouble.nvim",
       requires = "kyazdani42/nvim-web-devicons",
-    }
+    },
 
-    use {
+    {
         "danymat/neogen",
         requires = "nvim-treesitter/nvim-treesitter",
         -- Uncomment next line if you want to follow only stable versions
         -- tag = "*"
-    }
+    },
 
-    use 'onsails/lspkind-nvim'
-    use 'ray-x/lsp_signature.nvim'
-    use 'hrsh7th/vim-vsnip'
-    use 'hrsh7th/vim-vsnip-integ'
-    --use 'wfxr/minimap.vim'
+    'onsails/lspkind-nvim',
+    'ray-x/lsp_signature.nvim',
+    'hrsh7th/vim-vsnip',
+    'hrsh7th/vim-vsnip-integ',
+    --'wfxr/minimap.vim'
     --
     -- Too ugly
-    --use 'p00f/nvim-ts-rainbow'
-    use 'tpope/vim-surround'
-    use 'lukas-reineke/indent-blankline.nvim'
-    use 'chrisbra/csv.vim'
+    --'p00f/nvim-ts-rainbow'
+    'tpope/vim-surround',
+    'lukas-reineke/indent-blankline.nvim',
+    'chrisbra/csv.vim',
 
     -- Markdown
-    use({ "iamcco/markdown-preview.nvim",
+    { "iamcco/markdown-preview.nvim",
         run = "cd app && npm install",
         setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
-        ft = { "markdown" }, })
+        ft = { "markdown" }, },
 
-    use {"ellisonleao/glow.nvim"}
-    use 'dkarter/bullets.vim'
-    use 'yamatsum/nvim-cursorline'
-    use 'ldelossa/litee.nvim'
-    use 'ldelossa/litee-calltree.nvim'
-    use {'akinsho/git-conflict.nvim', tag = "*"}
-    use {'j-hui/fidget.nvim', tag = 'legacy'}
+    {"ellisonleao/glow.nvim"},
+    'dkarter/bullets.vim',
+    'yamatsum/nvim-cursorline',
+    'ldelossa/litee.nvim',
+    'ldelossa/litee-calltree.nvim',
+    {'akinsho/git-conflict.nvim', tag = "*"},
+    {'j-hui/fidget.nvim', tag = 'legacy'},
 
-    use 'tveskag/nvim-blame-line'
+    'tveskag/nvim-blame-line',
 
     -- For Nvim 0.8+
-    use 'SmiteshP/nvim-navic'
-    use {'nvim-neo-tree/neo-tree.nvim',
+    'SmiteshP/nvim-navic',
+    {'nvim-neo-tree/neo-tree.nvim',
         branch = "v2.x",
         requires = {
          "nvim-lua/plenary.nvim",
          "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
          "MunifTanjim/nui.nvim"}
-    }
+    },
 
-    use {
+    {
         "utilyre/barbecue.nvim",
         requires = {
             "neovim/nvim-lspconfig",
             "smiteshp/nvim-navic",
         }
-    }
-
-end)
+    },
+})
