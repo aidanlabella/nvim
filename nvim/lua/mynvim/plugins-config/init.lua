@@ -26,6 +26,7 @@ require("glow").setup()
 
 -- Plugins with lua initailization with custom options
 require(mod_prefix .. 'completeion')
+require(mod_prefix .. 'commenter')
 require(mod_prefix .. 'lsp')
 require(mod_prefix .. 'statusline')
 require(mod_prefix .. 'treesitter')

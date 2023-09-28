@@ -22,7 +22,13 @@ require("lazy").setup({
     -- Using Packer
 
     'mg979/vim-visual-multi',
-    'preservim/nerdcommenter',
+    {
+        'numToStr/Comment.nvim',
+        opts = {
+            -- add any options here
+        },
+        lazy = false,
+    },
     { 'TimUntersberger/neogit', dependencies = 'nvim-lua/plenary.nvim' },
     'tpope/vim-fugitive',
     'prabirshrestha/async.vim',
@@ -156,7 +162,7 @@ require("lazy").setup({
     'yamatsum/nvim-cursorline',
     'ldelossa/litee.nvim',
     'ldelossa/litee-calltree.nvim',
-    {'akinsho/git-conflict.nvim', tag = "*"},
+    {'akinsho/git-conflict.nvim', version = "*", config = true},
     {'j-hui/fidget.nvim', tag = 'legacy'},
 
     'tveskag/nvim-blame-line',
