@@ -88,6 +88,7 @@ local mappings = {
         f = {"<cmd>Telescope find_files<cr>", "Fuzzy Finder"},
         r = {"<cmd>Telescope file_browser<cr>", "File Browser"},
         a = {"<cmd>Telescope grep_string<cr>", "Find Words (vimgrep)"},
+        o = {"<cmd>Oil<cr>", "Oil"},
     },
     d = {
         name = "+Diagnostics",
