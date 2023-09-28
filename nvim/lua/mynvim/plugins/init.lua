@@ -59,7 +59,6 @@ require("lazy").setup({
    -- }
 
     'karb94/neoscroll.nvim',
-    'kyazdani42/nvim-tree.lua',
     'sindrets/diffview.nvim',
     'nvim-lua/plenary.nvim',
 
@@ -140,6 +139,18 @@ require("lazy").setup({
         init = function() vim.g.mkdp_filetypes = { "markdown" } end,
         ft = { "markdown" }, },
 
+    {
+      "nvim-tree/nvim-tree.lua",
+      version = "*",
+      lazy = false,
+      dependencies = {
+        "nvim-tree/nvim-web-devicons",
+      },
+      config = function()
+        require("nvim-tree").setup {}
+      end,
+    },
+
     {"ellisonleao/glow.nvim"},
     'dkarter/bullets.vim',
     'yamatsum/nvim-cursorline',
@@ -152,14 +163,12 @@ require("lazy").setup({
 
     -- For Nvim 0.8+
     'smiteshp/nvim-navic',
-    {'nvim-neo-tree/neo-tree.nvim',
-        branch = "v2.x",
-        dependencies = {
-         "nvim-lua/plenary.nvim",
-         "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-         "MunifTanjim/nui.nvim"}
+    {
+        'stevearc/oil.nvim',
+        opts = {},
+        -- Optional dependencies
+        dependencies = { "nvim-tree/nvim-web-devicons" },
     },
-
     {
         "utilyre/barbecue.nvim",
         dependencies = {

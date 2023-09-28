@@ -84,7 +84,7 @@ local mappings = {
     },
     f = {
         name = "+Files",
-        t = {"<cmd>Neotree .<cr>", "File Tree"},
+        t = {"<cmd>NvimTreeToggle<cr>", "File Tree"},
         f = {"<cmd>Telescope find_files<cr>", "Fuzzy Finder"},
         r = {"<cmd>Telescope file_browser<cr>", "File Browser"},
         a = {"<cmd>Telescope grep_string<cr>", "Find Words (vimgrep)"},
