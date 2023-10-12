@@ -10,7 +10,7 @@ local function on_attach(client, bufnr)
     -- set up buffer keymaps, etc.
 end
 
-vim.env.JAVA_HOME = '/opt/homebrew/opt/java'
+--vim.env.JAVA_HOME = '/opt/homebrew/opt/java'
 
 
 -- Configure LSP servers here
