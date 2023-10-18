@@ -124,8 +124,6 @@ require("lazy").setup({
 
     'onsails/lspkind-nvim',
     'ray-x/lsp_signature.nvim',
-    'hrsh7th/vim-vsnip',
-    'hrsh7th/vim-vsnip-integ',
     --'wfxr/minimap.vim'
     --
     -- Too ugly
@@ -177,4 +175,12 @@ require("lazy").setup({
             "smiteshp/nvim-navic",
         }
     },
+    {
+        "L3MON4D3/LuaSnip",
+        -- follow latest release.
+        version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+        -- install jsregexp (optional!).
+        build = "make install_jsregexp"
+    },
+    'rafamadriz/friendly-snippets',
 })

@@ -34,6 +34,7 @@ lspconfig.intelephense.setup { on_attach = on_attach }
 lspconfig.sqlls.setup { on_attach = on_attach }
 lspconfig.bashls.setup { on_attach = on_attach }
 lspconfig.ltex.setup { on_attach = on_attach }
+lspconfig.texlab.setup { on_attach = on_attach }
 lspconfig.marksman.setup { on_attach = on_attach }
 
 lspconfig.jdtls.setup {
