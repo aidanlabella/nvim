@@ -28,7 +28,6 @@ lspconfig.clangd.setup {
     on_attach = on_attach
 }
 
-lspconfig.pyright.setup {}
 lspconfig.jedi_language_server.setup { on_attach = on_attach }
 lspconfig.intelephense.setup { on_attach = on_attach }
 lspconfig.sqlls.setup { on_attach = on_attach }
