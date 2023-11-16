@@ -185,4 +185,5 @@ require("lazy").setup({
     },
     'rafamadriz/friendly-snippets',
     'hrsh7th/cmp-path',
+    'saadparwaiz1/cmp_luasnip',
 })
