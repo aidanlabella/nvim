@@ -37,6 +37,7 @@ require("luasnip.loaders.from_vscode").lazy_load()
       -- { name = 'snippy' }, -- For snippy users.
     }, {
       { name = 'buffer' },
+      { name = 'path' },
     })
   })
 
