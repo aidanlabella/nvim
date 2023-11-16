@@ -159,6 +159,7 @@ require("lazy").setup({
     {'j-hui/fidget.nvim', tag = 'legacy'},
 
     'tveskag/nvim-blame-line',
+    'xiyaowong/transparent.nvim',
 
     -- For Nvim 0.8+
     'smiteshp/nvim-navic',
