@@ -3,6 +3,7 @@ require('ibl').setup {
         char = "▎",
     },
     exclude = {
-        buftypes = {"terminal", "dashboard", "NvimTree", "nofile", "quickfix", "propmpt"}
+        filetypes = {"dashboard"},
+        buftypes = {"terminal", "NvimTree", "nofile", "quickfix", "propmpt"}
     }
 }
