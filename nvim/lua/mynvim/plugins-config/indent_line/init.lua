@@ -1,8 +1,8 @@
 require('ibl').setup {
     indent = {
-        char = "⋅",
+        char = "▎",
     },
     exclude = {
-        buftypes = {"terminal", "dashboard", "NvimTree"}
+        buftypes = {"terminal", "dashboard", "NvimTree", "nofile", "quickfix", "propmpt"}
     }
 }
