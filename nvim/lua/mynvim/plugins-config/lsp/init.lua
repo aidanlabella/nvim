@@ -12,29 +12,31 @@ end
 
 --vim.env.JAVA_HOME = '/opt/homebrew/opt/java'
 
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- Configure LSP servers here
 lspconfig.tsserver.setup { on_attach = on_attach }
 lspconfig.clangd.setup {
-    capabilities = {
-        textDocument = {
-              completion = {
-                completionItem = {
-                    snippetSupport = true
-                }
-            }
-        }
-    },
+    --capabilities = {
+        --textDocument = {
+              --completion = {
+                --completionItem = {
+                    --snippetSupport = true
+                --}
+            --}
+        --}
+    --},
+    capabilities = capabilities,
     on_attach = on_attach
 }
 
-lspconfig.pyright.setup { on_attach = on_attach }
-lspconfig.intelephense.setup { on_attach = on_attach }
-lspconfig.sqlls.setup { on_attach = on_attach }
-lspconfig.bashls.setup { on_attach = on_attach }
-lspconfig.ltex.setup { on_attach = on_attach }
-lspconfig.texlab.setup { on_attach = on_attach }
-lspconfig.marksman.setup { on_attach = on_attach }
+lspconfig.jedi_language_server.setup { on_attach = on_attach, capabilities = capabilities }
+lspconfig.intelephense.setup { on_attach = on_attach, capabilities = capabilities }
+lspconfig.sqlls.setup { on_attach = on_attach, capabilities = capabilities }
+lspconfig.bashls.setup { on_attach = on_attach, capabilities = capabilities }
+lspconfig.ltex.setup { on_attach = on_attach, capabilities = capabilities }
+lspconfig.texlab.setup { on_attach = on_attach, capabilities = capabilities }
+lspconfig.marksman.setup { on_attach = on_attach, capabilities = capabilities }
 
 lspconfig.jdtls.setup {
     vmargs = {
