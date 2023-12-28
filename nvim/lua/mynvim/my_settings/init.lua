@@ -8,24 +8,23 @@
 -- Un-comment if you plan to use a theme besides dracula that
 -- has specific neovim/tresitter features
 
- --require('onedark').setup{
-     --style = 'darker',
-     --transparent = true,
-     --term_colors = true,
-     --code_style = {
-         --functions = 'none',
-         --keywords = 'italic',
-         --comments = 'bold',
-         --strings = 'bold',
-     --},
- 
- --}
+require('onedark').setup{
+     style = 'cool',
+     transparent = true,
+     term_colors = true,
+     code_style = {
+         functions = 'none',
+         keywords = 'italic',
+         comments = 'bold',
+         strings = 'bold',
+    },
+}
 
 
 vim.api.nvim_exec(
 [[
-    colorscheme dracula
+    colorscheme onedark
 ]],
 false)
 
- --require('onedark').load()
+require('onedark').load()
