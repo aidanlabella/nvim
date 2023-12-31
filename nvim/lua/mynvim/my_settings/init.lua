@@ -9,7 +9,7 @@
 -- has specific neovim/tresitter features
 
 require('onedark').setup{
-     style = 'cool',
+     style = 'deep',
      transparent = true,
      term_colors = true,
      code_style = {
