@@ -15,10 +15,9 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     -- Colorschemes
     'navarasu/onedark.nvim',
-    'dracula/vim',
-    --{'Mofiqul/dracula.nvim',
-        --as = 'dracula',
-    --}
+    -- 'dracula/vim',
+    'Mofiqul/dracula.nvim',
+    
     -- Using Packer
 
     'mg979/vim-visual-multi',
