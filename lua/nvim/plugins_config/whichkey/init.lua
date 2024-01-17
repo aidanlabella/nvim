@@ -136,14 +136,11 @@ local mappings = {
     },
     l = {
         name = "+LSP",
-        a = {":CodeActionMenu<CR>", "Code Action Menu"},
-        d = {"<cmd>Telescope lsp_document_diagnostics<cr>", "Document Diagnostics"},
-        D = {"<cmd>Telescope lsp_workspace_diagnostics<cr>", "Workspace Diagnostics"},
-        f = {"<cmd>LspFormatting<cr>", "Format"},
+        a = {"<cmd>Lspsaga code_action<CR>", "Code Action Menu"},
+        h = {"<cmd>Lspsaga hover_doc<CR>", "Hover Documentation"},
+        o = {"<cmd>Lspsaga outline<CR>", "Outline"},
+        d = {"<cmd>Lspsaga show_line_diagnostics<CR>", "Line Diagnostics"},
         i = {"<cmd>LspInfo<cr>", "Info"},
-        q = {"<cmd>Telescope quickfix<cr>", "Quickfix"},
-        t = {"<cmd>LspTypeDefinition<cr>", "Type Definition"},
-        x = {"<cmd>cclose<cr>", "Close Quickfix"},
         s = {"<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols"},
         S = {"<cmd>Telescope lsp_workspace_symbols<cr>", "Workspace Symbols"}
     },

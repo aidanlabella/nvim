@@ -2,6 +2,8 @@ local mod_prefix = 'mynvim/plugins-config/lsp/'
 
 require("mason").setup()
 require("mason-lspconfig").setup()
+require("lspsaga").setup({lightbulb = {enable = false}})
+
 local lspconfig = require('lspconfig')
 local navic = require("nvim-navic")
 
@@ -61,5 +63,23 @@ lspconfig.jdtls.setup {
     on_attach = on_attach,
 }
 
--- Register a handler that will be called for all installed servers.
--- Alternatively, you may also register handlers on specific server instances instead (see example below).
+lightbulb_config = {
+    sign = {
+        enabled = false
+    },
+    float = {
+        enabled = true
+    },
+    status_text = {
+        enabled = false
+    },
+    virtual_text = {
+        enabled = false
+    },
+    line = {
+        enabled = false
+    },
+    autocmd = { enabled = true },
+}
+
+require("nvim-lightbulb").setup(lightbulb_config)

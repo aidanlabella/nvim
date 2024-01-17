@@ -25,7 +25,6 @@ require("lazy").setup({
     'prabirshrestha/async.vim',
     'ryanoasis/vim-devicons',
     'nvim-tree/nvim-web-devicons',
-    'majutsushi/tagbar',
     'norcalli/nvim-colorizer.lua',
     'junegunn/gv.vim',
     'machakann/vim-sandwich',
@@ -56,7 +55,7 @@ require("lazy").setup({
 
     { 'hoob3rt/lualine.nvim', dependencies = {'nvim-tree/nvim-web-devicons', opt = true} },
     'folke/which-key.nvim',
-    { 'weilbith/nvim-code-action-menu', cmd = 'CodeActionMenu', },
+    'nvimdev/lspsaga.nvim',
     'famiu/bufdelete.nvim',
     { 'lewis6991/gitsigns.nvim', dependencies = { 'nvim-lua/plenary.nvim' } },
     'folke/lsp-colors.nvim',
@@ -90,7 +89,6 @@ require("lazy").setup({
     },
 
     {"ellisonleao/glow.nvim"},
-    'dkarter/bullets.vim',
     'yamatsum/nvim-cursorline',
     'ldelossa/litee.nvim',
     'ldelossa/litee-calltree.nvim',
