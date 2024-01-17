@@ -1,6 +1,5 @@
-# myneovim
-My neovim configuration tree
-
+# NVIM Configuration
+@aidanlabella's neovim config
 
 ## Prerequisites 
 [Neovim >=0.8.0](https://neovim.io/)<br/>
