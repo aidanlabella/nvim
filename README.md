@@ -15,17 +15,12 @@ Installtion for Windows 10/11 is possible under the Windows Subsystem for Linux 
 ```
 $ sudo ln -sf ~/myneovim/nvim ~/.config/nvim
 ```
-3. If you haven't yet already, install Packer (this is the plugin manager)
-```
-$ ./myneovim/install_scripts/packer.sh
-```
-4. Open Neovim and install all the plugins (there will be alot of errors on the first launch, this is normal)
+3. Open Neovim and install all the plugins (there will be alot of errors on the first launch, this is normal)
 ```
 $ nvim
-:PackerInstall
-:PackerCompile
 ```
-5. To change the color scheme, open the file `~/.config/nvim/lua/plugins/init.lua` and change the line `colorscheme <colorscheme>` in the config function under `use 'dracula/vim'` to that of your choice. If your scheme is a plugin, then change the `dracula/vim` as such. If not, it does not need to be modified.
+4. To change the color scheme, open the file `~/.config/nvim/lua/plugins/init.lua` and change the line `colorscheme <colorscheme>` in the config function under `use 'dracula/vim'` to that of your choice. If your scheme is a plugin, then change the `dracula/vim` as such. If not, it does not need to be modified.
 
-
-
+## Misc
+Currently, the latest working version of JDTLS is 
+jdtls@1.12.0-202206011637
