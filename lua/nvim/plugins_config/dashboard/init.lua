@@ -92,6 +92,14 @@ db = {
                 keymap = 'SPC g v',
                 action = 'GV'
             },
+            {
+                icon = '󰩈 ',
+                desc = 'Exit',
+                key = '7',
+                desc_hl = '@error',
+                keymap = 'SPC q Q',
+                action = 'q!'
+            },
         },
         footer = {
             '',
