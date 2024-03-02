@@ -29,13 +29,28 @@ function M.setup(opts)
     ]],
     false)
 
-    vim.cmd('colorscheme ' .. opts.colorscheme)
 
     if opts.autoindent then
         vim.cmd('set autoindent')
     end
 
     require('nvim.code_format.' .. opts.formatting)
+
+    if opts.colorscheme == 'onedark' then
+        require('onedark').setup{
+             style = 'deep',
+             transparent = true,
+             term_colors = true,
+             code_style = {
+                 functions = 'none',
+                 keywords = 'italic',
+                 comments = 'bold',
+                 strings = 'bold',
+            },
+        }
+    end
+
+    vim.cmd('colorscheme ' .. opts.colorscheme)
 
 end
 
