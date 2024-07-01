@@ -16,18 +16,25 @@ require("lazy").setup({
     -- Colorschemes
     'navarasu/onedark.nvim',
     -- 'dracula/vim',
+
     'Mofiqul/dracula.nvim',
-    
+    {
+        "kylechui/nvim-surround",
+        version = "*", -- Use for stability; omit to use `main` branch for the latest features
+        event = "VeryLazy",
+        config = function()
+            require("nvim-surround").setup({
+                -- Configuration here, or leave empty to use defaults
+            })
+        end
+    },
     'mg979/vim-visual-multi',
     { 'numToStr/Comment.nvim', lazy = false },
-    { 'TimUntersberger/neogit', dependencies = 'nvim-lua/plenary.nvim' },
     'tpope/vim-fugitive',
-    'prabirshrestha/async.vim',
     'ryanoasis/vim-devicons',
     'nvim-tree/nvim-web-devicons',
     'norcalli/nvim-colorizer.lua',
     'junegunn/gv.vim',
-    'machakann/vim-sandwich',
     'lervag/vimtex',
     { 'glepnir/dashboard-nvim', event = 'VimEnter', dependencies = {'nvim-tree/nvim-web-devicons'} },
     'karb94/neoscroll.nvim',
@@ -62,14 +69,9 @@ require("lazy").setup({
     'windwp/nvim-autopairs',
 
     { "folke/trouble.nvim", dependencies = "nvim-tree/nvim-web-devicons" },
-
     { "danymat/neogen", dependencies = "nvim-treesitter/nvim-treesitter" },
-
     'onsails/lspkind-nvim',
     'ray-x/lsp_signature.nvim',
-    --
-    -- Too ugly
-    'tpope/vim-surround',
     'lukas-reineke/indent-blankline.nvim',
     'chrisbra/csv.vim',
 
