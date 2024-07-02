@@ -51,7 +51,6 @@ require("lazy").setup({
     --Telescope
     'nvim-telescope/telescope.nvim',
     'nvim-telescope/telescope-project.nvim',
-    'kosayoda/nvim-lightbulb',
 
     --Completion
     'hrsh7th/cmp-nvim-lsp',
@@ -95,7 +94,6 @@ require("lazy").setup({
     'ldelossa/litee.nvim',
     'ldelossa/litee-calltree.nvim',
     {'akinsho/git-conflict.nvim', version = "*", config = true},
-    {'j-hui/fidget.nvim', tag = 'legacy'},
 
     'tveskag/nvim-blame-line',
     'xiyaowong/transparent.nvim',

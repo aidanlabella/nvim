@@ -62,24 +62,3 @@ lspconfig.jdtls.setup {
     },
     on_attach = on_attach,
 }
-
-lightbulb_config = {
-    sign = {
-        enabled = false
-    },
-    float = {
-        enabled = true
-    },
-    status_text = {
-        enabled = false
-    },
-    virtual_text = {
-        enabled = false
-    },
-    line = {
-        enabled = false
-    },
-    autocmd = { enabled = true },
-}
-
-require("nvim-lightbulb").setup(lightbulb_config)

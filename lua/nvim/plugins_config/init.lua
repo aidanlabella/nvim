@@ -18,7 +18,6 @@ require('lsp_signature').setup()
 require('gitsigns').setup()
 require('neogen').setup()
 require('git-conflict').setup()
-require("fidget").setup()
 require("glow").setup()
 
 -- Plugins with lua initailization with custom options
