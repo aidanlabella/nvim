@@ -1,6 +1,6 @@
 require("barbecue").setup({
     theme = {
-        normal = {bg = "#44475A"},
+        --normal = {bg = "#56B6C2"},
     },
     symbols = {
         modified = "●",

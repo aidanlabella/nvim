@@ -5,12 +5,6 @@ require("mason-lspconfig").setup()
 require("lspsaga").setup({lightbulb = {enable = false}})
 
 local lspconfig = require('lspconfig')
-local navic = require("nvim-navic")
-
-local function on_attach(client, bufnr)
-    navic.attach(client, bufnr)
-end
-
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- Configure LSP servers here

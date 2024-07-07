@@ -155,8 +155,8 @@ local mappings = {
     },
     t = {
         name = "+Tabs/Buffers",
-        h = {"<cmd>lua print(\"now: <SPC> b p\")<cr>", "(Deprecated)"},
-        l = {"<cmd>lua print(\"now: <SPC> b n\")<cr>", "(Deprecated)"},
+        h = {"<cmd>BufferPrevious<cr>", "Prev. Tab"},
+        l = {"<cmd>BufferNext<cr>", "Next Tab"},
     },
     q = {
         name = "+Leave Neovim",

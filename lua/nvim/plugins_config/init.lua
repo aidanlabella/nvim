@@ -31,13 +31,11 @@ require(mod_prefix .. 'whichkey')
 require(mod_prefix .. 'trouble_diag')
 require(mod_prefix .. 'indent_line')
 require(mod_prefix .. 'cursorline')
-require(mod_prefix .. 'litee')
+require(mod_prefix .. 'tabline')
 --For NVIM 0.8
-require(mod_prefix .. 'winbar')
 require(mod_prefix .. 'splash')
 
 -- Plugins using vimscript
 require(mod_prefix .. 'code-minimap')
 require(mod_prefix .. 'ranger')
---require(mod_prefix .. 'tabline')
 require(mod_prefix .. 'latex')
