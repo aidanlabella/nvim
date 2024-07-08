@@ -1,19 +1,50 @@
-vim.g.barbar_auto_setup = true
---require'barbar'.setup {
-  --icons = {
-    ---- Configure the base icons on the bufferline.
-    ---- Valid options to display the buffer index and -number are `true`, 'superscript' and 'subscript'
-    --buffer_index = true,
-    ---- Enables / disables diagnostic symbols
-    --gitsigns = {
-      --added = {enabled = true, icon = '+'},
-      --changed = {enabled = true, icon = '~'},
-      --deleted = {enabled = true, icon = '-'},
-    --},
-    --separator = {left = '', right = ''},
+local theme = {
+  fill = 'TabLineFill',
+  -- Also you can do this: fill = { fg='#f2e9de', bg='#907aa9', style='italic' }
+  head = 'TabLine',
+  current_tab = 'Substitute',
+  tab = 'TabLine',
+  win = 'TabLine',
+  tail = 'Substitute',
+}
 
-    ---- If true, add an additional separator at the end of the buffer list
-    --separator_at_end = true,
-    ---- Configure the icons on the bufferline when modified or pinned.
-  --},
---}
+require('tabby').setup({
+  line = function(line)
+    return {
+      {
+        { '  ', hl = theme.head },
+        line.sep('', theme.head, theme.fill),
+      },
+      line.tabs().foreach(function(tab)
+        local hl = tab.is_current() and theme.current_tab or theme.tab
+        return {
+          line.sep('', hl, theme.fill),
+          tab.is_current() and '' or '󰆣',
+          tab.number(),
+          tab.name(),
+          tab.close_btn(''),
+          line.sep('', hl, theme.fill),
+          hl = hl,
+          margin = ' ',
+        }
+      end),
+      line.spacer(),
+      line.wins_in_tab(line.api.get_current_tab()).foreach(function(win)
+        return {
+          line.sep('', theme.win, theme.fill),
+          win.is_current() and '' or '',
+          win.buf_name(),
+          line.sep('', theme.win, theme.fill),
+          hl = theme.win,
+          margin = ' ',
+        }
+      end),
+      {
+        line.sep('', theme.tail, theme.fill),
+        { '  ', hl = theme.tail },
+      },
+      hl = theme.fill,
+    }
+  end,
+  -- option = {}, -- setup modules' option,
+})

@@ -64,22 +64,9 @@ require('lazy').setup({
     { 'akinsho/git-conflict.nvim', version = '*', config = true},
     { 'stevearc/oil.nvim', opts = {}, dependencies = { 'nvim-tree/nvim-web-devicons' } },
     { 'L3MON4D3/LuaSnip', version = 'v2.*', build = 'make install_jsregexp' },
+    { 'nanozuki/tabby.nvim', dependencies = 'nvim-tree/nvim-web-devicons', },
 
     -- Inline configuration
-    { 'romgrk/barbar.nvim',
-        dependencies = {
-          'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
-          'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
-        },
-        init = function() vim.g.barbar_auto_setup = false end,
-        opts = {
-          -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
-          -- animation = true,
-          -- insert_at_start = true,
-          -- …etc.
-        },
-        version = '^1.0.0', -- optional: only update when a new 1.x version is released
-    },
     { 'kylechui/nvim-surround',
         version = '*', -- Use for stability; omit to use `main` branch for the latest features
         event = 'VeryLazy',

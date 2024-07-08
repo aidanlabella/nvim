@@ -155,8 +155,9 @@ local mappings = {
     },
     t = {
         name = "+Tabs/Buffers",
-        h = {"<cmd>BufferPrevious<cr>", "Prev. Tab"},
-        l = {"<cmd>BufferNext<cr>", "Next Tab"},
+        h = {"<cmd>tabprevious<cr>", "Prev. Tab"},
+        l = {"<cmd>tabnext<cr>", "Next Tab"},
+        n = {"<cmd>tabnew<cr>", "New Tab"},
     },
     q = {
         name = "+Leave Neovim",

@@ -13,7 +13,7 @@ local vers = geten:read("*line")
 geten:close()
 
 local get_title = function() 
-    return ' ' .. vers
+    return vers
 end
 
 local get_host = function()
@@ -89,7 +89,6 @@ local config = {
                 },
                 'diagnostics'},
     lualine_c = {'branch', 'filename'},
-    lualine_x = {get_host},
     lualine_y = {word_count, 'fileformat', 'filetype'},
     lualine_z = {'location', 'progress', modes}
   },
