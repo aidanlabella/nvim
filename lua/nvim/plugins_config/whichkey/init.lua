@@ -55,6 +55,7 @@ vim.api.nvim_set_keymap("n", "<Leader>cg", ":lua require('neogen').generate()<CR
 vim.api.nvim_set_keymap("n", "<Leader>w", "<C-w>", { silent = false })
 
 local mappings = {
+    E = {":Oil<CR>", "Files"},
     p = {
         name = "+Projects",
         p = {":lua require'telescope'.extensions.project.project{}<CR>", "Switch Projects"},
