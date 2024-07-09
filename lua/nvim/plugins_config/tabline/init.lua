@@ -1,7 +1,7 @@
 local theme = {
   fill = 'TabLineFill',
   -- Also you can do this: fill = { fg='#f2e9de', bg='#907aa9', style='italic' }
-  head = 'TabLine',
+  head = 'WildMenu',
   current_tab = 'Substitute',
   tab = 'TabLine',
   win = 'TabLine',
@@ -12,8 +12,8 @@ require('tabby').setup({
   line = function(line)
     return {
       {
-        { '  ', hl = theme.head },
-        line.sep('', theme.head, theme.fill),
+        { ' tabs ', hl = theme.head },
+        line.sep('', theme.head, theme.head),
       },
       line.tabs().foreach(function(tab)
         local hl = tab.is_current() and theme.current_tab or theme.tab

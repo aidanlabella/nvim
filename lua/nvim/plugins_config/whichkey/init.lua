@@ -56,6 +56,7 @@ vim.api.nvim_set_keymap("n", "<Leader>w", "<C-w>", { silent = false })
 
 local mappings = {
     E = {":Oil<CR>", "Files"},
+    V = {":vnew<CR>", "Open VSplit"},
     p = {
         name = "+Projects",
         p = {":lua require'telescope'.extensions.project.project{}<CR>", "Switch Projects"},
