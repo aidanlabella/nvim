@@ -40,7 +40,7 @@ require('tabby').setup({
         }
       end),
       {
-        line.sep('', theme.tail, theme.fill),
+        line.sep('', theme.tail, theme.fill),
         { '  ', hl = theme.tail },
       },
       hl = theme.fill,
