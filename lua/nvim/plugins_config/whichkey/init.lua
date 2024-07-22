@@ -161,6 +161,8 @@ local mappings = {
         h = {"<cmd>tabprevious<cr>", "Prev. Tab"},
         l = {"<cmd>tabnext<cr>", "Next Tab"},
         n = {"<cmd>tabnew<cr>", "New Tab"},
+        k = {"<cmd>q<cr>", "Kill Tab"},
+        K = {"<cmd>q!<cr>", "Kill Tab (forcibly)"},
     },
     q = {
         name = "+Leave Neovim",
