@@ -52,6 +52,7 @@ require('lazy').setup({
     'onsails/lspkind-nvim',
     'ray-x/lsp_signature.nvim',
     'lukas-reineke/indent-blankline.nvim',
+    'aidanlabella/floss.vim',
 
     -- Extra opts required
     { 'numToStr/Comment.nvim', lazy = false },

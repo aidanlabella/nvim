@@ -57,13 +57,14 @@ vim.api.nvim_set_keymap("n", "<Leader>w", "<C-w>", { silent = false })
 local mappings = {
     E = {":Oil<CR>", "Files"},
     V = {":vnew<CR>", "Open VSplit"},
+    F = {":tabnew<CR>:Oil<CR>", "Open Tab (files)"},
     p = {
         name = "+Projects",
         p = {":lua require'telescope'.extensions.project.project{}<CR>", "Switch Projects"},
     },
     b = {
         name = "+Buffers",
-        b = {"<cmd>Telescope buffers<cr>", "Buffer List"},
+        b = {"<cmd>SelBInt<cr>", "Buffer List"},
         d = {":Bdelete <CR>", "Close Current Buffer"},
         n = {":bNext <CR>", "Next Buffer"},
         p = {":bprevious <CR>", "Previous Buffer"},
@@ -86,7 +87,7 @@ local mappings = {
     },
     f = {
         name = "+Files",
-        t = {"<cmd>NvimTreeToggle<cr>", "File Tree"},
+        t = {":vnew<CR>:Oil<CR>", "File Split (Oil)"},
         f = {"<cmd>Telescope find_files<cr>", "Fuzzy Finder"},
         r = {"<cmd>Telescope oldfiles<cr>", "Recent Files"},
         a = {"<cmd>Telescope grep_string<cr>", "Find Words (vimgrep)"},
