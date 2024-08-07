@@ -38,7 +38,7 @@ function M.setup(opts)
 
     if opts.colorscheme == 'onedark' then
         require('onedark').setup{
-             style = 'darker',
+             style = 'cool',
              transparent = true,
              term_colors = true,
              code_style = {

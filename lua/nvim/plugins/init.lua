@@ -31,15 +31,8 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     'nvim-lua/popup.nvim',
     'rafamadriz/friendly-snippets',
-    'hrsh7th/cmp-path',
-    'saadparwaiz1/cmp_luasnip',
     'nvim-telescope/telescope.nvim',
     'nvim-telescope/telescope-project.nvim',
-    'hrsh7th/cmp-nvim-lsp',
-    'hrsh7th/cmp-buffer',
-    'hrsh7th/cmp-path',
-    'hrsh7th/cmp-cmdline',
-    'hrsh7th/nvim-cmp',
     'folke/which-key.nvim',
     'nvimdev/lspsaga.nvim',
     'famiu/bufdelete.nvim',
@@ -66,6 +59,7 @@ require('lazy').setup({
     { 'stevearc/oil.nvim', opts = {}, dependencies = { 'nvim-tree/nvim-web-devicons' } },
     { 'L3MON4D3/LuaSnip', version = 'v2.*', build = 'make install_jsregexp' },
     { 'nanozuki/tabby.nvim', dependencies = 'nvim-tree/nvim-web-devicons', },
+    { 'ms-jpq/coq_nvim', init = function() vim.g.coq_settings = { auto_start = 'shut-up' } end, },
 
     -- Inline configuration
     { 'kylechui/nvim-surround',
