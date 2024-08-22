@@ -64,7 +64,7 @@ local mappings = {
     },
     b = {
         name = "+Buffers",
-        b = {"<cmd>SelBInt<cr>", "Buffer List"},
+        b = {"<cmd>Telescope buffers<cr>", "Buffer List"},
         d = {":Bdelete <CR>", "Close Current Buffer"},
         n = {":bNext <CR>", "Next Buffer"},
         p = {":bprevious <CR>", "Previous Buffer"},
