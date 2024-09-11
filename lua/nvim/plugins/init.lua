@@ -60,6 +60,7 @@ require('lazy').setup({
     { 'L3MON4D3/LuaSnip', version = 'v2.*', build = 'make install_jsregexp' },
     { 'nanozuki/tabby.nvim', dependencies = 'nvim-tree/nvim-web-devicons', },
     { 'ms-jpq/coq_nvim', init = function() vim.g.coq_settings = { auto_start = 'shut-up' } end, },
+    { 'echasnovski/mini.icons', init = function() require('mini.icons').setup() end, },
 
     -- Inline configuration
     { 'kylechui/nvim-surround',

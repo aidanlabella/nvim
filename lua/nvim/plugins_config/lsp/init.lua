@@ -9,7 +9,7 @@ local coq = require('coq')
 
 -- Configure LSP servers here
 -- ECMA Script
-lspconfig.tsserver.setup {coq.lsp_ensure_capabilities({on_attach = on_attach, capabilities = capabilities})}
+lspconfig.ts_ls.setup {coq.lsp_ensure_capabilities({on_attach = on_attach, capabilities = capabilities})}
 
 -- C/C++
 lspconfig.clangd.setup {coq.lsp_ensure_capabilities({on_attach = on_attach, capabilities = capabilities})}
