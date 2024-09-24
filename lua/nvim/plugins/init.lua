@@ -28,7 +28,6 @@ require('lazy').setup({
     'nvim-lua/plenary.nvim',
     'williamboman/mason-lspconfig.nvim',
     'neovim/nvim-lspconfig',
-    'nvim-treesitter/nvim-treesitter',
     'nvim-lua/popup.nvim',
     'rafamadriz/friendly-snippets',
     'folke/which-key.nvim',
@@ -46,6 +45,7 @@ require('lazy').setup({
     'aidanlabella/floss.vim',
 
     -- Extra opts required
+    { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
     { 'nvim-telescope/telescope.nvim', tag = '0.1.8', dependencies = {'nvim-lua/plenary.nvim'}},
     { 'numToStr/Comment.nvim', lazy = false },
     { 'glepnir/dashboard-nvim', event = 'VimEnter', dependencies = {'nvim-tree/nvim-web-devicons'} },
