@@ -34,6 +34,8 @@ require("which-key").setup{
     show_help = true -- show help message on the command line when the popup is visible
 }
 
+local tele = require('telescope.builtin')
+
 local opts = {
     mode = "n", -- NORMAL mode
     prefix = "<leader>",
@@ -42,7 +44,6 @@ local opts = {
     noremap = true, -- use `noremap` when creating keymaps
     nowait = false -- use `nowait` when creating keymaps
 }
-
 
 -- Set leader
 vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true})
@@ -200,7 +201,7 @@ local mappings =
     { "<leader>dr", "<cmd>TroubleRefresh<cr>", desc = "Refresh", nowait = false, remap = false },
     { "<leader>f", group = "Files", nowait = false, remap = false },
     { "<leader>fa", "<cmd>Telescope grep_string<cr>", desc = "Find Words (vimgrep)", nowait = false, remap = false },
-    { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Fuzzy Finder", nowait = false, remap = false },
+    { "<leader>ff", tele.find_files, desc = "Fuzzy Finder", nowait = false, remap = false },
     { "<leader>fo", "<cmd>Oil<cr>", desc = "Oil", nowait = false, remap = false },
     { "<leader>fr", "<cmd>Telescope oldfiles<cr>", desc = "Recent Files", nowait = false, remap = false },
     { "<leader>ft", ":vnew<CR>:Oil<CR>", desc = "File Split (Oil)", nowait = false, remap = false },
@@ -238,8 +239,6 @@ local mappings =
     { "<leader>n", group = "Command Shortcuts", nowait = false, remap = false },
     { "<leader>nh", "<cmd>Telescope command_history<cr>", desc = "Command History", nowait = false, remap = false },
     { "<leader>nn", "<cmd>Telescope buffer<cr>", desc = "Open New Buffer", nowait = false, remap = false },
-    { "<leader>p", group = "Projects", nowait = false, remap = false },
-    { "<leader>pp", ":lua require'telescope'.extensions.project.project{}<CR>", desc = "Switch Projects", nowait = false, remap = false },
     { "<leader>q", group = "Leave Neovim", nowait = false, remap = false },
     { "<leader>qQ", ":qa! <CR>", desc = "Force quit everything!", nowait = false, remap = false },
     { "<leader>qX", ":xa <CR>", desc = "Save and quit all buffers", nowait = false, remap = false },

@@ -31,8 +31,6 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     'nvim-lua/popup.nvim',
     'rafamadriz/friendly-snippets',
-    'nvim-telescope/telescope.nvim',
-    'nvim-telescope/telescope-project.nvim',
     'folke/which-key.nvim',
     'nvimdev/lspsaga.nvim',
     'famiu/bufdelete.nvim',
@@ -48,6 +46,7 @@ require('lazy').setup({
     'aidanlabella/floss.vim',
 
     -- Extra opts required
+    { 'nvim-telescope/telescope.nvim', tag = '0.1.8', dependencies = {'nvim-lua/plenary.nvim'}},
     { 'numToStr/Comment.nvim', lazy = false },
     { 'glepnir/dashboard-nvim', event = 'VimEnter', dependencies = {'nvim-tree/nvim-web-devicons'} },
     { 'williamboman/mason.nvim', run = ':MasonUpdate' },
