@@ -29,7 +29,6 @@ require('lazy').setup({
     'williamboman/mason-lspconfig.nvim',
     'neovim/nvim-lspconfig',
     'nvim-lua/popup.nvim',
-    'rafamadriz/friendly-snippets',
     'folke/which-key.nvim',
     'nvimdev/lspsaga.nvim',
     'famiu/bufdelete.nvim',
@@ -42,7 +41,13 @@ require('lazy').setup({
     'onsails/lspkind-nvim',
     'ray-x/lsp_signature.nvim',
     'lukas-reineke/indent-blankline.nvim',
-    'aidanlabella/floss.vim',
+    'hrsh7th/nvim-cmp',
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+    'hrsh7th/cmp-cmdline',
+    'saadparwaiz1/cmp_luasnip',
+    'rafamadriz/friendly-snippets',
 
     -- Extra opts required
     { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
@@ -58,7 +63,6 @@ require('lazy').setup({
     { 'stevearc/oil.nvim', opts = {}, dependencies = { 'nvim-tree/nvim-web-devicons' } },
     { 'L3MON4D3/LuaSnip', version = 'v2.*', build = 'make install_jsregexp' },
     { 'nanozuki/tabby.nvim', dependencies = 'nvim-tree/nvim-web-devicons', },
-    { 'ms-jpq/coq_nvim', init = function() vim.g.coq_settings = { auto_start = 'shut-up' } end, },
     { 'echasnovski/mini.icons', init = function() require('mini.icons').setup() end, },
 
     -- Inline configuration
