@@ -23,7 +23,6 @@ require('lazy').setup({
     'junegunn/gv.vim',
     'lervag/vimtex',
     'Mofiqul/dracula.nvim',
-    'karb94/neoscroll.nvim',
     'sindrets/diffview.nvim',
     'nvim-lua/plenary.nvim',
     'williamboman/mason-lspconfig.nvim',
@@ -40,7 +39,8 @@ require('lazy').setup({
     'ellisonleao/glow.nvim',
     'onsails/lspkind-nvim',
     'ray-x/lsp_signature.nvim',
-    'lukas-reineke/indent-blankline.nvim',
+    --'lukas-reineke/indent-blankline.nvim',
+    'karb94/neoscroll.nvim',
     'hrsh7th/nvim-cmp',
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-buffer',
@@ -107,5 +107,26 @@ require('lazy').setup({
             'RainbowDelimQuoted',
             'RainbowMultiDelim'
         }
+    },
+
+    -- Snacks plugin
+    {
+        "folke/snacks.nvim",
+        priority = 1000,
+        lazy = false,
+        opts = {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+            animate = { enabled = true },
+            bigfile = { enabled = true },
+            indent = { enabled = true, only_scope = true, only_current = true },
+            input = { enabled = true },
+            notifier = { enabled = true },
+            quickfile = { enabled = true },
+            scratch = { enabled = true },
+            statuscolumn = { enabled = true },
+            words = { enabled = true },
+        },
     }
 })

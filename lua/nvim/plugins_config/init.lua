@@ -29,7 +29,7 @@ require(mod_prefix .. 'statusline')
 require(mod_prefix .. 'treesitter')
 require(mod_prefix .. 'whichkey')
 require(mod_prefix .. 'trouble_diag')
-require(mod_prefix .. 'indent_line')
+--require(mod_prefix .. 'indent_line')
 require(mod_prefix .. 'cursorline')
 require(mod_prefix .. 'tabline')
 --For NVIM 0.8
