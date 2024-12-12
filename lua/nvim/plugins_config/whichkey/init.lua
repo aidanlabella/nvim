@@ -215,6 +215,8 @@ local mappings =
     { "<leader>gp", "<cmd>Git push<cr>", desc = "Push", nowait = false, remap = false },
     { "<leader>gr", "<cmd>ResetHunk<cr>", desc = "Reset Hunk", nowait = false, remap = false },
     { "<leader>gs", "<cmd>StageHunk<cr>", desc = "Stage Hunk", nowait = false, remap = false },
+    { "<leader>gS", "<cmd>Git stash<cr>", desc = "Stash", nowait = false, remap = false },
+    { "<leader>go", "<cmd>Git stash pop<cr>", desc = "Stash Pop", nowait = false, remap = false },
     { "<leader>gu", "<cmd>UndoStageHunk<cr>", desc = "Undo Stage Hunk", nowait = false, remap = false },
     { "<leader>gv", "<cmd>GV<cr>", desc = "Verbose Log", nowait = false, remap = false },
     { "<leader>gw", "<cmd>Git blame<cr>", desc = "Whodunnit?", nowait = false, remap = false },

@@ -28,7 +28,7 @@ lspconfig.pylsp.setup {
                 jedi_completion = {
                     include_params = true,
                 },
-                pylint = { enabled = false }, -- Disable pylint
+                pylint = { enabled = true }, -- Disable pylint
                 pyflakes = { enabled = false }, -- Disable pyflakes
                 pycodestyle = { enabled = false }, -- Disable pycodestyle
             },
