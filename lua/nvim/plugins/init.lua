@@ -39,7 +39,6 @@ require('lazy').setup({
     'ellisonleao/glow.nvim',
     'onsails/lspkind-nvim',
     'ray-x/lsp_signature.nvim',
-    --'lukas-reineke/indent-blankline.nvim',
     'karb94/neoscroll.nvim',
     'hrsh7th/nvim-cmp',
     'hrsh7th/cmp-nvim-lsp',
@@ -64,6 +63,7 @@ require('lazy').setup({
     { 'L3MON4D3/LuaSnip', version = 'v2.*', build = 'make install_jsregexp' },
     { 'nanozuki/tabby.nvim', dependencies = 'nvim-tree/nvim-web-devicons', },
     { 'echasnovski/mini.icons', init = function() require('mini.icons').setup() end, },
+    { 'Bekaboo/dropbar.nvim', dependencies = { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' } },
 
     -- Inline configuration
     { 'kylechui/nvim-surround',

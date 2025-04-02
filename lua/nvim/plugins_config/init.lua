@@ -34,6 +34,7 @@ require(mod_prefix .. 'cursorline')
 require(mod_prefix .. 'tabline')
 --For NVIM 0.8
 require(mod_prefix .. 'splash')
+require(mod_prefix .. 'dropbar')
 
 -- Plugins using vimscript
 require(mod_prefix .. 'code-minimap')

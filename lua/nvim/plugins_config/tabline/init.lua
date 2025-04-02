@@ -3,7 +3,7 @@ local theme = {
   -- Also you can do this: fill = { fg='#f2e9de', bg='#907aa9', style='italic' }
   head = 'Substitute',
   current_tab = 'WildMenu',
-  tab = 'PmenuThumb',
+  tab = 'TabLineSel',
   win = 'TabLine',
   tail = 'Substitute',
 }

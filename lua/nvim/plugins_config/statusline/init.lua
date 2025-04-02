@@ -92,6 +92,8 @@ local config = {
     lualine_y = {word_count, 'fileformat', 'filetype'},
     lualine_z = {'location', 'progress', modes}
   },
+  winbar = {},
+  inactive_winbar = {},
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},

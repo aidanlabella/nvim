@@ -2,7 +2,7 @@ local mod_prefix = 'mynvim/plugins-config/lsp/'
 
 require("mason").setup()
 require("mason-lspconfig").setup()
-require("lspsaga").setup({lightbulb = {enable = false}})
+require("lspsaga").setup({lightbulb = {enable = false}, symbol_in_winbar = {enable = false}})
 
 local lspconfig = require('lspconfig')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -28,7 +28,7 @@ lspconfig.pylsp.setup {
                 jedi_completion = {
                     include_params = true,
                 },
-                pylint = { enabled = true }, -- Disable pylint
+                pylint = { enabled = false }, -- Disable pylint
                 pyflakes = { enabled = false }, -- Disable pyflakes
                 pycodestyle = { enabled = false }, -- Disable pycodestyle
             },

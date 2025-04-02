@@ -28,6 +28,7 @@ require("which-key").setup{
 }
 
 local tele = require('telescope.builtin')
+local dropbar_api = require('dropbar.api')
 
 local opts = {
     mode = "n", -- NORMAL mode
@@ -47,6 +48,10 @@ vim.api.nvim_set_keymap("v", "<Leader>u", ":echo 'spc-cu is deprecated! use spc-
 vim.api.nvim_set_keymap("n", "<Leader>cu", ":echo 'spc-cu is deprecated! use spc-cc instead'<CR>", { silent = false })
 vim.api.nvim_set_keymap("n", "<Leader>cg", ":lua require('neogen').generate()<CR>", { silent = false })
 vim.api.nvim_set_keymap("n", "<Leader>w", "<C-w>", { silent = false })
+
+vim.keymap.set('n', '<Leader>;', dropbar_api.pick, { desc = 'Pick symbols in winbar' })
+vim.keymap.set('n', '[;', dropbar_api.goto_context_start, { desc = 'Go to start of current context' })
+vim.keymap.set('n', '];', dropbar_api.select_next_context, { desc = 'Select next context' })
 
 -- OLD SPEC:
 -- local mappings = {
