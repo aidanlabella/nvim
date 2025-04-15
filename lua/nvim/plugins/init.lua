@@ -40,15 +40,9 @@ require('lazy').setup({
     'onsails/lspkind-nvim',
     'ray-x/lsp_signature.nvim',
     'karb94/neoscroll.nvim',
-    'hrsh7th/nvim-cmp',
-    'hrsh7th/cmp-nvim-lsp',
-    'hrsh7th/cmp-buffer',
-    'hrsh7th/cmp-path',
-    'hrsh7th/cmp-cmdline',
-    'saadparwaiz1/cmp_luasnip',
-    'rafamadriz/friendly-snippets',
 
     -- Extra opts required
+    { 'saghen/blink.cmp', dependencies = { 'rafamadriz/friendly-snippets'} },
     { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
     { 'nvim-telescope/telescope.nvim', tag = '0.1.8', dependencies = {'nvim-lua/plenary.nvim'}},
     { 'numToStr/Comment.nvim', lazy = false },

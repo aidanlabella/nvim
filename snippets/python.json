@@ -1,0 +1,12 @@
+{
+  "Swift DB": {
+    "prefix": ["dbin"],
+    "body": ["from db.interface import SWIFTDBInterface"], 
+    "description": "The SWIFTDBInterface."
+  },
+  "Swift Ser": {
+    "prefix": ["sca"],
+    "body": ["from mwa_data_loader.mwa_data_generator import SerializableMWACapture"], 
+    "description": "The SerializableMWACapture."
+  }
+}
