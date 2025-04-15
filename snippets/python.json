@@ -8,5 +8,19 @@
     "prefix": ["sca"],
     "body": ["from mwa_data_loader.mwa_data_generator import SerializableMWACapture"], 
     "description": "The SerializableMWACapture."
+  },
+  "argparse": {
+    "prefix": ["argp"],
+    "body": [
+        "parser = argparse.ArgumentParser(description=\"${1:description}\")",
+        "parser.add_argument(\"${2:-f}\", \"${3:--flag}\", type=${4:str}, default=\"${5:None}\", dest=\"${6:dest}\")",
+        "args = parser.parse_args()"
+    ],
+    "description": "Argparse -quick"
+  },
+  "argparsearg": {
+    "prefix": ["parg"],
+    "body": ["parser.add_argument(\"${1:-f}\", \"${2:--flag}\", type=${3:str}, default=\"${4:None}\", dest=\"${5:dest}\")"],
+    "description": "Argparse -quick"
   }
 }
