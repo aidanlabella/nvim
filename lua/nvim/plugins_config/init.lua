@@ -6,6 +6,7 @@
 -- Plugin configuration
 
 local mod_prefix = "nvim/plugins_config/"
+vim.hl = vim.highlight
 
 -- Plugins that require a global declaration
 nvimTree = require(mod_prefix .. 'file-tree')

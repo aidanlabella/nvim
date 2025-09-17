@@ -50,7 +50,7 @@ require('lazy').setup({
     { 'williamboman/mason.nvim', run = ':MasonUpdate' },
     { 'hoob3rt/lualine.nvim', dependencies = {'nvim-tree/nvim-web-devicons', opt = true} },
     { 'lewis6991/gitsigns.nvim', dependencies = { 'nvim-lua/plenary.nvim' } },
-    { 'folke/trouble.nvim', dependencies = 'nvim-tree/nvim-web-devicons' },
+    { 'folke/trouble.nvim', opts = {}, cmd = "Trouble", },
     { 'danymat/neogen', dependencies = 'nvim-treesitter/nvim-treesitter' },
     { 'akinsho/git-conflict.nvim', version = '*', config = true},
     { 'stevearc/oil.nvim', opts = {}, dependencies = { 'nvim-tree/nvim-web-devicons' } },

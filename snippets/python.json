@@ -6,7 +6,7 @@
   },
   "Swift Ser": {
     "prefix": ["sca"],
-    "body": ["from mwa_data_loader.mwa_data_generator import SerializableMWACapture"], 
+    "body": ["from loader.mwa_data_generator import SerializableMWACapture"], 
     "description": "The SerializableMWACapture."
   },
   "argparse": {
@@ -22,5 +22,15 @@
     "prefix": ["parg"],
     "body": ["parser.add_argument(\"${1:-f}\", \"${2:--flag}\", type=${3:str}, default=\"${4:None}\", dest=\"${5:dest}\")"],
     "description": "Argparse -quick"
+  },
+  "logger": {
+    "prefix": ["lgg"],
+    "body": ["logging.basicConfig(level=logging.INFO, format=f'[%(asctime)s - %(levelname)s (${1:Module})]: %(message)s')"],
+    "description": "Logging quick"
+  },
+  "Breakpoint": {
+    "prefix": ["brp"],
+    "body": ["breakpoint()"],
+    "description": "breakpoint"
   }
 }
