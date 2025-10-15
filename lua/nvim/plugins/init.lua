@@ -55,9 +55,9 @@ require('lazy').setup({
     { 'akinsho/git-conflict.nvim', version = '*', config = true},
     { 'stevearc/oil.nvim', opts = {}, dependencies = { 'nvim-tree/nvim-web-devicons' } },
     { 'L3MON4D3/LuaSnip', version = 'v2.*', build = 'make install_jsregexp' },
-    { 'nanozuki/tabby.nvim', dependencies = 'nvim-tree/nvim-web-devicons', },
     { 'echasnovski/mini.icons', init = function() require('mini.icons').setup() end, },
     { 'Bekaboo/dropbar.nvim', dependencies = { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' } },
+    { 'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons' },
 
     -- Inline configuration
     { 'kylechui/nvim-surround',
