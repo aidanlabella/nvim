@@ -5,7 +5,7 @@
 -- User Settings
 
 local settings = {
-    colorscheme = 'onedark',
+    colorscheme = 'dracula',
     formatting  = 'academic',
     autoindent = true,
 }
