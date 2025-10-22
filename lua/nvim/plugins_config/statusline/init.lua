@@ -87,9 +87,9 @@ local config = {
     lualine_b = {{'diff',
                  symbols = {added = ' ', modified = ' ', removed = ' '},
                 },
-                'diagnostics'},
+                'diagnostics', 'lsp_status'},
     lualine_c = {'branch', 'filename'},
-    lualine_y = {word_count, 'fileformat', 'filetype'},
+    lualine_y = {word_count, get_host},
     lualine_z = {'location', 'progress', modes}
   },
   winbar = {},
