@@ -57,8 +57,9 @@ require('lazy').setup({
     { 'L3MON4D3/LuaSnip', version = 'v2.*', build = 'make install_jsregexp' },
     { 'echasnovski/mini.icons', init = function() require('mini.icons').setup() end, },
     { 'Bekaboo/dropbar.nvim', dependencies = { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' } },
+    { 'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons' },
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 
-    {'romgrk/barbar.nvim', dependencies = { 'lewis6991/gitsigns.nvim', 'nvim-tree/nvim-web-devicons', }, version = '^1.0.0', },
 
     -- Inline configuration
     { 'kylechui/nvim-surround',
