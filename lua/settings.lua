@@ -5,7 +5,7 @@
 -- User Settings
 
 local settings = {
-    colorscheme = 'onedark',
+    colorscheme = 'tokyonight-moon',
     formatting  = 'academic',
     autoindent = true,
 }
