@@ -1,5 +1,64 @@
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 
+local function ts_configuration()
+  local languages = {
+    "bash",
+    "c",
+    "cpp",
+    "cmake",
+    "css",
+    "diff",
+    "dockerfile",
+    "dot",
+    "elixir",
+    "go",
+    "graphql",
+    "html",
+    "http",
+    "java",
+    "javascript",
+    "json",
+    "julia",
+    "kotlin",
+    "lua",
+    "make",
+    "markdown",
+    "markdown_inline",
+    "php",
+    "python",
+    "query",
+    "regex",
+    "ruby",
+    "rust",
+    "scss",
+    "solidity",
+    "sql",
+    "swift",
+    "toml",
+    "typescript",
+    "vim",
+    "vimdoc",
+    "vue",
+    "yaml",
+    "zig",
+  }
+
+  local treesitter = require("nvim-treesitter")
+
+  treesitter.setup({
+    install_dir = vim.fn.stdpath("data") .. "/site",
+  })
+
+  treesitter.install(languages)
+
+  vim.api.nvim_create_autocmd("FileType", {
+    pattern = languages,
+    callback = function(args)
+      pcall(vim.treesitter.start, args.buf)
+    end,
+  })
+end
+
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
         'git',
@@ -43,8 +102,7 @@ require('lazy').setup({
 
     -- Extra opts required
     { 'saghen/blink.cmp', dependencies = { 'rafamadriz/friendly-snippets'} },
-    { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
-    { 'nvim-telescope/telescope.nvim', tag = '0.1.8', dependencies = {'nvim-lua/plenary.nvim'}},
+    { 'nvim-telescope/telescope.nvim', version = '*', dependencies = {'nvim-lua/plenary.nvim', { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }}},
     { 'numToStr/Comment.nvim', lazy = false },
     { 'glepnir/dashboard-nvim', event = 'VimEnter', dependencies = {'nvim-tree/nvim-web-devicons'} },
     { 'williamboman/mason.nvim', run = ':MasonUpdate' },
@@ -125,5 +183,12 @@ require('lazy').setup({
             statuscolumn = { enabled = true },
             words = { enabled = true },
         },
-    }
+    },
+    {
+          "nvim-treesitter/nvim-treesitter",
+          branch = "main",
+          lazy = false,
+          build = ":TSUpdate",
+          config = ts_configuration,
+    },
 })
