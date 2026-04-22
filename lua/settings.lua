@@ -5,7 +5,7 @@
 -- User Settings
 
 local settings = {
-    colorscheme = 'tokyonight-moon',
+    colorscheme = 'monokai-pro',
     formatting  = 'academic',
     autoindent = true,
 }

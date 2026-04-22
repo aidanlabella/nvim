@@ -23,7 +23,7 @@
 
 vim.api.nvim_exec(
 [[
-    colorscheme dracula
+    colorscheme monokai-pro
 ]],
 false)
 
