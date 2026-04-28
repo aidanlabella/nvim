@@ -216,6 +216,7 @@ local mappings =
     { "<leader>gb", "<cmd>Telescope git_branches<cr>", desc = "Checkout branch", nowait = false, remap = false },
     { "<leader>gc", "<cmd>Git commit<cr>", desc = "Commit", nowait = false, remap = false },
     { "<leader>gd", "<cmd>Git diff %<cr>", desc = "diff current file changes", nowait = false, remap = false },
+    { "<leader>gf", "<cmd>Git fetch<cr>", desc = "fetch", nowait = false, remap = false },
     { "<leader>gg", "<cmd>Git<cr>", desc = "Status", nowait = false, remap = false },
     { "<leader>gj", "<cmd>NextHunk<cr>", desc = "Next Hunk", nowait = false, remap = false },
     { "<leader>gk", "<cmd>PrevHunk<cr>", desc = "Prev Hunk", nowait = false, remap = false },
