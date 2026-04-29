@@ -3,6 +3,12 @@ require("nvim-tree").setup({
     view = {
       width = 35,
     },
+    tab = {
+      sync = {
+        open = true,
+        close = true,
+      },
+    },
     renderer = {
       group_empty = true,
     },

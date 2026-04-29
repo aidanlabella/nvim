@@ -13,7 +13,7 @@ local vers = geten:read("*line")
 geten:close()
 
 local get_title = function() 
-    return vers
+    return " " .. vers
 end
 
 local get_host = function()

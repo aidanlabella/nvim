@@ -99,9 +99,38 @@ require('lazy').setup({
     'onsails/lspkind-nvim',
     'ray-x/lsp_signature.nvim',
     'karb94/neoscroll.nvim',
+    'nanozuki/tabby.nvim',
 
     -- Extra opts required
-    { 'saghen/blink.cmp', dependencies = { 'rafamadriz/friendly-snippets'} },
+    {
+        'ms-jpq/coq_nvim',
+        branch = 'coq',
+        init = function()
+            vim.g.coq_settings = {
+                auto_start = "shut-up",
+                display = {
+                    icons = {
+                        mode = "long",
+                        spacing = 1,
+                    },
+                    pum = {
+                        fast_close = false,
+                        kind_context = { " ", "" },
+                        source_context = { " ", "" },
+                    },
+                    ghost_text = {
+                        enabled = true,
+                        highlight_group = "Comment",
+                    },
+                    preview = {
+                        border = "rounded",
+                    },
+                },
+            }
+        end,
+    },
+    { 'ms-jpq/coq.artifacts', branch = 'artifacts' },
+    { 'ms-jpq/coq.thirdparty', branch = '3p' },
     { 'nvim-telescope/telescope.nvim', version = '*', dependencies = {'nvim-lua/plenary.nvim', { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }}},
     { 'numToStr/Comment.nvim', lazy = false },
     { 'glepnir/dashboard-nvim', event = 'VimEnter', dependencies = {'nvim-tree/nvim-web-devicons'} },
@@ -112,12 +141,11 @@ require('lazy').setup({
     { 'danymat/neogen', dependencies = 'nvim-treesitter/nvim-treesitter' },
     { 'akinsho/git-conflict.nvim', version = '*', config = true},
     { 'stevearc/oil.nvim', opts = {}, dependencies = { 'nvim-tree/nvim-web-devicons' } },
-    { 'L3MON4D3/LuaSnip', version = 'v2.*', build = 'make install_jsregexp' },
     { 'echasnovski/mini.icons', init = function() require('mini.icons').setup() end, },
     { 'Bekaboo/dropbar.nvim', dependencies = { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' } },
-    { 'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons' },
-    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+    { 'catppuccin/nvim', name = "catppuccin", priority = 1000 },
     { 'folke/tokyonight.nvim', lazy = false, priority = 1000, opts = {}, },
+    { 'NeogitOrg/neogit', lazy = true, cmd = "Neogit", },
 
 
     -- Inline configuration

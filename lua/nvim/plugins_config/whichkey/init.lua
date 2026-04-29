@@ -29,6 +29,7 @@ require("which-key").setup{
 
 local tele = require('telescope.builtin')
 local dropbar_api = require('dropbar.api')
+local neogit = require('neogit')
 
 local opts = {
     mode = "n", -- NORMAL mode
@@ -217,7 +218,7 @@ local mappings =
     { "<leader>gc", "<cmd>Git commit<cr>", desc = "Commit", nowait = false, remap = false },
     { "<leader>gd", "<cmd>Git diff %<cr>", desc = "diff current file changes", nowait = false, remap = false },
     { "<leader>gf", "<cmd>Git fetch<cr>", desc = "fetch", nowait = false, remap = false },
-    { "<leader>gg", "<cmd>Git<cr>", desc = "Status", nowait = false, remap = false },
+    { "<leader>gg", function() neogit.open({ kind = "split" }) end, desc = "Status", nowait = false, remap = false },
     { "<leader>gj", "<cmd>NextHunk<cr>", desc = "Next Hunk", nowait = false, remap = false },
     { "<leader>gk", "<cmd>PrevHunk<cr>", desc = "Prev Hunk", nowait = false, remap = false },
     { "<leader>gl", "<cmd>Git log --oneline<cr>", desc = "Git log (single-line)", nowait = false, remap = false },
@@ -251,10 +252,10 @@ local mappings =
     { "<leader>qx", ":x <CR>", desc = "Save and quit current buffer", nowait = false, remap = false },
     { "<leader>t", group = "Tabs/Buffers", nowait = false, remap = false },
     { "<leader>tK", "<cmd>q!<cr>", desc = "Kill Tab (forcibly)", nowait = false, remap = false },
-    { "<leader>th", "<cmd>bprevious<cr>", desc = "Prev. Tab", nowait = false, remap = false },
-    { "<leader>tk", "<cmd>bdelete<cr>", desc = "Kill Tab", nowait = false, remap = false },
-    { "<leader>tl", "<cmd>bnext<cr>", desc = "Next Tab", nowait = false, remap = false },
-    { "<leader>tn", "<cmd>enew<cr>", desc = "New Tab", nowait = false, remap = false },
+    { "<leader>th", "<cmd>tabprevious<cr>", desc = "Prev. Tab", nowait = false, remap = false },
+    { "<leader>tk", "<cmd>tabclose<cr>", desc = "Kill Tab", nowait = false, remap = false },
+    { "<leader>tl", "<cmd>tabnext<cr>", desc = "Next Tab", nowait = false, remap = false },
+    { "<leader>tn", "<cmd>tabnew<cr>", desc = "New Tab", nowait = false, remap = false },
     { "<leader>w", group = "Window Managment", nowait = false, remap = false },
     { "<leader>x", group = "Latex", nowait = false, remap = false },
     { "<leader>xc", "<cmd>VimtexCompile<cr>", desc = "Compile", nowait = false, remap = false },
