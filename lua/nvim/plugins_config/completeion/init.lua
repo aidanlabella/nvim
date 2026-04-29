@@ -201,6 +201,53 @@ local function apply_coq_kind_highlights(items)
     end
 end
 
+local callable_completion_kinds = {
+    Function = true,
+    Method = true,
+    Constructor = true,
+}
+
+local function is_callable_completion(item)
+    if type(item) ~= "table" then
+        return false
+    end
+
+    local kind = item.kind or ""
+    local kind_name = type(kind) == "string" and kind:match("(%a+)$") or nil
+
+    return callable_completion_kinds[kind_name] == true
+end
+
+local function complete_callable_parentheses()
+    local item = vim.v.completed_item
+
+    if not is_callable_completion(item) or vim.api.nvim_get_mode().mode ~= "i" then
+        return
+    end
+
+    local col = vim.api.nvim_win_get_cursor(0)[2]
+    local line = vim.api.nvim_get_current_line()
+    local next_char = line:sub(col + 1, col + 1)
+    local prev_char = line:sub(col, col)
+
+    if next_char == "(" then
+        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Right>", true, false, true), "n", false)
+        return
+    end
+
+    if prev_char == ")" then
+        return
+    end
+
+    vim.api.nvim_feedkeys("()", "n", false)
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Left>", true, false, true), "n", false)
+end
+
+vim.api.nvim_create_autocmd("CompleteDone", {
+    group = vim.api.nvim_create_augroup("CoqCallableParentheses", { clear = true }),
+    callback = complete_callable_parentheses,
+})
+
 local function patch_coq_completion()
     if not _G.COQ or type(_G.COQ.send_comp) ~= "function" or _G.COQ.__kind_hl_patched then
         return false

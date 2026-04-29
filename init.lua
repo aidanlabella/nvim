@@ -4,6 +4,12 @@
 --
 -- Init File
 
+if vim.iter then
+    vim.tbl_flatten = function(tbl)
+        return vim.iter(tbl):flatten(math.huge):totable()
+    end
+end
+
 -- Load all plugins
 require('nvim.plugins')
 
