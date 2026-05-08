@@ -194,7 +194,7 @@ require("tabby.tabline").set(function(line)
     local tree_width = get_nvim_tree_width()
     local head_sep = ""
     local tree_label_width = math.max(tree_width - display_width(head_sep), 0)
-    local tree_label = tree_width > 0 and center_text("Project Tree", tree_label_width) or nil
+    local tree_label = tree_width > 0 and center_text("🌳Project Tree 🚀", tree_label_width) or nil
 
     return {
         tree_label and {
