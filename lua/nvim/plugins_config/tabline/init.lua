@@ -44,27 +44,50 @@ end
 local function setup_tabline_highlights()
     local tabline = get_hl("TabLine")
     local selected = get_hl("TabLineSel")
+    local fill = get_hl("TabLineFill")
     local statusline = get_hl("StatusLine")
     local diagnostic_info = get_hl("DiagnosticInfo")
+    local question = get_hl("Question")
     local string = get_hl("String")
     local diff_add = get_hl("DiffAdd")
-    local selected_bg = selected.bg or tabline.bg or statusline.bg or 0x30323d
+    -- Some colorschemes (including Dracula) only set a foreground for
+    -- TabLine and TabLineSel.  Tabby's separators need both neighboring
+    -- groups to have a background, otherwise the powerline glyphs are
+    -- rendered with missing or terminal-default colors.
+    local base_bg = fill.bg or tabline.bg or statusline.bg or 0x282a36
+    local tab_bg = tabline.bg or base_bg
+    local is_dracula = vim.g.colors_name == "dracula"
+    local selected_bg = is_dracula and (question.fg or 0xbd93f9)
+        or brighten(selected.bg or tab_bg, 0.18)
+    local selected_fg = is_dracula and base_bg
+        or selected.fg or tabline.fg or statusline.fg or 0xffffff
+    local file_bg = statusline.bg or brighten(base_bg, 0.08)
     local accent = diagnostic_info.fg or string.fg or diff_add.fg or 0x5fb3ff
 
+    vim.api.nvim_set_hl(0, "TabbyTablineFill", {
+        fg = fill.fg or tabline.fg or statusline.fg or 0xd0d0d0,
+        bg = base_bg,
+    })
+
+    vim.api.nvim_set_hl(0, "TabbyTablineTab", {
+        fg = tabline.fg or statusline.fg or 0xd0d0d0,
+        bg = tab_bg,
+    })
+
     vim.api.nvim_set_hl(0, "TabbyTablineFile", {
-        fg = tabline.fg or statusline.fg or "#d0d0d0",
-        bg = statusline.bg or "#30323d",
+        fg = tabline.fg or statusline.fg or 0xd0d0d0,
+        bg = file_bg,
     })
 
     vim.api.nvim_set_hl(0, "TabbyTablineCurrent", {
-        fg = selected.fg or tabline.fg or statusline.fg or "#ffffff",
-        bg = brighten(selected_bg, 0.18),
-        bold = selected.bold,
+        fg = selected_fg,
+        bg = selected_bg,
+        bold = is_dracula or selected.bold,
         italic = selected.italic,
     })
 
     vim.api.nvim_set_hl(0, "TabbyTablineTail", {
-        fg = statusline.bg or tabline.bg or 0x101010,
+        fg = file_bg,
         bg = blend(accent, selected_bg, 0.18),
         bold = true,
     })
@@ -180,10 +203,10 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 
 require("tabby.tabline").set(function(line)
     local theme = {
-        fill = "TabLineFill",
-        head = "TabLine",
+        fill = "TabbyTablineFill",
+        head = "TabbyTablineTab",
         current_tab = "TabbyTablineCurrent",
-        tab = "TabLine",
+        tab = "TabbyTablineTab",
         file = "TabbyTablineFile",
         tail = "TabbyTablineTail",
     }
@@ -215,12 +238,10 @@ require("tabby.tabline").set(function(line)
             end
 
             return {
-                {
-                    " " .. tab.number() .. ": " .. get_tab_label(tab) .. " " .. get_tab_icon(tab) .. " ",
-                    hl = hl,
-                },
+                " " .. tab.number() .. ": " .. get_tab_label(tab) .. " " .. get_tab_icon(tab) .. " ",
                 line.sep("", hl, next_hl),
                 hl = hl,
+                click = { "to_tab", tab.id },
             }
         end),
         line.spacer(),
