@@ -145,7 +145,6 @@ require('lazy').setup({
     { 'Bekaboo/dropbar.nvim', dependencies = { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' } },
     { 'catppuccin/nvim', name = "catppuccin", priority = 1000 },
     { 'folke/tokyonight.nvim', lazy = false, priority = 1000, opts = {}, },
-    { 'NeogitOrg/neogit', lazy = true, cmd = "Neogit", },
 
 
     -- Inline configuration
